@@ -25,7 +25,7 @@ SECRET_KEY = '#%4e_8(4+wtdh%n+%3zpcd@sh5ay2kh!va97cpbfe0vzgl1pv4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["india-rescue.herokuapp.com", "127.0.0.1"]
+ALLOWED_HOSTS = ['india-rescue.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -129,6 +129,3 @@ STATIC_URL = '/static/'
 CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
 
 CRISPY_TEMPLATE_PACK = "tailwind"
-
-if os.getcwd() == '/app':
-    DEBUG = False
