@@ -90,6 +90,8 @@ def successMsg(request, args):
     amount = args
     return render(request, 'rescue/success.html', {'amount':amount})
 
+def safety_measure(request):
+    return render(request, 'rescue/safety.html')
 
 def home3(request):
     resources = Resource.objects.all()
