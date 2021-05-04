@@ -1,611 +1,1443 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-  <title>Home Page</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rescue India Mission</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'rescue/mystyle.css' %}">
+    <script src="https://use.fontawesome.com/4ad478e227.js"></script>
+    
 </head>
 
-<body>
-  <header class="text-gray-600 body-font">
-    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-      <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round"
-          stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
-          viewBox="0 0 24 24">
-          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-        </svg>
-        <span class="ml-3 text-xl">India Rescue Mission</span>
-      </a>
-      <nav
-        class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
 
 
-        <a href="{% url 'home-page' %}" class="mr-5 underline hover:text-gray-900">Home</a>
-        <a href="{% url 'patient-form' %}" class="mr-5 hover:text-gray-900">Patient Form</a>
-        <a href="{% url 'doctor-form' %}" class="mr-5 hover:text-gray-900">Doctors Form</a>
-        <a href="{% url 'health_care_prov' %}" class="mr-5 hover:text-gray-900">Health Care Providers</a>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="twitter.png" alt="" width="30" height="30" class="d-inline-block align-text-top"> Rescue India Mission</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#intro">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'patient-form' %}">Patient Form</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'doctor-form' %}">Doctor Form</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#states">Statewise Info</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  COVID-19 Resources
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#ne">Nutiritonal Elements</a>
+                  <a class="dropdown-item" href="#vs">Vitamin supplements</a>
+                  <a class="dropdown-item" href="#dc">Diagnosis for Covid-19</a>
+                  <a class="dropdown-item" href="#md">Medicines</a>
+                  <a class="dropdown-item" href="#ts">Tests</a>
+                  <a class="dropdown-item" href="#pm">Prescription Medication</a>
+                  <a class="dropdown-item" href="#tc">Testing Centres</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#gal">Gallery</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#contact">Contact Us</a>
+              </li>
+            </ul>
+            </div>
+
+            <ul class="navbar-nav justify-content-end">            <li class="nav-item dropdown">
+              <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Login
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Patient Login</a>
+                  <a class="dropdown-item" href="#">Doctor Login</a>
+                  <a class="dropdown-item" href="#">Donor Login</a>
+                  <a class="dropdown-item" href="#">Volunteer Login</a>
+                  <a class="dropdown-item" href="#">Counsellor Login</a>
+              </div>
+          </li><li class="nav-item"><a class="nav-link active" href="https://t.me/joinchat/EGzuT3KeE3pJPLT6">Join Telegram</a></li></ul>
+        </div>
       </nav>
-      <button
-        class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Button
-        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          class="w-4 h-4 ml-1" viewBox="0 0 24 24">
-          <path d="M5 12h14M12 5l7 7-7 7"></path>
-        </svg>
-      </button>
-    </div>
-  </header>
+        <section id="intro">
+         <div class="intro-container">
+<h1 class="mb-4 pb-0">Rescue India Mission</h1>
+<div class="row justify-content-center"><div class="col-lg-6"><p>Rescue India Mission is a charity initiative to support India during this Covid calamity . A mission to save lives, prevent deaths, and stem the pandemic. Our volunteers are trying to provide oxygen supplies, hospital beds, support and medical advice to  stranded citizens round the clock. Come join us. Save lives. Contribute.</p>
+</div></div>
+<h2 class="text-warning mb-4 pb-0">Donate any of the following</h2>
+<div class="row">
+  <div class="col-md-3"><a href="#about" class="donate-btn scrollto">Oxygen Cylinder</a></div>
+  <div class="col-md-3"><a href="#about" class="donate-btn scrollto">Pulse Oximeter</a></div>
+  <div class="col-md-3"><a href="#about" class="donate-btn scrollto">Medical Supplies</a></div>
+  <div class="col-md-3"><a href="#about" class="donate-btn scrollto">Oxygen Concentrators</a></div>
+</div>
+         </div>
+        </section>
 
-  <style>
-    .covid {
-      background-image: url('https://png.pngtree.com/png-clipart/20190520/original/pngtree-happy-indian-republic-day-celebration-concept-with-ashoka-wheel-on-national-png-image_3740962.jpg');
-      width: 100%;
-      background-repeat: no-repeat;
-      background-size: cover;
-
-
-    }
-  </style>
-  <section class="text-gray-600 body-font covid bg-blend-soft-light	">
-    <div class="container px-5 py-24 mx-auto flex flex-wrap">
-      <div class="flex flex-col text-center w-full mb-20">
-        <h1 class="sm:text-6xl text-2xl font-medium title-font mb-4 text-gray-900">INDIA RESCUE MISSION</h1>
-        <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn
-          asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them
-          man bun deep jianbing selfies heirloom.</p>
-      </div>
-      <div class="flex flex-wrap md:-m-2 -m-1">
-        <div class="flex flex-wrap w-1/2">
+        <section id="about">
+          <div class="section-header"><h2>About Us</h2></div>
+            <div class="row">
+              <div class="col-md-6">
+                <p class="text-justify mx-2">India is facing an unprecedented humanitarian crisis in the form of covid calamity. The healthcare system is teetering on the verge of a total collapse. Responsible citizens are taking up the challenge of saving the covid stricken, as the hospitals and healthcare infrastructure is extraordinarily burdened. Deaths and mourning have become a daily reality. The crisis is unparalleled because the world's second largest population, developing country infrastructure, and scarcity of critical resources like hospital beds, oxygen manufacturing facilities and unpreparedness on the part of government have left large swathes of people helpless, and in danger of losing lives to fend for themselves, or at the mercy of compassionate citizen volunteers. We have risen to the call of duty to protect our fellow citizens. We are organising a drive to procure supplies of oxygen, oxygen concentrators, medical supplies, and grassroots reach to the nooks and corners of India. We are a network of doctors, Wharton and IIT alumni, coming together to rescue India from this devastation to whatever extent we best can. We solicit your support in donations. We will account for every donation, every rupee spent, and record the recipient details. Together in India Covid Rescue Mission, we will attempt the impossible. Let us save lives. TIME IS OF THE ESSENCE. So forgive our sloppiness. As we focus on prioritising saving of lives.</p>
+              </div>
+              <div class="col-md-6">
+                <img src="{% static 'rescue/images/indian-flag-38509.png' %}" alt="" width="600px" height="600px" class="mt-0">
+              </div>
+            </div>
+        </section>
 
 
-          <div class="md:p-2 p-1 w-full">
-
-          </div>
-        </div>
-        <div class="flex flex-wrap w-1/2">
-          <div class="md:p-2 p-1 w-full">
-
-          </div>
+        <br><br>
+        <div class="row justify-content-center">
+          <button class="btn btn-primary btn-lg px-4 py-3" href="#">Donate Now</button></div>
 
 
-
-        </div>
-      </div>
-
-    </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-  </section>
-
-
-
-  <section class="text-gray-600 body-font">
-    <div class="container px-5 py-8 mx-auto">
-      <div class="flex flex-col">
-        <div class="h-1 bg-gray-200 rounded overflow-hidden">
-          <div class="w-24 h-full bg-indigo-500"></div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-
-
-
-
-
-
-
-
-  <section class="text-gray-600 body-font">
-    <div class="container px-5 py-24 mx-auto">
-      <div class="flex flex-wrap w-full mb-20">
-        <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
-          <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">Pitchfork Kickstarter Taxidermy
-          </h1>
-          <div class="h-1 w-20 bg-indigo-500 rounded"></div>
-        </div>
-        <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">Whatever cardigan tote bag tumblr hexagon brooklyn
-          asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them man bun deep
-          jianbing selfies heirloom prism food truck ugh squid celiac humblebrag.</p>
-      </div>
-      <div class="flex flex-wrap -m-4">
-        <div class="xl:w-1/4 md:w-1/2 p-4">
-          <div class="bg-gray-100 p-6 rounded-lg">
-            <img class="h-40 rounded w-full object-cover object-center mb-6"
-              src="https://images.pexels.com/photos/5125690/pexels-photo-5125690.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-              alt="content">
-            <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
-            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Covid Survival Kits</h2>
-            <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon
-              disrupt edison bulbche.</p>
-          </div>
-        </div>
-        <div class="xl:w-1/4 md:w-1/2 p-4">
-          <div class="bg-gray-100 p-6 rounded-lg">
-            <img class="h-40 rounded w-full object-cover object-center mb-6"
-              src="https://images.pexels.com/photos/143654/pexels-photo-143654.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-              alt="content">
-            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Essential Medicines</h2>
-            <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon
-              disrupt edison bulbche.</p>
-          </div>
-        </div>
-        <div class="xl:w-1/4 md:w-1/2 p-4">
-          <div class="bg-gray-100 p-6 rounded-lg">
-            <img class="h-40 rounded w-full object-cover object-center mb-6"
-              src="https://images.pexels.com/photos/3958403/pexels-photo-3958403.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Mental
-              healthcare</h2>
-            <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon
-              disrupt edison bulbche.</p>
-          </div>
-        </div>
-        <div class="xl:w-1/4 md:w-1/2 p-4">
-          <div class="bg-gray-100 p-6 rounded-lg">
-            <img class="h-40 rounded w-full object-cover object-center mb-6"
-              src="https://images.pexels.com/photos/4386464/pexels-photo-4386464.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-              alt="content">
-            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Telemedicine: Talk to a doctor</h2>
-            <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon
-              disrupt edison bulbche.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-
-
-  <section class="text-gray-600 body-font overflow-hidden">
-    <div class="container px- py-24 mx-auto">
-      <div class="lg:w-4/5 mx-auto flex flex-wrap">
-        <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
-          <h1 class="text-gray-900 text-3xl title-font font-medium mb-4">Give Oxygen and Save Covid
-            Afflicted India</h1>
-          <div class="flex mb-4">
-
-
-          </div>
-          <p class="leading-relaxed mb-4">India is facing an unprecedented humanitarian crisis in the form of
-            covid calamity. The healthcare system is teetering on the verge of a total collapse. Responsible
-            citizens are taking up the challenge of saving the covid stricken, as the hospitals and
-            healthcare infrastructure is extraordinarily burdened. Deaths and mourning have become a daily
-            reality. The crisis is unparalleled because the world's second largest population, developing
-            country infrastructure and scarcity of resources like hospital beds, oxygen manufacturing
-            facilities and unpreparedness on the part of government have left large swathes of people to
-            fend for themselves, or at the mercy of compassionate citizen volunteers. We gave risen to the
-            call of duty to protect our fellow citizens. We are organising a drive to procure supplies of
-            oxygen, oxygen concentrators, medical supplies, and grassroots reach to the nooks and corners of
-            India. We are a network of doctors, Wharton and IIT alumni, coming together to rescue India from
-            this devastation to whatever extent we best can. We solicit your support in donations. We will
-            account for every donation, every rupee spent, and record the recipient details. Together in
-            India Covid Rescue Mission, we will attempt the impossible. Let us save lives. TIME IS OF THE
-            ESSENCE. SO forgive our sloppiness.</p>
-
-          <div class="flex">
-
-            <button
-              class="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Button</button>
-          </div>
-        </div>
-        <img alt="ecommerce" class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded"
-          src="https://images.pexels.com/photos/3168928/pexels-photo-3168928.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-      </div>
-    </div>
-  </section>
-
-
-
-
-
-
-
-
-  <section class="text-gray-600 body-font">
-    <div class="container px-24 py-24 mx-auto">
-      <div class="flex flex-wrap w-full mb-20">
-        <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
-          <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">What do you wish to help with</h1>
-          <div class="h-1 w-20 bg-indigo-500 rounded"></div>
-        </div>
-        <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">Whatever cardigan tote bag tumblr hexagon brooklyn
-          asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them man bun deep
-          jianbing selfies heirloom prism food truck ugh squid celiac humblebrag.</p>
-      </div>
-      <div class="flex flex-wrap -m-4">
-        <div class="xl:w-1/2 md:w-1/2 p-4">
-          <div class="p-6 rounded-lg shadow-xl">
-            <img class="h-40 rounded w-full object-cover object-center mb-6"
-              src="https://images.unsplash.com/photo-1573367778037-96ce1bdd5efc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fG94eWdlbiUyMGN5bGluZGVyfGVufDB8MHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-              alt="content">
-            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Oxygen Cylinder</h2>
-            <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon
-              disrupt edison bulbche.</p><br>
-            <a href="#">
-              <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">DONATE NOW --> </h3>
-            </a>
-
-          </div>
-        </div>
-        <div class="xl:w-1/2 md:w-1/2 p-4">
-          <div class="p-6 rounded-lg shadow-xl">
-            <img class="h-40 rounded w-full object-cover object-center mb-6"
-              src="https://images.unsplash.com/photo-1572996489084-bd293caab387?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHVsc2UlMjBveHltZXRlcnxlbnwwfDB8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-              alt="content">
-            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Pulse oxymeter</h2>
-            <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon
-              disrupt edison bulbche.</p>
-            <br><a href="#">
-              <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">DONATE NOW --> </h3>
-            </a>
-
-          </div>
-        </div>
-        <div class="xl:w-1/2 md:w-1/2 p-4">
-          <div class="p-6 rounded-lg shadow-xl">
-            <img class="h-40 rounded w-full object-cover object-center mb-6"
-              src="https://images.unsplash.com/photo-1563260324-5ebeedc8af7c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bWVkaWNhbCUyMHN1cHBsaWVzfGVufDB8MHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-              alt="content">
-            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Medical Supplies</h2>
-            <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon
-              disrupt edison bulbche.</p>
-            <br><a href="#">
-              <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">DONATE NOW --> </h3>
-            </a>
-
-          </div>
-        </div>
-        <div class="xl:w-1/2 md:w-1/2 p-4">
-          <div class="p-6 rounded-lg shadow-xl">
-            <img class="h-40 rounded w-full object-cover object-center mb-6"
-              src="https://images.unsplash.com/photo-1526139506140-315ac793b9cf?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8b3h5Z2VuJTIwY29uY2VudHJhdGlvbnxlbnwwfDB8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-              alt="content">
-            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Oxygen Concentration</h2>
-            <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon
-              disrupt edison bulbche.</p><br>
-            <br><a href="#">
-              <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">DONATE NOW --> </h3>
-            </a>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="text-gray-600 body-font ">
-    <div class="container px-24 py-24 mx-auto flex flex-wrap">
-      <div class="flex w-full mb-20 flex-wrap">
-        <h1 class="sm:text-5xl text-6xl font-medium title-font text-gray-900 lg:w-1/2 lg:mb-0 mb-4">Our Gallery</h1>
-
-      </div>
-      <div class="flex flex-wrap md:-m-2 -m-1">
-        <div class="flex flex-wrap w-1/2">
-          <div class="md:p-2 p-1 w-1/2">
-            <img alt="gallery" class="w-full object-cover h-full object-center block"
-              src="https://images.unsplash.com/photo-1578307985320-34b61a66c195?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cGF0aWVudHN8ZW58MHwwfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">
-          </div>
-          <div class="md:p-2 p-1 w-1/2">
-            <img alt="gallery" class="w-full object-cover h-full object-center block"
-              src="https://images.unsplash.com/photo-1578496781379-7dcfb995293d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fHBhdGllbnRzfGVufDB8MHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">
-          </div>
-          <div class="md:p-2 p-1 w-full">
-            <img alt="gallery" class="w-full h-full object-cover object-center block"
-              src="https://images.unsplash.com/photo-1581594693690-517d9a71e1f2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fHBhdGllbnRzfGVufDB8MHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">
-          </div>
-        </div>
-        <div class="flex flex-wrap w-1/2">
-          <div class="md:p-2 p-1 w-full">
-            <img alt="gallery" class="w-full h-full object-cover object-center block"
-              src="https://images.pexels.com/photos/7659567/pexels-photo-7659567.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-          </div>
-          <div class="md:p-2 p-1 w-1/2">
-            <img alt="gallery" class="w-full object-cover h-full object-center block"
-              src="https://images.pexels.com/photos/7579831/pexels-photo-7579831.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-          </div>
-          <div class="md:p-2 p-1 w-1/2">
-            <img alt="gallery" class="w-full object-cover h-full object-center block"
-              src="https://dummyimage.com/503x303">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="text-gray-600 body-font">
-    <div class="container px-5 py-8 mx-auto">
-      <div class="flex flex-col">
-        <div class="h-1 bg-gray-200 rounded overflow-hidden">
-          <div class="w-24 h-full bg-indigo-500"></div>
-        </div>
-        <div class="flex flex-wrap sm:flex-row flex-col py-6 mb-12">
-          <h1 class="sm:w-2/5 text-gray-900 font-medium title-font text-5xl mb-2 sm:mb-0">Resources</h1>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 
-
-
-  <section class="text-gray-600 body-font overflow-hidden">
-    <div class="container px-24 py-8 mx-auto">
-      <div class="flex flex-wrap -m-12">
-        {% for resource in resources %}
-        <div class="p-12 md:w-1/2 flex flex-col items-start shadow-xl  ">
-          <span
-            class="inline-block py-1 px-2 rounded bg-indigo-50 text-indigo-500 text-xs font-medium tracking-widest">{{resource.hashtag}}</span>
-          <a href="{{ resource.link }}"><h2 class="sm:text-3xl text-2xl title-font font-medium text-gray-900 mt-4 mb-4">{{ resource.title }}</h2>
-          <p class="leading-relaxed mb-8">{{ resource.description }}</p></a>
-        </div>
-
-        {% endfor %}
-      </div>
-    </div>
-  </section> -->
-
-
-
-
-
-
-
-  <section class="text-gray-600 body-font overflow-hidden">
-    <img class="object-cover h-64 w-full" src="https://source.unsplash.com/1600x390/?library" alt="">
-    <div class="container px-5 py-8  mx-auto">
+<br><br>
+        <section id="services">
+          <div class="container" data-aos="fade-up">
+            <div class="section-header">
+              <h2>Services Offered</h2>
+              <p>Our platform offers services mentioned as below to aid the needful.</p>
+            </div>
     
-      <div class="flex flex-wrap -m-12">
-        {% for resource in resources %}
-        <div class="p-8 md:w-1/2 flex flex-col items-start shadow-xl  ">
-          <span
-            class="inline-block py-1 px-2 rounded bg-indigo-50 text-indigo-500 text-xs font-medium tracking-widest">{{resource.hashtag}}</span>
-          <a href="{{ resource.link }}">
-            <h2 class="sm:text-3xl text-2xl title-font font-medium text-gray-900 mt-4 mb-4">{{ resource.title }}</h2>
-            <p class="leading-relaxed mb-8">{{ resource.description }}</p>
-          </a>
-        </div>
+            <div class="row">
+              <div class="col-lg-3">
+              <div class="card border-primary text-dark bg-light mx-1" style="width: 18rem;">
+                <img src="{% static 'rescue/images/csk.jpeg' %}" class="card-img-top" alt="..." width="300px" height="200px">
+                <div class="card-body">
+                  <h5 class="card-title">Covid Survival Kits</h5>
+                  <p class="card-text text-justify">We help to donate Covid survival kits such as Masks, PPE Kits, Pulse Oximeters etc which serve as an important equipment at such times for even doctors as well as to the common users too.<br><br><br><br></p>
+                </div>
+                <div class="card-footer text-center"><a href="#" class="btn btn-success">Click to Know More</a></div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="card border-success text-dark bg-light mx-1" style="width: 18rem;">
+                <img src="{% static 'rescue/images/em.jpeg' %}" class="card-img-top" alt="..." width="300px" height="200px">
+                <div class="card-body">
+                  <h5 class="card-title">Essential Medicines</h5>
+                  <p class="card-text text-justify">Essential Medicines for recovery from Covid-19 such as favpiravir, remdesivir etc are provided to the patients fighting Covid-19 through our platform. <br<br><br><br><br><br><br></p>
+                </div>
+                <div class="card-footer text-center"><a href="#" class="btn btn-success">Click to Know More</a></div>
+              </div></div>
+              <div class="col-lg-3">
+            <div class="card text-dark border-warning bg-light mx-1" style="width: 18rem;">
+                <img src="{% static 'rescue/images/hc.jpeg' %}" class="card-img-top" alt="..." width="300px" height="200px">
+                <div class="card-body">
+                  <h5 class="card-title">Mental Healthcare</h5>
+                  <p class="card-text text-justify">The effects of pandemic are not only physically felt, but mentally as well people are affected. It affects the mental state of person causing anxiety, nervousness etc which needs to be taken care of. We also provide help to such people through our platform.<br><br></p>
+                </div>
+                <div class="card-footer text-center"><a href="#" class="btn btn-success">Click to Know More</a></div>
+              </div>
+            </div><div class="col-lg-3">
+              <div class="card text-dark bg-light border-dark mx-1" style="width: 18rem;">
+                <img src="{% static 'rescue/images/tele.jpeg' %}" class="card-img-top" alt="..." width="300px" height="200px">
+                <div class="card-body">
+                  <h5 class="card-title">Telemedicine: Talk to a Doctor</h5>
+                  <p class="card-text text-justify">At such pandemic times, it is not feasible for each and every person to go out and consult doctor, we even have solutions for such people. We offer telemedicine i.e Doctors provide you diagnosis via telephone without any kind of physical contact.</p>
+                </div>
+                <div class="card-footer text-center"><a href="#" class="btn btn-success">Click to Know More</a></div>
+              </div>
+            </div>
+            </div><br><br>
+            <div class="row justify-content-center">
+              <a class="btn btn-primary btn-lg px-4 py-3" href="#">Donate Now</a></div>
+          </div>
+    
+        </section>
 
-        {% endfor %}
+<br><br>
+        <section id="doctors">
+          <div class="container" data-aos="fade-up">
+            <div class="section-header">
+              <h2>Doctors on our platform</h2>
+            </div>
+    
+            <div class="card-deck">
+              <div class="card border-primary text-dark bg-light mx-1" style="width: 18rem;">
+                <img src="{% static 'rescue/images/Doctors/1.jfif' %}" class="card-img-top" alt="..." width="300px" height="200px">
+                <div class="card-body">
+                  <h5 class="card-title">Dr ABC</h5>
+                  <h6 class="card-subtitle">Physiologist</h6>
+                  <p class="card-text text-justify">Dr ABC is a physiologist at who practices at Nevada General Hostpital. She has over 8 years of experience in treating patients with various physiological diseases.</p>
+                </div>
+                <div class="card-footer text-center"><a href="#" class="btn btn-warning">View testimonial</a></div>
+              </div>
+              <div class="card border-success text-dark bg-light mx-1" style="width: 18rem;">
+                <img src="{% static 'rescue/images/Doctors/2.jfif' %}" class="card-img-top" alt="..." width="300px" height="200px">
+                <div class="card-body">
+                  <h5 class="card-title">Dr XYZ</h5>
+                  <h6 class="card-subtitle">Rheumatologist</h6>
+                  <p class="card-text text-justify">Dr ABC is a Rheumatologist at who practices at St Bonaventure Hostpital. He has over 10 years of experience in treating patients with various Rheumatic ailments.</p>
+                </div>
+                <div class="card-footer text-center"><a href="#" class="btn btn-warning">View testimonial</a></div>
+              </div>
+             <div class="card text-dark border-primary bg-light mx-1" style="width: 18rem;">
+                <img src="{% static 'rescue/images/Doctors/3.jfif' %}" class="card-img-top" alt="..." width="300px" height="200px">
+                <div class="card-body">
+                  <h5 class="card-title">Dr PQR</h5>
+                  <h6 class="card-subtitle">Neurologist</h6>
+                  <p class="card-text text-justify">Dr PQR is a physiologist at who practices at Blue Bird Multispeciality Hospital. She has over 15 years of experience in treating patients with various Neurological diseases.</p>
+                </div>
+                <div class="card-footer text-center"><a href="#" class="btn btn-warning">View testimonial</a></div>
+             </div>
+            </div>
+            <br>
+                <h3 class="text-center"><a class="btn btn-primary btn-lg" href="{% url 'doctor-form' %}">Click to fill form for doctor</a></h3>
+                <hr>
+                <br><br>
+            <div class="row justify-content-center">
+              <a class="btn btn-primary btn-lg px-4 py-3" href="#">Donate Now</a></div>
+          </div>
+    
+        </section>
+<!-- 
+
+        <br><br>
+        <section id="patients">
+          <div class="container" data-aos="fade-up">
+            <div class="section-header">
+              <h2>Some testimonials from patients who benefitted from our platform</h2>
+            </div>
+    
+            <div class="card-deck">
+              <div class="card border-primary text-dark bg-light mx-1" style="width: 18rem;">
+                <img src="./Patients/1.jfif" class="card-img-top" alt="..." width="300px" height="200px">
+                <div class="card-body">
+                  <h5 class="card-title">Mr ABC</h5>
+                  <h6 class="card-subtitle">Businessman, Noida, UP</h6>
+                  <p class="card-text text-justify">Mr ABC is a businessman and philanthropist who recently caught Covid-19. Thanks to our platform, we were able to procure needed equipments such as Oxygen cylinder, concentrator etc for him during much needed times.</p>
+                </div>
+                <!-- <div class="card-footer text-center"><a href="#" class="btn btn-primary">View testimonial</a></div> 
+              <!-- </div>
+              <div class="card border-success text-dark bg-light mx-1" style="width: 18rem;">
+                <img src="./Patients/2.jfif" class="card-img-top" alt="..." width="300px" height="200px">
+                <div class="card-body">
+                  <h5 class="card-title">Ms XYZ</h5>
+                  <h6 class="card-subtitle">Homemaker, Mumbai, Maharashtra</h6>
+                  <p class="card-text text-justify">Ms ABC is a Homemaker from Mumbai who also became victim of this pandemic and had to get home quarantined for recovery. Due to lockdown at that time, she took help of our platform to receive Pulse oximeter and telemedication.</p>
+                </div>
+                <!-- <div class="card-footer text-center"><a href="#" class="btn btn-primary">View testimonial</a></div> 
+              <!-- </div>
+             <div class="card text-dark border-primary bg-light mx-1" style="width: 18rem;">
+                <img src="./Patients/3.jfif" class="card-img-top" alt="..." width="300px" height="200px">
+                <div class="card-body">
+                  <h5 class="card-title">Mr PQR</h5>
+                  <h6 class="card-subtitle">Software Engineer, Bangalore, Karnataka</h6>
+                  <p class="card-text text-justify">Mr PQR, a Software Engineer from Bangalore. He caught Covid-19 and had to get admitted to the hospital to recover from the same, but unfortunately the hospital fell short of Oxygen cylinders. Thanks to our platform, that he was able to get one in time.</p>
+                </div>
+                <!-- <div class="card-footer text-center"><a href="#" class="btn btn-primary">View testimonial</a></div> 
+             <!-- </div>
+            </div>
+            <br>
+                <h3 class="text-center"><a class="btn btn-success btn-lg" href="/patientform">Click to fill form for patient</a></h3>
+                <hr>
+                <br><br>
+            <div class="row justify-content-center">
+              <a class="btn btn-primary btn-lg px-4 py-3" href="#">Donate Now</a></div>
+          </div>
+    
+        </section>
+ -->
+
+        <br><br>
+        <section id="donor">
+          <div class="container" data-aos="fade-up">
+            <div class="section-header">
+              <h2>Our proud donors</h2>
+            </div>
+    
+            <div class="card-deck">
+              <div class="card border-primary text-dark bg-light mx-1" style="width: 18rem;">
+                <img src="{% static 'rescue/images/Donors/1.jfif' %}" class="card-img-top" alt="..." width="300px" height="200px">
+                <div class="card-body">
+                  <h5 class="card-title">Mr ABC</h5>
+                  <h6 class="card-subtitle">Businessman, Delhi</h6>
+                  <p class="card-text text-justify">Mr ABC is a businessman and philanthropist who recently donated 40 Oxygen Cyliners and 40 Pulse Oximeters. We are proud to have a generous donor like him.</p><p>Read his story by clicking the link below</p>
+                </div>
+                <div class="card-footer text-center"><a href="#" class="btn btn-danger">View testimonial</a></div>
+              </div>
+              <div class="card border-success text-dark bg-light mx-1" style="width: 18rem;">
+                <img src="{% static 'rescue/images/Donors/2.jfif' %}" class="card-img-top" alt="..." width="300px" height="200px">
+                <div class="card-body">
+                  <h5 class="card-title">Ms XYZ</h5>
+                  <h6 class="card-subtitle">Chef, Maharashtra</h6>
+                  <p class="card-text text-justify">Ms ABC is a chef from Mumbai who also became no less than a hero for the victim of this pandemic.He donated around 50 Oxygen Concentrators and 20 Oxygen Cylinders to us. These people are the heart of our website</p><p>Read her story by clicking the link below</p>
+                </div>
+                <div class="card-footer text-center"><a href="#" class="btn btn-danger">View testimonial</a></div>
+              </div>
+             <div class="card text-dark border-primary bg-light mx-1" style="width: 18rem;">
+                <img src="{% static 'rescue/images/Donors/1.jfif' %}" class="card-img-top" alt="..." width="300px" height="200px">
+                <div class="card-body">
+                  <h5 class="card-title">Mr PQR</h5>
+                  <h6 class="card-subtitle">Interior Designer, Kerala</h6>
+                  <p class="card-text text-justify">Mr PQR, a Interior Designer from Kerala. He donated to us around 45 Pulse Oximeters and also provided 50 Beds to us which were used to treat Covid-19 infected patients.</p><p>Read his story by clicking the link below</p>
+                </div>
+                <div class="card-footer text-center"><a href="#" class="btn btn-danger">View testimonial</a></div>
+             </div>
+            </div>
+            <br>
+                <h3 class="text-center"><a class="btn btn-primary btn-lg" href="/donorform">Click to register yourself as donor</a></h3>
+                <hr>
+                <br><br>
+            <div class="row justify-content-center">
+              <a class="btn btn-primary btn-lg px-4 py-3" href="#">Donate Now</a></div>
+          </div>
+    
+        </section>
+
+
+        <br><br>
+        <section id="volunteer">
+          <div class="container" data-aos="fade-up">
+            <div class="section-header">
+              <h2>Our warrior Volunteers</h2>
+            </div>
+    
+            <div class="card-deck">
+              <div class="card border-primary text-dark bg-light mx-1" style="width: 18rem;">
+                <img src="{% static 'rescue/images/Volunteers/1.jfif' %}" class="card-img-top" alt="..." width="300px" height="200px">
+                <div class="card-body">
+                  <h5 class="card-title">Mr ABC</h5>
+                  <h6 class="card-subtitle">student, AIIMSDelhi</h6>
+                  <p class="card-text text-justify">Mr ABC is actively volunteering in providing support and assistance to the patients affected by Covid-19 and helping them get access to important resources for the same.</p><p>Read his story by clicking the link below</p>
+                </div>
+                <div class="card-footer text-center"><a href="#" class="btn btn-secondary">View testimonial</a></div>
+              </div>
+              <div class="card border-success text-dark bg-light mx-1" style="width: 18rem;">
+                <img src="{% static 'rescue/images/Volunteers/2.jfif' %}" class="card-img-top" alt="..." width="300px" height="200px">
+                <div class="card-body">
+                  <h5 class="card-title">Ms XYZ</h5>
+                  <h6 class="card-subtitle">Chef, Gujarat</h6>
+                  <p class="card-text text-justify">Ms ABC is a chef from Gujarat who came forward to help the humanity by providing free food to the Covid-19 affected patients. She makes sure the food is hygienic and also provides immunity to the patients at the same time.</p><p>Read her story by clicking the link below</p>
+                </div>
+                <div class="card-footer text-center"><a href="#" class="btn btn-secondary">View testimonial</a></div>
+              </div>
+             <div class="card text-dark border-primary bg-light mx-1" style="width: 18rem;">
+                <img src="{% static 'rescue/images/Volunteers/3.jfif' %}" class="card-img-top" alt="..." width="300px" height="200px">
+                <div class="card-body">
+                  <h5 class="card-title">Mr PQR</h5>
+                  <h6 class="card-subtitle">Accountatnt, West Bengal</h6>
+                  <p class="card-text text-justify">Mr PQR, an Accountant from West Bengal provided free medicines to the Covid-19 infected patients by delivering it to their desired location for free of cost. Additionally he also provided leads to them for important equipments such as Oxygen concentrators, Pulse Oximeters etc if needed.</p><p>Read his story by clicking the link below</p>
+                </div>
+                <div class="card-footer text-center"><a href="#" class="btn btn-secondary">View testimonial</a></div>
+             </div>
+            </div>
+            <br>
+                <h3 class="text-center"><a class="btn btn-success btn-lg" href="/volunteerform">Click to register yourself as volunteer for Rescue India</a></h3>
+                <hr><br><br>
+                <div class="row justify-content-center">
+                  <a class="btn btn-primary btn-lg px-4 py-3" href="#">Donate Now</a></div>
+          </div>
+    
+        </section>
+
+
+
+
+
+        <section id="states">
+          <div class="container" data-aos="fade-up">
+            <div class="section-header">
+              <h2>Statewise Info</h2>
+              <p>Here is statewise Info</p>
+            </div>
+    
+            <div class="row">
+              <div class="card col-md-4" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title text-center">MAHARASHTRA</h5>
+                  <h6 class="card-subtitle mb-2 text-center text-danger">Important Links</h6>
+                  <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                  <div class="row">
+                    <div class="col-md-6"><a href="https://chat.whatsapp.com/Cdha00ZWDQxGWcEJcHX9Ti" style="background-color: rgb(94,92,230); font-weight: 600;" target="_blank" class="text-wrap card-link btn">Beds Available</a>
+                    </div>
+                    <div class="col-md-6"><a href="https://www.instagram.com/hemkunt_foundation/?hl=en" style="background-color: rgb(10,132,255); font-weight: 600;" target="_blank" class="card-link btn">Pulse Oximeter</a>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                    <div class="col-md-12 text-center"><a href="http://friends2support.org/" style="background-color: rgb(48,209,88); font-weight: 600;" target="_blank" class="text-wrap card-link btn">Plasma Donors</a>
+                    </div>
+                    <!-- <div class="col-md-6"><a href="#" class="card-link btn btn-dark">Pulse Oximeter</a>
+                    </div> -->
+                  </div>
+                  <br>
+                  <h6 class="card-subtitle mb-2 text-center">SOS Contacts</h6>
+                  <div class="row">
+                    <div class="col-md-6"><a href="tel:+917822989954" class="card-link">Mr Rajesh +917822989954</a>
+                    </div>
+                    <div class="col-md-6"><a href="tel:+917977239969" class="card-link">Mr Samrat +917977239969</a>
+                    </div>
+                  </div>
+                  </div>
+              </div>
+              <div class="card col-md-4" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title text-center">DELHI</h5>
+                  <h6 class="card-subtitle mb-2 text-center text-danger">Important Links</h6>
+                  <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                  <div class="row">
+                    <div class="col-md-6"><a href="https://coronabeds.jantasamvad.org/" style="background-color: rgb(94,92,230); font-weight: 600;" target="_blank" class="text-wrap card-link btn">Beds Available</a>
+                    </div>
+                    <div class="col-md-6"><a href="https://www.instagram.com/hemkunt_foundation/" style="background-color: rgb(10,132,255); font-weight: 600;" target="_blank" class="card-link btn">Pulse Oximeter</a>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                    <div class="col-md-12 text-center"><a href="http://friends2support.org/" style="background-color: rgb(48,209,88); font-weight: 600;" target="_blank" class="text-wrap card-link btn">Plasma Donors</a>
+                    </div>
+                    <!-- <div class="col-md-6"><a href="#" class="card-link btn btn-dark">Pulse Oximeter</a>
+                    </div> -->
+                  </div>
+                  <br>
+                  <h6 class="card-subtitle mb-2 text-center">SOS Contacts</h6>
+                  <div class="row">
+                    <div class="col-md-6"><a href="tel:+919911006015" class="card-link">Mr Nitish +919911006015</a>
+                    </div>
+                    <div class="col-md-6"><a href="tel:+919311188123" class="card-link">Mr Khan +919311188123</a>
+                    </div>
+                  </div>
+                  </div>
+              </div>
+              <div class="card col-md-4" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title text-center">GUJARAT</h5>
+                  <h6 class="card-subtitle mb-2 text-center text-danger">Important Links</h6>
+                  <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                  <div class="row">
+                    <div class="col-md-6"><a href="https://gujcovid19.gujarat.gov.in/" style="background-color: rgb(94,92,230); font-weight: 600;" target="_blank" class="text-wrap card-link btn">Beds Available</a>
+                    </div>
+                    <div class="col-md-6"><a href="https://www.gujaratcovidsupport.org/" style="background-color: rgb(10,132,255); font-weight: 600;" target="_blank" class="card-link btn">Pulse Oximeter</a>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                    <div class="col-md-12 text-center"><a href="http://friends2support.org/" style="background-color: rgb(48,209,88); font-weight: 600;" target="_blank" class="text-wrap card-link btn">Plasma Donors</a>
+                    </div>
+                    <!-- <div class="col-md-6"><a href="#" class="card-link btn btn-dark">Pulse Oximeter</a>
+                    </div> -->
+                  </div>
+                  <br>
+                  <h6 class="card-subtitle mb-2 text-center">SOS Contacts</h6>
+                  <div class="row">
+                    <div class="col-md-6"><a href="tel:+919898006737" class="card-link">Mr Utpal shah +919898006737</a>
+                    </div>
+                    <div class="col-md-6"><a href="tel:+91982533320" class="card-link">Ms Vardiani +91982533320</a>
+                    </div>
+                  </div>
+                  </div>
+              </div>
+              </div>
+              <div class="row">
+                <div class="card col-md-4" style="width: 18rem;">
+                  <div class="card-body">
+                    <h5 class="card-title text-center">KARNATAKA</h5>
+                    <h6 class="card-subtitle mb-2 text-center text-danger">Important Links</h6>
+                    <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                    <div class="row">
+                      <div class="col-md-6"><a href="https://bbmpgov.com/chbms/" target="_blank" style="background-color: rgb(94,92,230); font-weight: 600;" class="text-wrap card-link btn">Beds Available</a>
+                      </div>
+                      <div class="col-md-6"><a href="https://www.primehealers.com/oxygen-concentrator" target="_blank" style="background-color: rgb(10,132,255); font-weight: 600;" class="card-link btn">Pulse Oximeter</a>
+                      </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                      <div class="col-md-12 text-center"><a href="http://friends2support.org/" style="background-color: rgb(48,209,88); font-weight: 600;" target="_blank" class="text-wrap card-link btn">Plasma Donors</a>
+                      </div>
+                      <!-- <div class="col-md-6"><a href="#" class="card-link btn btn-dark">Pulse Oximeter</a>
+                      </div> -->
+                    </div>
+                    <br>
+                    <h6 class="card-subtitle mb-2 text-center">SOS Contacts</h6>
+                    <div class="row">
+                      <div class="col-md-6"><a href="tel:+919148950554" class="card-link">Mr Saqib +919148950554</a>
+                      </div>
+                      <div class="col-md-6"><a href="tel:+919845340065" class="card-link">Bharath Medical & General Agencies +919845340065</a>
+                      </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="card col-md-4" style="width: 18rem;">
+                  <div class="card-body">
+                    <h5 class="card-title text-center">RAJASTHAN</h5>
+                    <h6 class="card-subtitle mb-2 text-center text-danger">Important Links</h6>
+                    <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                    <div class="row">
+                      <div class="col-md-6"><a href="https://covidinfo.rajasthan.gov.in/DistrictWiseCovid19BedsStatus.aspx" style="background-color: rgb(94,92,230); font-weight: 600;" target="_blank" class="text-wrap card-link btn">Beds Available</a>
+                      </div>
+                      <div class="col-md-6"><a href="https://aiigma.org/wp-content/uploads/2020/12/List-of-Medical-Oxygen-Suppliers-for-Home-use-.pdf" style="background-color: rgb(10,132,255); font-weight: 600;" target="_blank" class="card-link btn">Pulse Oximeter</a>
+                      </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                      <div class="text-center col-md-12"><a href="http://friends2support.org/" target="_blank" style="background-color: rgb(48,209,88); font-weight: 600;" class="text-wrap card-link btn">Plasma Donors</a>
+                      </div>
+                      <!-- <div class="col-md-6"><a href="#" class="card-link btn btn-dark">Pulse Oximeter</a>
+                      </div> -->
+                    </div>
+                    <br>
+                    <h6 class="card-subtitle mb-2 text-center">SOS Contacts</h6>
+                    <div class="row">
+                      <div class="col-md-6"><a href="tel:+917231900022" class="card-link">Mr Rajendar +917231900022</a>
+                      </div>
+                      <div class="col-md-6"><a href="tel:+919619806190" class="card-link">AUSHADH DISTRIBUTORS +919619806190</a>
+                      </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="card col-md-4" style="width: 18rem;">
+                  <div class="card-body">
+                    <h5 class="card-title text-center">KERALA</h5>
+                    <h6 class="card-subtitle mb-2 text-center text-danger">Important Links</h6>
+                    <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                    <div class="row">
+                      <div class="col-md-6"><a href="https://covid19jagratha.kerala.nic.in/home/addHospitalDashBoard" target="_blank" style="background-color: rgb(94,92,230); font-weight: 600;" class="text-wrap card-link btn">Beds Available</a>
+                      </div>
+                      <div class="col-md-6"><a href="https://covid19jagratha.kerala.nic.in/home/addHospitalDashBoard" target="_blank" style="background-color: rgb(10,132,255); font-weight: 600;" class="card-link btn">Pulse Oximeter</a>
+                      </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                      <div class="text-center col-md-12"><a href="http://friends2support.org/" style="background-color: rgb(48,209,88); font-weight: 600;" class="card-link btn" target="_blank">Plasma Donors</a>
+                      </div>
+                      <!-- <div class="col-md-6"><a href="#" class="card-link btn btn-dark">Pulse Oximeter</a>
+                      </div> -->
+                    </div>
+                    <br>
+                    <h6 class="card-subtitle mb-2 text-center">SOS Contacts</h6>
+                    <div class="row">
+                      <div class="col-md-6"><a href="tel:+919847142642" class="card-link">Alfa Agencies +919847142642</a>
+                      </div>
+                      <div class="col-md-6"><a href="tel:+919447373875" class="card-link">NORTHERN PHARMA (PTC) +919447373875</a>
+                      </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <br><div class="row justify-content-end"><p><a href="#" class="text-primary">Click for more states</a></p></div>
+                <br><br>
+                <div class="row justify-content-center">
+                  <a class="btn btn-primary btn-lg px-4 py-3" href="#">Donate Now</a></div>  
+          </div>
+    
+        </section>
+
+
+
+        <section id="cres">
+          <div class="section-header"><h2 class="text-center">What to do to protect yourself from Covid-19?</h2></div>
+            <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
+              <div class="col-lg-9">
+                <ul class="list-group list-group-flush" id="slist">
+                  <li class="list-group-item list-group-item-light list-group-item-action"><a data-toggle="collapse" class="collapsed" href="#s1"><span class="text-dark">Wear a mask that covers your nose and mouth to help protect yourself and others.</span></a>
+                    <div id="s1" class="collapse" data-parent="#slist">
+                      <ul><li>Everyone 2 years and older should wear masks in public.</li>
+                       <li>Masks should be worn in addition to staying at least 6 feet apart, especially around people who don’t live with you.</li>
+                        <li>If someone in your household is infected, people in the household should take precautions including wearing masks to avoid spread to others.</li>
+                        <li>Wash your hands or use hand sanitizer before putting on your mask.</li>
+                        <li>Wear your mask over your nose and mouth and secure it under your chin.</li>
+                        <li>Fit the mask snugly against the sides of your face, slipping the loops over your ears or tying the strings behind your head.</li>
+                       <li>If you have to continually adjust your mask, it doesn’t fit properly, and you might need to find a different mask type or brand.</li> 
+                        <li>Make sure you can breathe easily.</li></ul>
+                    </div>
+                  </li>
+                  <li class="list-group-item list-group-item-light list-group-item-action"><a data-toggle="collapse" class="collapsed" href="#s2"><span class="text-dark">Stay 6 feet apart from others who don’t live with you.</span></a>
+                    <div id="s2" class="collapse" data-parent="#slist">
+                      <ul>
+<li>Inside your home: Avoid close contact with people who are sick. <ul> <li>If possible, maintain 6 feet between the person who is sick and other household members.
+</li></ul></li>
+<li>Outside your home: Put 6 feet of distance between yourself and people who don’t live in your household.
+  <ul><li>Remember that some people without symptoms may be able to spread virus.
+    Stay at least 6 feet (about 2 arm lengths) from other people.
+    Keeping distance from others is especially important for people who are at higher risk of getting very sick.
+    </li></ul></li></ul>
+                    </div>
+                  </li>
+                  <li class="list-group-item list-group-item-light list-group-item-action"><a data-toggle="collapse" class="collapsed" href="#s3"><span class="text-dark">Get a COVID-19 vaccine when it is available to you.</span></a>
+                    <div id="s3" class="collapse" data-parent="#slist">
+                     <ul><li>Authorized COVID-19 vaccines can help protect you from COVID-19.</li><li>You should get a COVID-19 vaccine when it is available to you.</li><li>Once you are fully vaccinated, you may be able to start doing some things that you had stopped doing because of the pandemic.</li></ul> 
+                    </div>
+                  </li>
+                  <li class="list-group-item list-group-item-light list-group-item-action"><a data-toggle="collapse" class="collapsed" href="#s4"><span class="text-dark">Avoid crowds and poorly ventilated indoor spaces.</span></a>
+                    <div id="s4" class="collapse" data-parent="#slist">
+                     <ul><li>Being in crowds like in restaurants, bars, fitness centers, or movie theaters puts you at higher risk for COVID-19.
+                      </li><li>Avoid indoor spaces that do not offer fresh air from the outdoors as much as possible.
+                        </li><li>If indoors, bring in fresh air by opening windows and doors, if possible.</li></ul>   
+                    </div>
+                  </li>
+                  <li class="list-group-item list-group-item-light list-group-item-action"><a data-toggle="collapse" class="collapsed" href="#s5"><span class="text-dark">Wash your hands often with soap and water. Use hand sanitizer if soap and water aren’t available.</span></a>
+                    <div id="s5" class="collapse" data-parent="#slist">
+                      <ul><li>Wash your hands often with soap and water for at least 20 seconds especially after you have been in a public place, or after blowing your nose, coughing, or sneezing.
+                        </li>
+                        <li>It’s especially important to wash:
+                          <ul><li>Before eating or preparing food</li>
+                          <li>Before touching your face</li>
+                          <li>After using the restroom</li>
+                          <li>After leaving a public place</li>
+                          <li>After blowing your nose, coughing, or sneezing</li>
+                          <li>After handling your mask</li>
+                          <li>After changing a diaper</li>
+                          <li>After caring for someone sick</li>
+                          <li>After touching animals or pets</li>
+                        </ul></li><li>If soap and water are not readily available, use a hand sanitizer that contains at least 60% alcohol. Cover all surfaces of your hands and rub them together until they feel dry.
+                        </li><li>Avoid touching your eyes, nose, and mouth with unwashed hands.</li></ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <br><br>
+            <div class="row justify-content-center">
+              <a class="btn btn-primary btn-lg px-4 py-3" href="#">Donate Now</a></div>
+        </section>
+
+
+
+
+
+
+
+        <br><br>
+        <section id="mhealth">
+          <div class="container" data-aos="fade-up">
+            <div class="section-header">
+              <h2>Mental Health</h2>
+            </div>
+            <div class="card-deck">
+              <div class="card border-primary text-dark bg-light mx-1" style="width: 18rem;">
+                <img src="{% static 'rescue/images/Doctors/4.jfif' %}" class="card-img-top" alt="..." width="300px" height="200px">
+                <div class="card-body">
+                  <h5 class="card-title">Dr ABC</h5>
+                  <h6 class="card-subtitle">Psychologist</h6>
+                  <p class="card-text text-justify">Dr ABC is a psychologist at who practices at Nevada General Hostpital. He has over 8 years of experience in treating patients with various physiological diseases.</p>
+                </div>
+                <!-- <div class="card-footer text-center"><a href="#" class="btn btn-warning">View testimonial</a></div> -->
+              </div>
+              <div class="card border-success text-dark bg-light mx-1" style="width: 18rem;">
+                <img src="{% static 'rescue/images/Doctors/4.jfif' %}" class="card-img-top" alt="..." width="300px" height="200px">
+                <div class="card-body">
+                  <h5 class="card-title">Dr XYZ</h5>
+                  <h6 class="card-subtitle">Rheumatologist</h6>
+                  <p class="card-text text-justify">Dr ABC is a Rheumatologist at who practices at St Bonaventure Hostpital. He has over 10 years of experience in treating patients with various Rheumatic ailments.</p>
+                </div>
+                <!-- <div class="card-footer text-center"><a href="#" class="btn btn-warning">View testimonial</a></div> -->
+              </div>
+             <div class="card text-dark border-primary bg-light mx-1" style="width: 18rem;">
+                <img src="{% static 'rescue/images/Doctors/5.jfif' %}" class="card-img-top" alt="..." width="300px" height="200px">
+                <div class="card-body">
+                  <h5 class="card-title">Dr PQR</h5>
+                  <h6 class="card-subtitle">Neurologist</h6>
+                  <p class="card-text text-justify">Dr PQR is a neurologist at who practices at Blue Bird Multispeciality Hospital. She has over 15 years of experience in treating patients with various Neurological diseases.</p>
+                </div>
+                <!-- <div class="card-footer text-center"><a href="#" class="btn btn-warning">View testimonial</a></div> -->
+             </div>
+             <div class="card text-dark border-primary bg-light mx-1" style="width: 18rem;">
+              <img src="{% static 'rescue/images/Doctors/6.jfif' %}" class="card-img-top" alt="..." width="300px" height="200px">
+              <div class="card-body">
+                <h5 class="card-title">Dr TUV</h5>
+                <h6 class="card-subtitle">Neurologist</h6>
+                <p class="card-text text-justify">Dr TUV is a neurologist at who practices at Apollo Hospital. He has over 15 years of experience in treating patients with various Neurological diseases.</p>
+              </div>
+              <!-- <div class="card-footer text-center"><a href="#" class="btn btn-warning">View testimonial</a></div> -->
+           </div>
+            </div>
+            <div class="card col-lg-12">
+              <div class="card-body">
+                <!-- <h5 class="card-title">Special title treatment</h5> -->
+                <h5 class="card-text">We have a panel of counsellors on call to answer your concerns and take your calls. Seek their help here for free.</h5><br>
+                <p class="text-center"><a href="#" class="btn btn-lg btn-warning">Consult Now</a></p>
+              </div>
+            </div>    <br><br>
+            <div class="row justify-content-center">
+              <a class="btn btn-primary btn-lg px-4 py-3" href="#">Donate Now</a></div>
+            </div>
+        </section>
+
+<br><br>
+
+
+
+
+
+        <section id="faq">
+
+          <div class="container" data-aos="fade-up">
+    
+            <div class="section-header">
+              <h2>Covid Important Resources </h2>
+            </div>
+    
+            <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
+              <div class="col-lg-9">
+                <ul id="faq-list">
+    
+                  <!-- <li>
+                    <a data-toggle="collapse" class="collapsed" href="#faq1">What to do to protect yourself from covid?<i class="fa fa-plus"></i></a>
+                    <div id="faq1" class="collapse" data-parent="#faq-list">
+                      
+                    </div>
+                  </li>
+     -->
+                  <li>
+                    <a data-toggle="collapse" id="ne" href="#faq2" class="collapsed">Nutiritonal Elements <i class="fa fa-plus"></i></a>
+                    <div id="faq2" class="collapse" data-parent="#faq-list">
+                      <ul> 
+                      <li>Nutritional yeast  ( I recommend Bragg’s ) unregulates your production of monocytes. Eat a tea spoon a day by adding to salads etc. Also seems to enhance mood as a side effect.
+                      </li>
+<li>Mushrooms also significantly boost Immunoglobulin A and should be consumed regularly.
+
+Mushrooms also have a strong anti inflammatory effect so that’s just a extra beneficial side effect
+</li>
+<li>Consuming raw Broccoli sprouts ideally but broccoli and or all other cruciferous vegetables like cabbage , cauliflower etc provide you with precursors to sulphorophanes which are hugely protective against pathogens. If you cook them then just garnish with raw mustard seeds before consuming.
+</li>
+<li>All berries .. blueberries have been extensively tested boost your nk cell activity so I would include them in my regular diet
+Kale which is very closely related to Broccoli also helps clear dioxins and boost your immune response
+</li>
+<li>Cardamom ( which you should always wash before consuming to remove pesticide residue ) boosts the efficacy of nk cells by ten times ... strongest natural booster of efficacy of these cells been found to date. Black pepper also boosts nk cell activity. 
+The two combined magnify each other’s efforts. Garlic helps clear out lots of opportunistic bacteria from lungs.
+</li>
+<li>A whole host of Probiotics have been seen to boost natural immune response though mechanisms are not fully understood. But better than eating any tablets is to eat fermented millets ( without heating) Most commercially available probiotics don’t work as per a recent Israeli study.
+</li>
+<li>Amla has huge immune system boosting powers ... so does green tea. I would include these as part of my regimen.
+</li>
+<li>Eating less times a day will not harm you .. in fact it may do the opposite . ... Front load your calories to the earlier part of the day and flow natural circadian rhythms. Your gut microbiome will be grateful and confer better immune protection
+</li>
+<li>Aloe and aloe juice  is one more food I would add to protect myself since it is known to inhibit flu viruses from adheasing to lung tissue.
+</li>
+<li>Frequent use of sauna is also know to offer protection against pneumonia so should be incorporated if possible. If not steaming ( done carefully with some distance so as not to scald your bronchial tissue) would help.
+</li>
+<li>Selenium deficiency often makes one more susceptible to viral attacks.  So add one Brazil nut once a week or some pumpkin seeds will do the job ... (we need very little selenium)
+</li>
+<li>Kiwi fruit has been found to reduce the intensity and duration of viral infections of the pneumatic system so eating it twice a week will help.
+</li>
+<li>Eating two pods of raw garlic every day will prevent secondary infections in the lungs.
+</li>
+<li>Since covid leads to blood clot issues I would recommend having a spoonful of turmeric with a pinch of black pepper everyday. Garlic also helps.
+</li>
+<li>Covid messes with sugar metabolism and release and so do steroids if you end up needing them.</li>
+                      </ul>
+                    </div>
+                  </li>
+    
+                  <li>
+                    <a data-toggle="collapse" id="vs" href="#faq3" class="collapsed">Vitamin supplements
+                      <i class="fa fa-plus"></i></a>
+                    <div id="faq3" class="collapse" data-parent="#faq-list">
+                      <p>
+                        I would also recommend a large doze of vitamin d too
+                        60,000 iu. ( most of us are deficient and being deficient vitamin D would hamper our immunity.) After fifteen days I would switch to eating 4000 iu per day .
+                        
+                        Do brhamari or else the extended humming after using thumbs to close ears to concentrate nitrous oxide in Nasal cavity.
+                        </p>
+                    </div>
+                  </li>
+    
+                  <li>
+                    <a data-toggle="collapse" id="dc" href="#faq4" class="collapsed">What to do when you contract covid, or suspect an infection?<i class="fa fa-plus"></i></a>
+                    <div id="faq4" class="collapse" data-parent="#faq-list">
+                      <p>
+                        Lay on your stomach with two pillows under your hip and one under your upper chest. Lie on your sides too. This expands the surface area available for respiration.
+
+Start monitoring your oxygen saturation. It’s very important to keep doing so even after the fever has dissipated for at least a week.
+
+If ct value is over 24 you will not be infectious to others but still take every precaution.
+</p>
+                    </div>
+                  </li>
+    
+                  <li>
+                    <a data-toggle="collapse" id="md" href="#faq5" class="collapsed">Medicines<i class="fa fa-plus"></i></a>
+                    <div id="faq5" class="collapse" data-parent="#faq-list">
+                      <ul><li>Tab Favipiravir (Favmac)
+                        200 mg
+                        Day 1 : 9 tabs twice a day
+                        Day 2 onwards till day 7: 4 tabs twice a day ( clinical data shows weak but some efficacy. Since there are minimal side effects it’s worth including in regimen.)
+                        
+                        </li><li>Tab Ivermectin
+                        12 mg
+                        At bedtime x 3 days
+                        </li>
+                        <li>
+                        Most doctors prescribe a antibiotic like doxy cycline (100 mg twice a day for five days or Azithromycin ( 500 mg once a day for five days ) but quite frankly if you have two freshly chopped pods of raw garlic and you don’t have any other secondary issue you shouldn’t need it.
+                        </li>
+                        <li>Inhaled Budesonide ( an asthma medicine ) reduces risk that the disease will become more serious.
+                         </li>
+                         <li>
+                        Eat any zinc supplement 
+                        Zinconia. Is a common and easily available zinc supplement   Have one a day for two weeks. My personal preference is to eat a few cashews daily instead.
+                         </li>
+                         <li>
+                        Have paracetamol if fever goes to 102/103 if it’s lower don’t interfere with your fever. Interferon production and efficacy increases with higher body temperature and it’s useful in fighting virus load
+                        </li></ul>
+                    </div>
+                  </li>
+                  
+
+                  <li>
+                    <a data-toggle="collapse" href="#faq8" id="ts" class="collapsed">Tests<i class="fa fa-plus"></i></a>
+                    <div id="faq8" class="collapse" data-parent="#faq-list">
+                      <ul><li>Following tests to be done after 7 days if any discomfort / fever persists. If symptom free and oxygen saturation above 94 then measure your oxygen saturation  after a six minute walk inside your room. If the saturation falls by 4 percent or more than still do the following tests.
+ 
+                        CBC, ESR, CRP, LFT, KFT, uric acid, Ferritin levels, D dimer, CK, CK-MB, Trop I, Pro BNP, Interleukin 6, HbA1c, HRCT thorax. If liver enzyme Alt ( alanine amino transferase ) ,ferritin ,haemoglobin are high and or there is myalgia ( deep muscle pain ) or you have been a cancer patient or suffer from a neuro degenerative disease I would be extra vigilant and search out more intensive medical resources including availability of oxygen and potentially access to a hospital. 
+                        
+                        </li></ul>
+                    </div>
+                  </li>
+
+                  
+                  <li>
+                    <a data-toggle="collapse" href="#faq6" id="pm" class="collapsed">Prescription Medication 
+                      <i class="fa fa-plus"></i></a>
+                    <div id="faq6" class="collapse" data-parent="#faq-list">
+                      <p>Keep these following medicines at home. Do not start eating any. Only eat if oxygen saturation starts dropping below 90 .. if you eat get to a hospital 
+
+                        1) stanozol 2 mg ( goes by the brand name .. neuro bal ( dosage is 3 times a day with full glass of water )
+                        </p>
+                        <p>
+                        If hospitalised or oxygen saturation falls then breathing exercises , lying on your stomach ( with pillows ) and humming all help.
+                        
+                        Remdesvir , plasma therapy etc have no efficacy ( I’ve read loads of clinical trial data )and am perplexed as to why they are prescribed other than the human instinct of trying something.
+                      </p><p>
+                        Steroids ( usually dexmethazone and or methyl prednisone )work very well but do not self administer. If had to early they will suppress the fight against infections. Make sure you have these only under medical supervision.
+                      </p><p>
+                        At that juncture doctors usually prescribe an anti coagulant like heparin etc. Do tell the doctor about your consumption of turmeric and garlic as they are both blood thinners and maybe the doctor might chose to modify dosage.
+                        
+                        The general perception is that in covid 19 and or covid 21 only the respiratory tract is involved but this is not true. That is where the symptoms are most acute. </p><p>
+                        
+                        The reality is that the spike protein bonds with Ace2 receptors. These are embedded in virtually all membranes but have the highest density in the lungs , heart , blood vessels, brain ,gut,other organs ... hence it causes inflammation and different kinds of inflammations and sub optimal functioning in these organs which may or may not be symptomatic. 
+                        
+                        Hence you hear of sudden cardiac arrests in patients whose lung functions etc have normalised. This dangerous effect can last for about three months after the acute symptomatic phase of the disease. In this period it is best not to stress your system. Do ambling walks , yoga , stretches etc . Let your system recover. Don’t attempt to do intense exercises.
+                        
+                        </p>
+                    </div>
+                  </li>
+
+                  <li>
+                    <a data-toggle="collapse" href="#faq9" id="tc" class="collapsed">Testing Centres<i class="fa fa-plus"></i></a>
+                    <div id="faq9" class="collapse" data-parent="#faq-list">
+                      <ul id="subfaq-list"><li><a data-toggle="collapse" href="#subfaq1" class="collapsed">Andhra Pradesh<i class="fa fa-plus"></i></a>
+                        <div id="subfaq1" class="collapse" data-parent="#subfaq-list">
+                          <ul><li>Sri Venkateswara Institute of Medical
+                            Sciences, Tirupati
+                            </li>
+                          <li>Sri Venkateswara Medical College,
+                            Tirupati</li>
+                          <li>Manipal Hospital, Tadepalli, Guntur</li>
+                          <li>PathGene Health Care Pvt Ltd#2nd Floor,
+                            Srinivasapuram, Tiruchanoor Road, Opp LV
+                            kayanamandapam, Tirupathi</li>
+                          <li>Rangaraya Medical College, Kakinada</li>
+                          <li>Apollo Health and Lifestyle Ltd, Vijayawada
+                            Diagnostics Lab, 40-5-6, Parmeshwara
+                            Complex, Tikkle Road, Vijayawada
+                            </li>
+                          </ul>
+                        </div></li>
+                        <li><a data-toggle="collapse" href="#subfaq2" class="collapsed">Gujarat<i class="fa fa-plus"></i></a>
+                          <div id="subfaq2" class="collapse" data-parent="#subfaq-list">
+                            <ul><li>BJ Medical College, Ahmedabad
+                              </li>
+                            <li>MP Shah Govt Medical College, Jamnagar</li>
+                            <li>Unipath Specialty laboratory limited, 102,
+                              Sanoma Plaza, Opposite Parimal Garden,
+                              Besides JMC House, Ellisbridge, Ahmedabad</li>
+                            <li>. Supratech Micropath Laboratory & Research
+                              Institute Pvt Ltd, Kedar, Ahmedabad</li>
+                            <li>Govt. Medical College, Surat</li>
+                            <li>Pangenomics International Pvt Ltd, Ellis
+                              Bridge, Ahmedabad</li>
+                            </ul>
+                          </div></li><li><a data-toggle="collapse" href="#subfaq3" class="collapsed">Maharashtra<i class="fa fa-plus"></i></a>
+                            <div id="subfaq3" class="collapse" data-parent="#subfaq-list">
+                              <ul><li>ICMR-National Institute of Virology,
+                                Pune
+                                </li>
+                              <li>Seth GS Medical College & KEM Hospital,
+                                Mumbai</li>
+                              <li>Kasturba Hospital for Infectious Diseases,
+                                Mumbai</li>
+                              <li>National Institute of Virology Field Unit,
+                                Mumbai
+                                </li>
+                              <li>Thyrocare Technologies Limited, D37/1,
+                                TTC MIDC, Turbhe, Navi Mumbai</li>
+                              <li>All India Institute of Medical Sciences,
+                                Nagpur</li>
+                              </ul>
+                            </div></li></ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <br><br>
+            <div class="row justify-content-center">
+              <a class="btn btn-primary btn-lg px-4 py-3" href="#">Donate Now</a></div>
+          </div>
+    
+        </section>
+
+        <!-- <li>
+          <a data-toggle="collapse" href="#faq7" class="collapsed">Some Important Links to Follow<i class="fa fa-plus"></i></a>
+          <div id="faq7" class="collapse" data-parent="#faq-list">
+            <ul><li><a href="https://covidrelief.glideapp.io/" target="_blank">https://covidrelief.glideapp.io/</a></li><li><a target="_blank" href="https://coronabeds.jantasamvad.org/all-covid-icu-beds.html">https://coronabeds.jantasamvad.org/all-covid-icu-beds.html</a> </li></ul>
+          </div>
+        </li> -->
+
+<section class="section-bg" id="links">
+  <div class="section-header"><h2>Some Important Links To Check Out</h2></div>
+  <div class="row justify-content-center">
+    <div class="card col-md-4">
+      <div class="card-body">
+        <h5 class="card-title text-center">Check where hospital beds are available in your state</h5>
+        <div class="row justify-content-center"><a href="https://covidrelief.glideapp.io/" target="_blank" class="btn btn-success btn-lg">Click Here To Know</a></div>
       </div>
     </div>
-  </section>
-
-  <section class="text-gray-600 body-font">
-    <div class="container px-5 py-24 mx-auto">
-      <h1 class="text-3xl font-medium title-font text-gray-900 mb-12 text-center">Testimonials</h1>
-      <div class="flex flex-wrap -m-4">
-        <div class="p-4 md:w-1/2 w-full shadow-xl">
-          <div class="h-full bg-gray-100 p-8 rounded">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="block w-5 h-5 text-gray-400 mb-4" viewBox="0 0 975.036 975.036">
-              <path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"></path>
-            </svg>
-            <p class="leading-relaxed mb-6">Synth chartreuse iPhone lomo cray raw denim brunch everyday carry neutra before they sold out fixie 90's microdosing. Tacos pinterest fanny pack venmo, post-ironic heirloom try-hard pabst authentic iceland.</p>
-            <a class="inline-flex items-center">
-              <img alt="testimonial" src="https://dummyimage.com/106x106" class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center">
-              <span class="flex-grow flex flex-col pl-4">
-                <span class="title-font font-medium text-gray-900">Holden Caulfield</span>
-                <span class="text-gray-500 text-sm">UI DEVELOPER</span>
-              </span>
-            </a>
-          </div>
-        </div>
-        <div class="p-4 md:w-1/2 w-full shadow-xl">
-          <div class="h-full bg-gray-100 p-8 rounded">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="block w-5 h-5 text-gray-400 mb-4" viewBox="0 0 975.036 975.036">
-              <path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"></path>
-            </svg>
-            <p class="leading-relaxed mb-6">Synth chartreuse iPhone lomo cray raw denim brunch everyday carry neutra before they sold out fixie 90's microdosing. Tacos pinterest fanny pack venmo, post-ironic heirloom try-hard pabst authentic iceland.</p>
-            <a class="inline-flex items-center">
-              <img alt="testimonial" src="https://dummyimage.com/107x107" class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center">
-              <span class="flex-grow flex flex-col pl-4">
-                <span class="title-font font-medium text-gray-900">Alper Kamu</span>
-                <span class="text-gray-500 text-sm">DESIGNER</span>
-              </span>
-            </a>
-          </div>
-        </div>
+    <div class="card col-md-4">
+      <div class="card-body">
+        <h5 class="card-title text-center">Check about Oxygen Cylinders and Plasma availability in your state</h5>
+        <div class="row justify-content-center"><a href="https://covid-resource.netlify.app/" target="_blank" class="btn btn-success btn-lg">Click Here To Know</a></div>
       </div>
     </div>
-  </section>
-
-
-  <section class="text-gray-600 body-font relative" style="background-image: url(''); background-repeat: no-repeat; background-size: cover;" >
-    <div class="container px-5 py-24 mx-auto shadow-2xl">
-      <div class="flex flex-col text-center w-full mb-12">
-        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Contact Us</h1>
-        <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify.</p>
-      </div>
-      <div class="lg:w-1/2 md:w-2/3 mx-auto">
-        <div class="flex flex-wrap -m-2">
-          <div class="p-2 w-1/2">
-            <div class="relative">
-              <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
-              <input type="text" id="name" name="name" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-            </div>
-          </div>
-          <div class="p-2 w-1/2">
-            <div class="relative">
-              <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
-              <input type="email" id="email" name="email" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-            </div>
-          </div>
-          <div class="p-2 w-full">
-            <div class="relative">
-              <label for="message" class="leading-7 text-sm text-gray-600">Message</label>
-              <textarea id="message" name="message" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
-            </div>
-          </div>
-          <div class="p-2 w-full">
-            <button class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
-          </div>
-          <div class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
-            <a class="text-indigo-500">example@email.com</a>
-            <p class="leading-normal my-5">49 Smith St.
-              <br>Saint Cloud, MN 56301
-            </p>
-            <span class="inline-flex">
-              <a class="text-gray-500">
-                <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-                </svg>
-              </a>
-              <a class="ml-4 text-gray-500">
-                <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                  <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
-                </svg>
-              </a>
-              <a class="ml-4 text-gray-500">
-                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-                  <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
-                </svg>
-              </a>
-              <a class="ml-4 text-gray-500">
-                <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                  <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
-                </svg>
-              </a>
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
+  </div>
   <br><br>
-  <hr>
-  <hr>
+  <div class="row justify-content-center">
+    <a class="btn btn-primary btn-lg px-4 py-3" href="#">Donate Now</a></div>
+</section>
 
-  <footer class="text-gray-600 body-font">
-    <div
-      class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
-      <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
-        <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round"
-            stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
-            viewBox="0 0 24 24">
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-          </svg>
-          <span class="ml-3 text-xl">INDIA RESCUE MISSION</span>
-        </a>
-        <p class="mt-2 text-sm text-gray-500">Air plant banjo lyft occupy retro adaptogen indego</p>
-      </div>
-      <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
-        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-          <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Forms</h2>
-          <nav class="list-none mb-10">
-            <li>
-              <a href="{% url 'doctor-form' %}" class="text-gray-600 hover:text-gray-800"> Doctor's Forms</a>
-            </li>
-            <li>
-              <a href="{% url 'patient-form' %}" class="text-gray-600 hover:text-gray-800"> Patient Forms</a>
-            </li>
+<br>
+<br>
 
-          </nav>
+
+<section class="section-bg" id="gal">
+  <div class="container section-bg">
+    <div class="section-header"><h2>Gallery</h2></div>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner" role="listbox">
+
+            <!--First slide-->
+            <div class="carousel-item active">
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card mb-2">
+                            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg"
+                                 alt="Card image cap">
+                            
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 clearfix d-none d-md-block">
+                        <div class="card mb-2">
+                            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
+                                 alt="Card image cap">
+                            
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 clearfix d-none d-md-block">
+                        <div class="card mb-2">
+                            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg"
+                                 alt="Card image cap">
+                            
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--/.First slide-->
+            <!--Second slide-->
+            <div class="carousel-item">
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card mb-2">
+                            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg"
+                                 alt="Card image cap">
+                            
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 clearfix d-none d-md-block">
+                        <div class="card mb-2">
+                            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg"
+                                 alt="Card image cap">
+                            
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 clearfix d-none d-md-block">
+                        <div class="card mb-2">
+                            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(48).jpg"
+                                 alt="Card image cap">
+                            
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--/.Second slide-->
+            <!--Third slide-->
+            <div class="carousel-item">
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card mb-2">
+                            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(53).jpg"
+                                 alt="Card image cap">
+                            
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 clearfix d-none d-md-block">
+                        <div class="card mb-2">
+                            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(45).jpg"
+                                 alt="Card image cap">
+                            
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 clearfix d-none d-md-block">
+                        <div class="card mb-2">
+                            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(51).jpg"
+                                 alt="Card image cap">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
         </div>
-        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-          <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
-          <nav class="list-none mb-10">
-            <li>
-              <a class="text-gray-600 hover:text-gray-800">First Link</a>
-            </li>
-            <li>
-              <a class="text-gray-600 hover:text-gray-800">Second Link</a>
-            </li>
-            <li>
-              <a class="text-gray-600 hover:text-gray-800">Third Link</a>
-            </li>
-            <li>
-              <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
-            </li>
-          </nav>
+      </section><br><br>
+      <div class="row justify-content-center">
+        <a class="btn btn-primary btn-lg px-4 py-3" href="#">Donate Now</a></div>
+</div>
+
+      <br><br>
+      <section class="section-with-bg">
+        <div class="section-header">
+          <h2>Message Board</h2>
+          <h3 class="text-center">Here you can post any message to save a life and be heard.</h3>
         </div>
-        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-          <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
-          <nav class="list-none mb-10">
-            <li>
-              <a class="text-gray-600 hover:text-gray-800">First Link</a>
-            </li>
-            <li>
-              <a class="text-gray-600 hover:text-gray-800">Second Link</a>
-            </li>
-            <li>
-              <a class="text-gray-600 hover:text-gray-800">Third Link</a>
-            </li>
-            <li>
-              <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
-            </li>
-          </nav>
+      <div id="feed" class="row justify-content-center"><div class="border border-dark col-lg-6 p-2">
+      <blockquote class="blockquote">
+        <p class="mb-0">We've just received 30 Oxygen Cyliners from Rescue India. Thanks a lot for coming out to help in such times.</p>
+        <br><h5>Mr ABC</h5>
+        <footer class="blockquote-footer">Chief Surgeon at XYZ Hospital</footer>
+        <p></p>
+      </blockquote><hr><blockquote class="blockquote">
+        <p class="mb-0">We've just received 50 Pulse Oximeters from Rescue India. Thanks a lot for coming out to help in such times.</p>
+        <br><h5>Mr PQR</h5>
+        <footer class="blockquote-footer">Chief of Medicine at BlueEye Multispeciality Hospital</footer>
+        <p></p>
+      </blockquote><hr><blockquote class="blockquote">
+        <p class="mb-0">We've just received 20 Oxygen Concentrators from Rescue India. Thanks a lot for coming out to help in such times.</p>
+        <br><h5>Mr XYZ</h5>
+        <footer class="blockquote-footer">Founder at ABC Foundation</footer>
+        <p></p>
+      </blockquote></div></div></section>
+
+
+<br><br>
+
+
+      <section class="section-with-bg">
+        <div class="section-header">
+            <h2>Message Board for Patients</h2>
+            <h3 class="text-center">Here you can post your details so that our helpers can reach out to you.</h3>
         </div>
-        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-          <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
-          <nav class="list-none mb-10">
-            <li>
-              <a class="text-gray-600 hover:text-gray-800">First Link</a>
-            </li>
-            <li>
-              <a class="text-gray-600 hover:text-gray-800">Second Link</a>
-            </li>
-            <li>
-              <a class="text-gray-600 hover:text-gray-800">Third Link</a>
-            </li>
-            <li>
-              <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
-            </li>
-          </nav>
+        
+            <div id="patientfeed" class="row justify-content-center">
+                <div class="border border-dark col-lg-6 px-2">
+                        <blockquote class="blockquote">
+                            <h3 class="mb-0"></h3>
+                            <br /><h4>Help US</h4>
+                            <h5>MR ABC</h5>
+                            <h5>+918976546372</h5>
+                            <footer class="blockquote-footer">Nadiad, Gujarat, India</footer>
+                        </blockquote><hr>
+                        <blockquote class="blockquote">
+                          <h3 class="mb-0"></h3>
+                          <br /><h4>Help US</h4>
+                          <h5>MR ABC</h5>
+                          <h5>+918976546372</h5>
+                          <footer class="blockquote-footer">Nadiad, Gujarat, India</footer>
+                          <!-- <p></p> -->
+                      </blockquote><hr>
+                      <blockquote class="blockquote">
+                        <h3 class="mb-0"></h3>
+                        <br /><h4>Help US</h4>
+                        <h5>MR ABC</h5>
+                        <h5>+918976546372</h5>
+                        <footer class="blockquote-footer">Nadiad, Gujarat, India</footer>
+                        <!-- <p></p> -->
+                    </blockquote>
+                </div>
+                
+            </div> 
+            <br>
+        <p class="text-center text-light"><a href="#" class="btn btn-primary">Click for more</a></p>
+        <br />
+        <div class="row justify-content-center"><h3>Post your Message here</h3></div>
+        <br />
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+              <form action="">  
+              
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <input type="text" name="Name" class="form-control" id="name" placeholder="Your Name" required />
+                            <div class="validate"></div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <input type="number" class="form-control" name="Contact" id="contact" placeholder="Your Contact Number" required />
+                            <div class="validate"></div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="form-group col-md-3">
+                            <input type="text" class="form-control" name="City" id="city" placeholder="City" required />
+                            <div class="validate"></div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <input type="text" class="form-control" name="State" id="state" placeholder="State" required />
+                            <div class="validate"></div>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <input type="text" class="form-control" name="Country" id="country" placeholder="Country" required />
+                            <div class="validate"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" name="Message" rows="5" required placeholder="Message"></textarea>
+                        <div class="validate"></div>
+                    </div>
+                    <div class="text-center mb-3"><button type="submit" class="btn btn-primary">Send Message</button></div>
+              </form>
+            </div>
         </div>
+    
+        <br><br>
+        <div class="row justify-content-center">
+            <a class="btn btn-primary btn-lg px-4 py-3" href="#">Donate Now</a>
+        </div>
+    </section>
+    
+
+
+
+
+
+
+
+<br><br>
+<section class="section-with-bg">
+  <div class="section-header">
+    <h2>Our Twitter Handle</h2>
+    <!-- <h3 class="text-center">Watch out for </h3> -->
+  </div>
+<div id="feed" class="row justify-content-center"><div class="col-lg-6"><a class="twitter-timeline" data-lang="en" data-width="800" data-height="600" href="https://twitter.com/NASA?ref_src=twsrc%5Etfw">Tweets by NASA</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div> </div><br><br>
+<div class="row justify-content-center">
+  <a class="btn btn-primary btn-lg px-4 py-3" href="#">Donate Now</a></div></section>
+
+        <section id="supporters" class="section-with-bg">
+
+          <div class="container" data-aos="fade-up">
+            <div class="section-header">
+              <h2>Where our funds will go?</h2>
+              <h3 class="text-center">Affiliated Charities</h3>
+            </div>
+    
+            <div class="row no-gutters supporters-wrap clearfix" data-aos="zoom-in" data-aos-delay="100">
+    
+              <div class="col-lg-3 col-md-4 col-xs-6">
+                <div class="supporter-logo">
+                  <img src="{% static 'rescue/images/logos/1.jpg' %}" class="img-fluid" alt="">
+                </div>
+                <p class="text-center"><strong>Pratham</strong></p>
+              </div>
+    
+              <div class="col-lg-3 col-md-4 col-xs-6">
+                <div class="supporter-logo">
+                  <img src="{% static 'rescue/images/logos/2.jpg' %}" class="img-fluid" alt="">
+                </div>
+                <p class="text-center"><strong>Aarambh</strong></p>
+
+              </div>
+    
+              <div class="col-lg-3 col-md-4 col-xs-6">
+                <div class="supporter-logo">
+                  <img src="{% static 'rescue/images/logos/3.jpg' %}" class="img-fluid" alt="">
+                </div>
+                <p class="text-center"><strong>Shakti</strong></p>
+              </div>
+    
+              <div class="col-lg-3 col-md-4 col-xs-6">
+                <div class="supporter-logo">
+                  <img src="{% static 'rescue/images/logos/4.png' %}" class="img-fluid" alt="">
+                </div>
+                <p class="text-center"><strong>Pratham</strong></p>
+
+              </div>
+    
+              <div class="col-lg-3 col-md-4 col-xs-6">
+                <div class="supporter-logo">
+                  <img src="{% static 'rescue/images/logos/5.png' %}" class="img-fluid" alt="">
+                </div>
+                <p class="text-center"><strong>Aarambh</strong></p>
+
+              </div>
+    
+              <div class="col-lg-3 col-md-4 col-xs-6">
+                <div class="supporter-logo">
+                  <img src="{% static 'rescue/images/logos/6.png' %}" class="img-fluid" alt="">
+                </div>
+                <p class="text-center"><strong>Shakti</strong></p>
+
+              </div>
+    
+              <div class="col-lg-3 col-md-4 col-xs-6">
+                <div class="supporter-logo">
+                  <img src="./logos/1.jpg" class="img-fluid" alt="">
+                </div>
+                <p class="text-center"><strong>Pratham</strong></p>
+
+              </div>
+    
+              <div class="col-lg-3 col-md-4 col-xs-6">
+                <div class="supporter-logo">
+                  <img src="./logos/2.jpg" class="img-fluid" alt="">
+                </div>
+                <p class="text-center"><strong>Aarambh</strong></p>
+              </div>
+    
+            </div>
+            <br><br>
+            <div class="row justify-content-center">
+              <a class="btn btn-primary btn-lg px-4 py-3" href="#">Donate Now</a></div>
+          </div>
+    
+        </section>
+
+
+        <section id="other" class="section-with-bg">
+
+          <div class="container" data-aos="fade-up">
+            <div class="section-header">
+              <h2>Other Campaigns To Donate To</h2>
+              <!-- <h3 class="text-center">Affiliated Charities</h3> -->
+            </div>
+    
+            <div class="card-deck justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+    
+              <div class="card col-md-3" style="width: 18rem;">
+                <img src="{% static 'rescue/images/logos/gv.png' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text text-center"><a href="https://www.giveindia.org/" target="_blank" class="text-dark">Rescue India Mission</a></p>
+                </div>
+              </div>
+              <div class="card col-md-3" style="width: 18rem;">
+                <img src="{% static 'rescue/images/logos/sosiyc.png' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text text-center"><a href="https://twitter.com/sosiyc" target="_blank" class="text-dark">SOSIYC</a></p>
+                </div>
+              </div>
+              <div class="card col-md-3" style="width: 18rem;">
+                <img src="{% static 'rescue/images/logos/gv.png' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text text-center"><a href="https://www.giveindia.org/" target="_blank" class="text-dark">Give India</a></p>
+                </div>
+              </div>
+              
+              <!-- <div class="col-lg-3 col-md-4 col-xs-6">
+                <div class="supporter-logo">
+                  <img src="./logos/4.png" class="img-fluid" alt="">
+                </div>
+                <p class="text-center"><strong>Prerna</strong></p>
+              </div> -->
+            </div>
+            <br><br>
+            <div class="row justify-content-center">
+              <a class="btn btn-primary btn-lg px-4 py-3" href="#">Donate Now</a></div>
+          </div>
+    
+        </section>
+
+
+
+
+<br><br>
+        <section id="shortage" class="section-with-bg">
+
+          <div class="container" data-aos="fade-up">
+            <div class="section-header">
+              <h2>Hospitals With Oxygen Shortage</h2>
+              <h3 class="text-center">Check here to stay updated and you can add too, if you know any such hospitals.</h3>
+            </div>
+              <div class="card">
+                <!-- <img src="./logos/sosiyc.png" class="card-img-top" alt="..."> -->
+                <div class="card-body">
+                  <h3 class="card-title text-left">MPUH Urological Hospital</h3>
+                  <p class="card-text text-left">Nadiad, Gujarat, India</p>
+                </div>
+              </div>
+              <div class="card">
+                <!-- <img src="./logos/sosiyc.png" class="card-img-top" alt="..."> -->
+                <div class="card-body">
+                  <h3 class="card-title text-left">Apollo Hospitals</h3>
+                  <p class="card-text text-left">Ahmedabad, Gujarat, India</p>
+                </div>
+              </div>
+              <div class="card">
+                <!-- <img src="./logos/sosiyc.png" class="card-img-top" alt="..."> -->
+                <div class="card-body">
+                  <h3 class="card-title text-left">Billroth Hospitals</h3>
+                  <p class="card-text text-left">Rajkot, Gujarat, India</p>
+                </div>
+              </div>
+              <div class="card">
+                <!-- <img src="./logos/sosiyc.png" class="card-img-top" alt="..."> -->
+                <div class="card-body">
+                  <h3 class="card-title text-left">Fortis Healthcare</h3>
+                  <p class="card-text text-left">Mount Abu, Rajasthan, India</p>
+                </div>
+              </div>
+            <br>
+            <div class="row justify-content-center"> <a href="#" class="btn btn-warning btn-lg mx-1">Click to add more</a> <a href="#" class="mx-1 btn-lg btn btn-success">View more</a></div>
+            <br><br>
+            <div class="row justify-content-center">
+              <a class="btn btn-primary btn-lg px-4 py-3" href="#">Donate Now</a></div>
+          </div>
+    
+        </section>
+
+
+
+<br><br>
+
+
+    <section id="contact" class="section-bg">
+
+      <div class="container">
+
+        <div class="section-header">
+          <h2>Contact Us</h2>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-4">
+            <div class="contact-address">
+              <i class="ion-ios-location-outline"></i>
+              <h3>Address</h3>
+              <address class="text-primary"> Opposite Shreyas Cinema, 'Abhilasha',<br> Nadiad - 387002, Gujarat</address>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-phone">
+              <i class="ion-ios-telephone-outline"></i>
+              <h3>Phone Number</h3>
+              <p><a href="tel:+917600169639">+91 76001 69639</a></p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-email">
+              <div></div>
+              <h3>Email</h3>
+              <p><a href="mailto:info@example.com">saminmomin4@gmail.com</a></p>
+            </div>
+          </div>
+
+        </div>
+        <br><br>
+            <div class="row justify-content-center">
+              <a class="btn btn-primary btn-lg px-4 py-3" href="#">Donate Now</a></div>
+</div>
+    </section>
+    <br><br>
+    <section class="section-bg"><div class="container"> 
+      <div class="section-header">
+        <h2>Complaints/Feedback</h2>
       </div>
+
+        <div class="form">
+          <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validate"></div>
+              </div>
+              <div class="form-group col-md-6">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                <div class="validate"></div>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+              <div class="validate"></div>
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+              <div class="validate"></div>
+            </div>
+            <div class="text-center mb-3"><button type="submit" class="btn btn-primary">Send Message</button></div>
+          </form>
+        </div>
+        <br><br>
+        <div class="row justify-content-center">
+          <a class="btn btn-primary btn-lg px-4 py-3" href="#">Donate Now</a></div>
+      </div>
+    </section>
+<br>
+<br>
+
+<footer>
+  <h2 class="text-center section-header">Social Media Handles</h2>
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <h3 class="text-center"><i class="fa fa-telegram"></i> Telegram</h3>
+      <a class="text-center" href="https://t.me/joinchat/EGzuT3KeE3pJPLT6"><p class="text-center bg-light text-success">Click to join our official group</p></a>
     </div>
-    <div class="bg-gray-100">
-      <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
-        <p class="text-gray-500 text-sm text-center sm:text-left">© 2020 Tailblocks —
-          <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" class="text-gray-600 ml-1"
-            target="_blank">@knyttneve</a>
-        </p>
-        <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
-          <a class="text-gray-500">
-            <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
-              viewBox="0 0 24 24">
-              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-            </svg>
-          </a>
-          <a class="ml-3 text-gray-500">
-            <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
-              viewBox="0 0 24 24">
-              <path
-                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
-              </path>
-            </svg>
-          </a>
-          <a class="ml-3 text-gray-500">
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              class="w-5 h-5" viewBox="0 0 24 24">
-              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
-            </svg>
-          </a>
-          <a class="ml-3 text-gray-500">
-            <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-              stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
-              <path stroke="none"
-                d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
-              <circle cx="4" cy="4" r="2" stroke="none"></circle>
-            </svg>
-          </a>
-        </span>
-      </div>
+    <div class="col-md-4">
+      <h3 class="text-center"><i class="fa fa-twitter"></i>Twitter</h3>
+      <a href="https://twitter.com/i/events/1385596085192691712?s=09"><p class="text-center bg-light text-success">Click to follow for leads</p></a>
     </div>
-  </footer>
-
-
-
+    <div class="col-md-4">
+      <h3 class="text-center"><i class="fa fa-facebook-square"></i> Facebook</h3>
+      <a href="https://www.facebook.com/groups/2489879517824917/?ref=share"><p class="text-center bg-light text-success">Follow to stay updated</p></a>
+    </div>
+  </div>
+</footer>
 </body>
-
 </html>
