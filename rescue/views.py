@@ -1,10 +1,10 @@
 from django.shortcuts import render, redirect
-from .forms import DoctorsForms, TeleMedicineForms
+from .forms import DoctorsForms, TeleMedicineForms, MessagesForm
 from django.contrib import messages
 from django.urls import reverse
 import stripe
 from django.http import JsonResponse
-from .models import Resource, City
+from .models import Resource, City, Messages
 
 stripe.api_key = "sk_test_51IkYavSEV2gnCPG20RfHko44Y1eooN01Kjd9bMU9vGo5a2WlNNr5XYqKoLKWBlLvkY3TGDv2evZMHO24EnMNrLUT00n1k2ztHs"
 def home(request):
@@ -94,12 +94,41 @@ def safety_measure(request):
     return render(request, 'rescue/safety.html')
 
 def home3(request):
+    if request.method == 'POST':
+        print(request.POST)
+        name = request.POST['Name']
+        print(name)
+        contact = request.POST['Contact']
+        print(contact)
+        city = request.POST['City']
+        print(city)
+        state = request.POST['State']
+        print(state)
+        country = request.POST['Country']
+        print(country)
+        message = request.POST['Message']
+        print(message)
+        form = Messages.objects.create(name=name, contact=contact, city=city, state=state, country=country, message=message)
+        # messages.success(request, "Your message has been recorded")
+       
+        form.save()
+        print('Form is valid')
+
     resources = Resource.objects.all()
+    messages = Messages.objects.order_by('-pk')[0:3]
     context = {
         'resources':resources,
+        'messages':messages,
     }
     return render(request, 'rescue/home3.html', context)
 
 
 def index(request):
     return render(request, 'rescue/index.html')
+
+def mssgs(request):
+    mssges = Messages.objects.order_by('-pk')
+    context = {
+        'mssges':mssges,
+    }
+    return render(request, 'rescue/messages.html', context)

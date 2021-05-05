@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import Telemedicine, Doctor
+from .models import Telemedicine, Doctor, Messages
 
 
 class DoctorsForms(ModelForm):
@@ -13,3 +13,8 @@ class TeleMedicineForms(ModelForm):
         model = Telemedicine
         fields = '__all__'
         exclude = ('username',)
+
+class MessagesForm(ModelForm):
+    class Meta:
+        model = Messages
+        fields = '__all__'

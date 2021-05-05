@@ -5,6 +5,7 @@ urlpatterns = [
     path('doctor_form/', views.doctorForm, name='doctor-form'),
     path('patient_or_doctor/', views.patient_or_doctor, name='doc_or_pt'),
     path('charge/', views.charge, name='charge'),
+    path('messages/', views.mssgs, name='messages-page'),
     path('success/<str:args>', views.successMsg, name='success'),
     path('', views.home3, name='home-page'),
     path('index/', views.index, name='index-page'),

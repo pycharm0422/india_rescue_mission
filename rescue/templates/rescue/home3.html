@@ -483,7 +483,6 @@
           </li><li class="nav-item"><a class="nav-link active" href="https://t.me/joinchat/EGzuT3KeE3pJPLT6">Join Telegram</a></li></ul>
         </div>
       </nav>        
-      
         <section id="intro">
          <div class="intro-container" >
 <h1 class="mb-4 pb-0">Rescue India Mission</h1>
@@ -1489,55 +1488,48 @@ If ct value is over 24 you will not be infectious to others but still take every
       <h3 class="text-center">Here you can post your details so that our helpers can reach out to you.</h3>
   </div>
   
+  {% if messages %}
       <div id="patientfeed" class="row justify-content-center">
           <div class="border border-dark col-lg-6 px-2">
+            {% for msg in messages %}
                   <blockquote class="blockquote">
                       <h3 class="mb-0"></h3>
-                      <br /><h4>Need Oximeter Immediately</h4>
-                      <h5>MR ABC</h5>
-                      <h5>+918976546372</h5>
-                      <footer class="blockquote-footer">Nadiad, Gujarat, India</footer>
+                      <br /><h4>{{ msg.message }}</h4>
+                      <h5>{{ msg.name }}</h5>
+                      <h5>{{ msg.contact }}</h5>
+                      <footer class="blockquote-footer">{{msg.city}}, {{msg.state}}, {{msg.country}}</footer>
                   </blockquote><hr>
-                  <blockquote class="blockquote">
-                    <h3 class="mb-0"></h3>
-                    <br /><h4>Need Oxygen Cylinder for critical patient</h4>
-                    <h5>MR ABC</h5>
-                    <h5>+918976546372</h5>
-                    <footer class="blockquote-footer">Lucknow, Uttar Pradesh, India</footer>
-                    <!-- <p></p> -->
-                </blockquote><hr>
-                <blockquote class="blockquote">
-                  <h3 class="mb-0"></h3>
-                  <br /><h4>Need ICU Bed Immediately</h4>
-                  <h5>MR XYZ</h5>
-                  <h5>+918976546372</h5>
-                  <footer class="blockquote-footer">Mumbai, Maharashtra, India</footer>
-                  <!-- <p></p> -->
-              </blockquote>
+            {% endfor %}
+               
           </div>
-          
-      </div> 
+    
+      </div> <br>
+      <p class="text-center text-light"><a href="{% url 'messages-page' %}" class="btn btn-primary">Click for more</a></p>
+    {% else %}
+    <h2 class="text-center" >No messages to show </h2>
+    {% endif %}
       <br>
-  <p class="text-center text-light"><a href="#" class="btn btn-primary">Click for more</a></p>
   <br />
   <div class="row justify-content-center"><h3>Post your Message here</h3></div>
   <br />
   <div class="row justify-content-center">
       <div class="col-md-10">
-        <form action="">  
-        
+        <form action="" method="POST">  
+        {% csrf_token %}
               <div class="form-row">
                   <div class="form-group col-md-6">
                       <input type="text" name="Name" class="form-control" id="name" placeholder="Your Name" required />
                       <div class="validate"></div>
                   </div>
                   <div class="form-group col-md-6">
+
                       <input type="number" class="form-control" name="Contact" id="contact" placeholder="Your Contact Number" required />
                       <div class="validate"></div>
                   </div>
               </div>
               <div class="row justify-content-center">
                   <div class="form-group col-md-3">
+
                       <input type="text" class="form-control" name="City" id="city" placeholder="City" required />
                       <div class="validate"></div>
                   </div>
@@ -1546,11 +1538,13 @@ If ct value is over 24 you will not be infectious to others but still take every
                       <div class="validate"></div>
                   </div>
                   <div class="form-group col-md-3">
+
                       <input type="text" class="form-control" name="Country" id="country" placeholder="Country" required />
                       <div class="validate"></div>
                   </div>
               </div>
               <div class="form-group">
+
                   <textarea class="form-control" name="Message" rows="5" required placeholder="Message"></textarea>
                   <div class="validate"></div>
               </div>
@@ -1558,6 +1552,24 @@ If ct value is over 24 you will not be infectious to others but still take every
         </form>
       </div>
   </div>
+
+<!-- 
+
+<script>
+  var form_fields = document.getElementsByTagName('input')
+  form_fields[1].placeholder = 'name'
+  form_fields[2].placeholder = 'Contact'
+  form_fields[3].placeholder = 'city'
+  form_fields[4].placeholder = 'state'
+  form_fields[5].placeholder = 'country'
+  form_fields[6].placeholder = 'Message'
+
+
+  for (var field in form_fields){
+    form_fields[field].className += 'form-control'
+  }
+
+</script> -->
 
   <br><br>
   <div class="row justify-content-center">

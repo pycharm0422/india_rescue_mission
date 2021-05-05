@@ -48,3 +48,14 @@ class Resource(models.Model):
     def __str__(self):
         return self.title
 
+
+class Messages(models.Model):
+    name = models.CharField(max_length=200)
+    contact = models.CharField(max_length=12)
+    city = models.CharField(max_length=200, null=True)
+    state = models.CharField(max_length=200,null=True)
+    country = models.CharField(max_length=200)
+    message = models.TextField()
+
+    def __str__(self):
+        return self.name + self.city
