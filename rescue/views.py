@@ -97,22 +97,13 @@ def home3(request):
     if request.method == 'POST':
         print(request.POST)
         name = request.POST['Name']
-        print(name)
         contact = request.POST['Contact']
-        print(contact)
         city = request.POST['City']
-        print(city)
         state = request.POST['State']
-        print(state)
         country = request.POST['Country']
-        print(country)
         message = request.POST['Message']
-        print(message)
         form = Messages.objects.create(name=name, contact=contact, city=city, state=state, country=country, message=message)
-        # messages.success(request, "Your message has been recorded")
        
-        form.save()
-        print('Form is valid')
 
     resources = Resource.objects.all()
     messages = Messages.objects.order_by('-pk')[0:3]
@@ -127,6 +118,15 @@ def index(request):
     return render(request, 'rescue/index.html')
 
 def mssgs(request):
+    if request.method == 'POST':
+        print(request.POST)
+        name = request.POST['Name']
+        contact = request.POST['Contact']
+        city = request.POST['City']
+        state = request.POST['State']
+        country = request.POST['Country']
+        message = request.POST['Message']
+        form = Messages.objects.create(name=name, contact=contact, city=city, state=state, country=country, message=message)
     mssges = Messages.objects.order_by('-pk')
     context = {
         'mssges':mssges,
