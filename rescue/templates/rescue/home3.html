@@ -1596,6 +1596,30 @@
         </div>
       </div>
     </div>
+    <br>
+    <div class="row justify-content-center">
+      <div class="card col-md-4">
+        <div class="card-body">
+          <h5 class="card-title text-center">Effective and Non Effective medications for Covid-19</h5>
+          <div class="row justify-content-center"><a href="https://drive.google.com/file/d/1DHGl9E2kzf6lwoh32_3bs_84BxzqRtT1/view?usp=sharing" target="_blank"
+              class="btn btn-success btn-lg">Click Here To Know</a></div>
+        </div>
+      </div>
+      <div class="card col-md-4">
+        <div class="card-body">
+          <h5 class="card-title text-center">Collection of Tweets for Important Covid Equipments</h5>
+          <div class="row justify-content-center"><a href="https://external.sprinklr.com/insights/explorer/dashboard/601b9e214c7a6b689d76f493/tab/5?id=DASHBOARD_601b9e214c7a6b689d76f493"
+              target="_blank" class="btn btn-success btn-lg">Click Here To Know</a></div>
+        </div>
+      </div>
+      <!-- <div class="card col-md-4">
+        <div class="card-body">
+          <h5 class="card-title text-center">Check about Oxygen Cylinders and Plasma availability in your state</h5>
+          <div class="row justify-content-center"><a href="https://covid-resource.netlify.app/" target="_blank"
+              class="btn btn-success btn-lg">Click Here To Know</a></div>
+        </div>
+      </div> -->
+    </div>
     <br><br>
     <div class="row justify-content-center">
       <a class="btn btn-primary btn-lg px-4 py-3" href="#">Donate Now</a>
@@ -1744,16 +1768,16 @@
           </blockquote>
           <hr>
           {% endfor %}
-
+        </div>
         {% else %}
           <h2 class="text-center" >Write Message to view</h2>
         {% endif %}
-      </div>
+      
     </div>
   </section>
 
   <div class="row justify-content-center">
-    <div class="col-md-10 ">
+    <div class="col-md-5">
       <form action="{% url 'message-board-form' %}" method="post">
         {% csrf_token %}
         <fieldset>
