@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect
-from .forms import DoctorsForms, TeleMedicineForms, MessagesForm, MessageBoardForm
+from .forms import DoctorsForms, TeleMedicineForms, MessagesForm, MessageBoardForm, VolunteerForm, DonorForm, CounsellerForm
 from django.contrib import messages
 from django.urls import reverse
 import stripe
 from django.http import JsonResponse
-from .models import Resource, City, Messages, MessageBoard
+from .models import Resource, City, Messages, MessageBoard, Volunteer, Donor, Doctor, Telemedicine, Counsellor
+from django.contrib.auth import login, authenticate
+
 
 stripe.api_key = "sk_test_51IkYavSEV2gnCPG20RfHko44Y1eooN01Kjd9bMU9vGo5a2WlNNr5XYqKoLKWBlLvkY3TGDv2evZMHO24EnMNrLUT00n1k2ztHs"
 def home(request):
@@ -28,19 +30,41 @@ def patient_or_doctor(request):
 
 def telemedicineForm(request):
     if request.method == 'POST':
+
+        name = request.POST['name']
+        age = request.POST['age']
+        gender = request.POST['gender']
+        address = request.POST['address']
+        oxygen_saturation = request.POST['oxygen_saturation']
+        pulse = request.POST['pulse']
+        person_accompany_name = request.POST['person_accompany_name']
+        person_accompany_phone = request.POST['person_accompany_phone']
+        contact = request.POST['contact']
+        email = request.POST['email']
+        profile = request.POST['profile']
+        city = request.POST['city']
+        state = request.POST['state']
+        country = request.POST['country']
         form = TeleMedicineForms(request.POST)
         if form.is_valid():
+            print("working ....")
             form.save()
-            username = form.cleaned_data.get('username')
-            messages.success(request, f'Patient form submitted {username}')
-
+            new_user = authenticate(
+                username=form.cleaned_data['username'],
+                password=form.cleaned_data['password1']
+            )
+            login(request, new_user)
+        
+        Telemedicine.objects.create(username=request.user, name=name, age=age, gender=gender, address=address, oxygen_saturation=oxygen_saturation, pulse=pulse, person_accompany_name=person_accompany_name, person_accompany_phone=person_accompany_phone, contact=contact, email=email, profile=profile, city=city, state=state, country=country)
         return redirect('home-page')
     else:
         form = TeleMedicineForms()
+
     context = {
         'form':form,
     }
-    return render(request, 'rescue/patient_form.html', context)
+
+    return render(request, 'rescue/patient.html', context)
 
 def doctorForm(request):
     if request.method == 'POST':
@@ -146,3 +170,129 @@ def messagesboard(request):
         if form.is_valid():
             form.save()
     return redirect('home-page')
+
+
+def volunteer(request):
+    if request.method == 'POST':
+        name = request.POST['name']
+        age = request.POST['age']
+        gender = request.POST['gender']
+        address = request.POST['address']
+        contact = request.POST['contact']
+        email = request.POST['email']
+        profile = request.POST['profile']
+        city = request.POST['city']
+        state = request.POST['state']
+        country = request.POST['country']
+        form = VolunteerForm(request.POST)
+        if form.is_valid():
+            print("working ....")
+            form.save()
+            new_user = authenticate(
+                username=form.cleaned_data['username'],
+                password=form.cleaned_data['password1']
+            )
+            login(request, new_user)
+        
+        Volunteer.objects.create(user=request.user, name=name, age=age, gender=gender, address=address, contact=contact, email=email, profile=profile, city=city, state=state, country=country)
+        return redirect('home-page')
+    else:
+        form = VolunteerForm()
+
+    context = {
+        'form':form,
+    }
+
+    return render(request, 'rescue/volunteers.html', context)
+
+def donor(request):
+    if request.method == 'POST':
+        name = request.POST['name']
+        age = request.POST['age']
+        gender = request.POST['gender']
+        blood_group = request.POST['blood_group']
+        address = request.POST['address']
+        contact = request.POST['contact']
+        email = request.POST['email']
+        profile = request.POST['profile']
+        city = request.POST['city']
+        state = request.POST['state']
+        country = request.POST['country']
+        form = DonorForm(request.POST)
+        if form.is_valid():
+            form.save()
+            new_user = authenticate(
+                username=form.cleaned_data['username'],
+                password=form.cleaned_data['password1']
+            )
+            login(request, new_user)
+        Donor.objects.create(user=request.user, name=name, age=age, gender=gender, blood_group=blood_group, address=address, contact=contact, email=email, profile=profile, city=city, state=state, country=country)
+        return redirect('home-page')
+    else:
+        form = DonorForm()
+    context = {
+        'form':form
+    }
+    return render(request, 'rescue/donor.html', context)
+
+def doctor(request):
+    if request.method == 'POST':
+        name = request.POST['name']
+        age = request.POST['age']
+        gender = request.POST['gender']
+        specilization = request.POST['specilization']
+        years_of_practice = request.POST['years_of_practice']
+        hospital_name = request.POST['hospital_name']
+        consulting_hour = request.POST['consulting_hour']
+        address = request.POST['address']
+        contact = request.POST['contact']
+        email = request.POST['email']
+        profile = request.POST['profile']
+        city = request.POST['city']
+        state = request.POST['state']
+        country = request.POST['country']
+        form = DoctorsForms(request.POST)
+        if form.is_valid():
+            form.save()
+            new_user = authenticate(
+                username=form.cleaned_data['username'],
+                password=form.cleaned_data['password1']
+            )
+            login(request, new_user)
+        Doctor.objects.create(username=request.user,name=name, age=age, gender=gender, specilization=specilization, years_of_practice=years_of_practice, hospital_name=hospital_name, consulting_hour=consulting_hour, address=address, contact=contact, email=email, profile=profile, city=city, state=state, country=country)
+        return redirect('home-page')
+    else:
+        form = DoctorsForms()
+    context = {
+        'form':form
+    }
+    return render(request, 'rescue/doctor.html', context)
+
+def councellor(request):
+    if request.method == 'POST':
+        name = request.POST['name']
+        age = request.POST['age']
+        gender = request.POST['gender']
+        address = request.POST['address']
+        contact = request.POST['contact']
+        email = request.POST['email']
+        profile = request.POST['profile']
+        city = request.POST['city']
+        state = request.POST['state']
+        country = request.POST['country']
+        form = CounsellerForm(request.POST)
+        if form.is_valid():
+            form.save()
+            new_user = authenticate(
+                username=form.cleaned_data['username'],
+                password=form.cleaned_data['password1']
+            )
+            login(request, new_user)
+        Counsellor.objects.create(user=request.user, name=name, age=age, gender=gender, address=address, contact=contact, email=email, profile=profile, city=city, state=state, country=country)
+        return redirect('home-page')
+    else:
+        form = CounsellerForm()
+    context = {
+        'form':form
+    }
+    return render(request, 'rescue/councellor.html', context)
