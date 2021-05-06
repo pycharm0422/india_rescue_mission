@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import Telemedicine, Doctor, Messages
+from .models import Telemedicine, Doctor, Messages, MessageBoard
 
 
 class DoctorsForms(ModelForm):
@@ -17,4 +17,9 @@ class TeleMedicineForms(ModelForm):
 class MessagesForm(ModelForm):
     class Meta:
         model = Messages
+        fields = '__all__'
+
+class MessageBoardForm(ModelForm):
+    class Meta:
+        model = MessageBoard
         fields = '__all__'

@@ -1,10 +1,10 @@
 from django.shortcuts import render, redirect
-from .forms import DoctorsForms, TeleMedicineForms, MessagesForm
+from .forms import DoctorsForms, TeleMedicineForms, MessagesForm, MessageBoardForm
 from django.contrib import messages
 from django.urls import reverse
 import stripe
 from django.http import JsonResponse
-from .models import Resource, City, Messages
+from .models import Resource, City, Messages, MessageBoard
 
 stripe.api_key = "sk_test_51IkYavSEV2gnCPG20RfHko44Y1eooN01Kjd9bMU9vGo5a2WlNNr5XYqKoLKWBlLvkY3TGDv2evZMHO24EnMNrLUT00n1k2ztHs"
 def home(request):
@@ -103,13 +103,16 @@ def home3(request):
         country = request.POST['Country']
         message = request.POST['Message']
         form = Messages.objects.create(name=name, contact=contact, city=city, state=state, country=country, message=message)
-       
-
+    form2 = MessageBoardForm()
+    bdmsgs = MessageBoard.objects.order_by('-pk')[0:3]
     resources = Resource.objects.all()
     messages = Messages.objects.order_by('-pk')[0:3]
     context = {
         'resources':resources,
         'messages':messages,
+        'form2':form2,
+        'bdmsgs':bdmsgs,
+        
     }
     return render(request, 'rescue/home3.html', context)
 
@@ -132,3 +135,14 @@ def mssgs(request):
         'mssges':mssges,
     }
     return render(request, 'rescue/messages.html', context)
+
+
+def dashboard(request):
+    return render(request, 'rescue/dashboard.html')
+
+def messagesboard(request):
+    if request.method == 'POST':
+        form = MessageBoardForm(request.POST)
+        if form.is_valid():
+            form.save()
+    return redirect('home-page')

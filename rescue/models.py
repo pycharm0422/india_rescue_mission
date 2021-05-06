@@ -59,3 +59,12 @@ class Messages(models.Model):
 
     def __str__(self):
         return self.name + self.city
+
+class MessageBoard(models.Model):
+    name = models.CharField(max_length=200)
+    designation = models.CharField(max_length=200, null=True)
+    organization = models.CharField(max_length=200, null=True)
+    message = models.TextField()
+
+    def __str__(self):
+        return self.name + " " + self.designation
