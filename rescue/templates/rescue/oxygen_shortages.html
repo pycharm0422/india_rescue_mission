@@ -1,0 +1,486 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oxygen Shortage</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'resuce/mystyle.css' %}">
+</head>
+
+<style>
+  
+    .section-header {
+        margin-bottom: 60px;
+        position: relative;
+        padding-bottom: 20px;
+      }
+      
+      .section-header::before {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 60px;
+        height: 5px;
+        background: #f82249;
+        bottom: 0;
+        left: calc(50% - 25px);
+      }
+      
+      .section-header h2 {
+        font-size: 36px;
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+      
+      .section-header p {
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        font-size: 18px;
+        font-weight: 500;
+        color: #9195a2;
+      }
+      
+      .section-with-bg {
+        background-color: #f6f7fd;
+      }
+      
+    #intro {
+        width: 100%;
+        height: 100vh;
+        background: url("{% static 'rescue/images/indian-flag-38509.png' %}") top center;
+        background-size: cover;
+        overflow: hidden;
+        position: relative;
+      }
+      
+      @media (min-width: 1024px) {
+        #intro {
+          background-attachment: fixed;
+        }
+      }
+      
+      #intro:before {
+        content: "";
+        background: rgba(6, 12, 34, 0.5);
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+      }
+      
+      #intro .intro-container {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        top: 90px;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        padding: 0 15px;
+      }
+      
+      @media (max-width: 991px) {
+        #intro .intro-container {
+          top: 70px;
+        }
+      }
+      
+      #intro h1 {
+        color: #fff;
+        font-size: 56px;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+      
+      #intro h1 span {
+        color: #f82249;
+      }
+      
+      @media (max-width: 991px) {
+        #intro h1 {
+          font-size: 34px;
+        }
+      }
+      
+      #intro p {
+        color: #ebebeb;
+        font-weight: 700;
+        font-size: 20px;
+      }
+      
+      @media (max-width: 991px) {
+        #intro p {
+          font-size: 16px;
+        }
+      }
+      
+      
+      
+      @-webkit-keyframes pulsate-btn {
+        0% {
+          transform: scale(0.6, 0.6);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(1, 1);
+          opacity: 0;
+        }
+      }
+      
+      @keyframes pulsate-btn {
+        0% {
+          transform: scale(0.6, 0.6);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(1, 1);
+          opacity: 0;
+        }
+      }
+      #about {
+        background: url("{% static 'rescue/images/download.jfif' %}");
+        background-size: cover;
+        overflow: hidden;
+        position: relative;
+        color: black;
+        padding: 60px 0 40px 0;
+      }
+      
+      @media (min-width: 1024px) {
+        #about {
+          background-attachment: fixed;
+        }
+      }
+      
+      #about:before {
+        content: "";
+        background: rgba(13, 20, 41, 0.2);
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+      }
+      
+      #about h2 {
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: white;
+      }
+      
+      #about h3 {
+        font-size: 24px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        color: black;
+      }
+      
+      #about p {
+        font-weight: 500;
+        font-size: 18px;
+        margin-bottom: 20px;
+        color: floralwhite;
+      }
+    
+      #states {
+        padding: 60px 0 30px 0;
+      }
+      
+      #states .state {
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 30px;
+      }
+      
+      #states .state .details {
+        background: rgba(6, 12, 34, 0.76);
+        position: absolute;
+        left: 0;
+        bottom: -30px;
+        right: 0;
+        text-align: center;
+        padding-top: 10px;
+        transition: all 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+      }
+      
+      #states .state .details h3 {
+        color: #fff;
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+      
+      #states .state .details p {
+        color: #fff;
+        font-size: 15px;
+        margin-bottom: 10px;
+        font-style: italic;
+      }
+      
+      #states .state .details .social {
+        height: 30px;
+      }
+      
+      #states .state .details a {
+        color: #fff;
+      }
+      
+      #states .state .details a:hover {
+        color: #f82249;
+      }
+      
+      #states .state:hover .details {
+        bottom: 0;
+      }
+      
+      #states-details {
+        padding: 60px 0;
+      }
+      
+      #states-details .details h2 {
+        color: #112363;
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+      
+      #states-details .details .social {
+        margin-bottom: 15px;
+      }
+      
+      #states-details .details .social a {
+        background: #e9edfb;
+        color: #112363;
+        line-height: 1;
+        display: inline-block;
+        text-align: center;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        padding-top: 9px;
+      }
+      
+      #states-details .details .social a:hover {
+        background: #f82249;
+        color: #fff;
+      }
+      
+      #states-details .details .social a i {
+        font-size: 18px;
+      }
+      
+      #states-details .details p {
+        color: #112363;
+        font-size: 15px;
+        margin-bottom: 10px;
+      }
+      
+      #intro .donate-btn {
+        font-weight: 500;
+        font-size: 26px;
+        letter-spacing: 1px;
+        display: inline-block;
+        padding: 12px 32px;
+        border-radius: 50px;
+        transition: 0.5s;
+        line-height: 1;
+        margin: 10px;
+        color: #fff;
+        -webkit-animation-delay: 0.8s;
+        animation-delay: 0.8s;
+        border: 2px solid green;
+      }
+      a:hover{text-decoration: none;}
+      #intro .donate-btn:hover {
+        background: green;
+        color: #fff;
+      }
+    
+      @-webkit-keyframes pulsate-btn {
+        0% {
+          transform: scale(0.6, 0.6);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(1, 1);
+          opacity: 0;
+        }
+      }
+      
+      @keyframes pulsate-btn {
+        0% {
+          transform: scale(0.6, 0.6);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(1, 1);
+          opacity: 0;
+        }
+      }
+      
+      #faq {
+        padding: 60px 0;
+      }
+      
+      #faq #faq-list {
+        padding: 0;
+        list-style: none;
+      }
+      
+      #faq #faq-list li {
+        border-bottom: 1px solid #ddd;
+      }
+      
+      #faq #faq-list a {
+        padding: 18px 0;
+        display: block;
+        position: relative;
+        font-family: "Raleway", sans-serif;
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 600;
+        padding-right: 20px;
+      }
+      
+      #faq #faq-list i {
+        font-size: 24px;
+        position: absolute;
+        right: 0;
+        top: 16px;
+      }
+      
+      #faq #faq-list p {
+        margin-bottom: 20px;
+      }
+      
+      @media (max-width: 768px) {
+        #faq #faq-list a {
+          font-size: 18px;
+        }
+        #faq #faq-list i {
+          top: 13px;
+        }
+      }
+      
+      #faq #faq-list a.collapse {
+        color: #f82249;
+      }
+      
+      #faq #faq-list a.collapsed {
+        color: #000;
+      }
+      
+      #faq #faq-list a.collapsed i::before {
+        content: "\f055" !important;
+      }
+      
+      #supporters {
+        padding: 60px 0;
+      }
+      
+      #supporters .supporters-wrap {
+        border-top: 1px solid #e0e5fa;
+        border-left: 1px solid #e0e5fa;
+        margin-bottom: 30px;
+      }
+      
+      #supporters .supporter-logo {
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-right: 1px solid #e0e5fa;
+        border-bottom: 1px solid #e0e5fa;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.5);
+        height: 160px;
+      }
+      
+      #supporters .supporter-logo:hover img {
+        transform: scale(1.2);
+      }
+      
+      #supporters img {
+        transition: all 0.4s ease-in-out;
+      }
+    
+      
+      
+</style>
+<body>
+    <section class="section-with-bg">
+        <br><br>
+        <div class="section-header">
+            <h2>HOSPITALS WITH OXYGEN SHORTAGE</h2>
+            <h3 class="text-center">Here you can post your details so that our helpers can reach out to you.</h3>
+        </div>
+        <div class="row justify-content-center">
+            <h3>Post your Hospital List Here</h3>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <fieldset>
+
+                        {{form|crispy}}
+
+                    </fieldset>
+                    <div class="text-center mb-3"><button type="submit" class="btn btn-primary">Send Data</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <hr>
+        <div class="section-header">
+            <h3 class="text-center">Lists Of Hospital</h3>
+        </div>
+        <div class="row justify-content-center">
+                <div class="border border-dark col-lg-6 p-2">
+                  {% if mssges %}
+                    {% for msg in mssges %}
+                    <blockquote class="blockquote">
+                        <div class="card-body">
+                            <h3 class="card-title text-left">{{msg.name}}</h3>
+                            <p class="card-text text-left">{{msg.city}}, {{msg.state}}, {{msg.country}}</p>
+                        </div>
+                    </blockquote>
+                    <hr>
+                    {% endfor %}
+                 
+                  </div><br><br>
+                  {% else %}
+                    <h2 class="text-center" >Hospital List will appear Here</h2>
+                  {% endif %}
+                <br>
+        </div><br><br>
+        <br>
+        
+    </section>
+    <div class="text-center mb-3"><a href="{% url 'home-page' %}" class="btn btn-primary">Back to home page</a>
+    </div>
+</body>
+
+</html>

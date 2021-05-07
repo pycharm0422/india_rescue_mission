@@ -1787,7 +1787,8 @@
           </blockquote>
           <hr>
           {% endfor %}
-        </div>
+          <p class="text-center text-light"><a href="{% url 'messages-board' %}" class="btn btn-primary">Click for more</a></p>
+        </div><br><br>
         {% else %}
           <h2 class="text-center" >Your messages will appear here.</h2>
         {% endif %}
@@ -2120,8 +2121,9 @@
         </div>
       </div>
       <br>
-      <div class="row justify-content-center"> <a href="#" class="btn btn-warning btn-lg mx-1">Click to add more</a> <a
-          href="#" class="mx-1 btn-lg btn btn-success">View more</a></div>
+      
+      <div class="row justify-content-center"> <a href="{% url 'oxygen-shortage-page' %}" class="btn btn-warning btn-lg mx-1">Click to add more</a> <a
+          href="{% url 'oxygen-shortage-page' %}" class="mx-1 btn-lg btn btn-success">View more</a></div>
       <br><br>
       <div class="row justify-content-center">
         <a class="btn btn-primary btn-lg px-4 py-3" href="#">Donate Now</a>

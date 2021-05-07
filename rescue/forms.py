@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import Telemedicine, Doctor, Messages,MessageBoard, Donor, Counsellor, Volunteer
+from .models import Telemedicine, Doctor, Messages,MessageBoard, Donor, Counsellor, Volunteer, OxygenShortageHospital
 from django.contrib.auth.forms import UserCreationForm
 from django import forms
 from django.contrib.auth.models import User
@@ -104,3 +104,8 @@ class CounsellerForm(UserCreationForm):
     class Meta:
         model = User
         fields = ['username', 'name', 'age', 'gender','address', 'contact', 'email', 'profile', 'city', 'state', 'country', 'password1', 'password2']
+
+class OxygenShortageHospitalForm(ModelForm):
+    class Meta:
+        model =OxygenShortageHospital
+        fields = "__all__"

@@ -6,6 +6,7 @@ urlpatterns = [
     path('patient_or_doctor/', views.patient_or_doctor, name='doc_or_pt'),
     path('charge/', views.charge, name='charge'),
     path('messages/', views.mssgs, name='messages-page'),
+    path('messages-board/', views.board, name='messages-board'),
     path('messagesboard/', views.messagesboard, name='message-board-form'),
     path('dashboard/', views.dashboard, name='dashboard-page'),
     path('volunteer-form/', views.volunteer, name='volunteer-page'),
@@ -17,4 +18,5 @@ urlpatterns = [
     path('index/', views.index, name='index-page'),
     path('health_care_providers/', views.health_care, name='health_care_prov'),
     path('safety_measure/', views.safety_measure, name='safety-measure'),
+    path('oxygen_shortage/', views.oxygen_shortage, name='oxygen-shortage-page'),
 ]

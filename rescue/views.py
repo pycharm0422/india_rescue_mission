@@ -1,10 +1,10 @@
 from django.shortcuts import render, redirect
-from .forms import DoctorsForms, TeleMedicineForms, MessagesForm, MessageBoardForm, VolunteerForm, DonorForm, CounsellerForm
+from .forms import DoctorsForms, TeleMedicineForms, MessagesForm, MessageBoardForm, VolunteerForm, DonorForm, CounsellerForm, OxygenShortageHospitalForm
 from django.contrib import messages
 from django.urls import reverse
 import stripe
 from django.http import JsonResponse
-from .models import Resource, City, Messages, MessageBoard, Volunteer, Donor, Doctor, Telemedicine, Counsellor
+from .models import Resource, City, Messages, MessageBoard, Volunteer, Donor, Doctor, Telemedicine, Counsellor, OxygenShortageHospital
 from django.contrib.auth import login, authenticate
 
 
@@ -131,11 +131,13 @@ def home3(request):
     bdmsgs = MessageBoard.objects.order_by('-pk')[0:3]
     resources = Resource.objects.all()
     messages = Messages.objects.order_by('-pk')[0:3]
+    form3 = OxygenShortageHospitalForm()
     context = {
         'resources':resources,
         'messages':messages,
         'form2':form2,
         'bdmsgs':bdmsgs,
+        'form3':form3,
         
     }
     return render(request, 'rescue/home3.html', context)
@@ -296,3 +298,35 @@ def councellor(request):
         'form':form
     }
     return render(request, 'rescue/councellor.html', context)
+
+def board(request):
+    if request.method == 'POST':
+        form = MessageBoardForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('home-page')
+    bdmsgs = MessageBoard.objects.order_by('-pk')
+    form = MessageBoardForm()
+    context = {
+        'mssges':bdmsgs,
+        'form':form,
+    }
+
+    return render(request, 'rescue/board.html', context)
+
+
+def oxygen_shortage(request):
+    if request.method == 'POST':
+        form = OxygenShortageHospitalForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('oxygen-shortage-page')
+
+    form = OxygenShortageHospitalForm()
+    shortages = OxygenShortageHospital.objects.order_by('-pk')
+
+    context = {
+        'form':form,
+        'mssges':shortages,
+    }
+    return render(request, 'rescue/oxygen_shortages.html', context)
