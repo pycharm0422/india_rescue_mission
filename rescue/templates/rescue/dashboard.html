@@ -20,12 +20,16 @@
 </head>
 
 <body style="font-family: 'Comfortaa', cursive;">
-  <h1 class="text-center mt-4">Click on the state to know about its resources</h1><br>
+  <h1 class="text-center mt-4">Enter your city name to get information about available resources</h1><br>
+  <div class="row justify-content-center">
+    <div class="col-md-8"><input type="text" class="form-control" id="myInput" onkeydown="myFunction()" placeholder="Search for cities.. example Delhi" autocomplete></div>
+  </div>
+  <br>
   <div class="row justify-content-center">
     <div class="col-md-3 bg-dark" style="border: 2px solid black;"></div>
   </div>
   <br><br>
-  <div class="container col-md-10 border-success rounded-lg p-2" style="border: 2px solid;">
+  <!-- <div class="container col-md-10 border-success rounded-lg p-2" style="border: 2px solid;">
     <div class="row justify-content-center">
       <div class="col-md-3"><a href="#guj" class="btn btn-primary btn-lg p-2 px-2 rounded-pill">Gujarat</a></div>
       <div class="col-md-3"><a href="#mah" class="btn btn-success btn-lg p-2 px-2 rounded-pill">Maharashtra</a></div>
@@ -69,905 +73,906 @@
     <div class="row justify-content-center">
       <div class="col-md-3"><a href="#pud" class="btn btn-success btn-lg p-2 px-2 rounded-pill">Puducherry</a></div>
       <div class="col-md-3"><a href="#meg" class="btn btn-primary btn-lg p-2 px-2 rounded-pill">Meghalaya</a></div>
-      <!-- <div class="col-md-3"><a href="#pun" class="btn btn-lg p-2 px-2 rounded-pill text-light" style="background-color: lightpink;">Punjab</a></div><div class="col-md-3"><a href="#ch" class="btn btn-lg p-2 px-2 rounded-pill" style="background-color: orange; color: white;">Chhattisgarh</a></div>-->
+       <div class="col-md-3"><a href="#pun" class="btn btn-lg p-2 px-2 rounded-pill text-light" style="background-color: lightpink;">Punjab</a></div><div class="col-md-3"><a href="#ch" class="btn btn-lg p-2 px-2 rounded-pill" style="background-color: orange; color: white;">Chhattisgarh</a></div>
     </div><br>
-  </div>
+  </div> -->
 
-  <br><br>
-  <h1 class="text-dark text-center">Statewide Dashboard</h1><br>
+  
+  <h1 class="text-dark text-center">Citywide Resources</h1><br>
   <div class="row justify-content-center">
     <div class="col-md-3 bg-dark" style="border: 2px solid black;"></div>
   </div>
   <br><br>
   <div class="container col-md-10" id="guj">
-    <h2 class="text-center text-light bg-primary p-2" style="border-radius: 2rem;">Gujarat</h2>
     <table class="table table-borderless">
-      <thead>
-        <tr>
-          <th scope="col">City</th>
-          <!-- <th scope="col">All Resources</th> -->
-          <th scope="col">Beds availability resource</th>
-          <th scope="col">Oxygen availability resource</th>
-          <th scope="col">Plasma Resource</th>
-        </tr>
-      </thead>
       <tbody>
-        <tr class="table-info">
+        <tr style="display:none;"class="bg-info">
+          <th scope="row" class="text-light">Gujarat</th>
+          <!-- <td>Jacob</td> -->
+          <td><a href="https://covidgandhinagar.com/" class="btn btn-primary">Bed Availability</a></td>
+          <td><a href="tel:9624057044" class="btn btn-success">Call for Oxygen</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-primary">Plasma Availability</a></td>
+        </tr>
+        <tr style="display:none;"class="table-info">
           <th scope="row" class="text-light">Ahmedabad</th>
           <!-- <td>Mark</td> -->
-          <td><a href="https://covidamd.com/" class="btn btn-success">Click Here</a></td>
-          <td><a href="http://www.friends2support.org/" class="btn btn-primary">Click Here</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-success">Click Here</a></td>
+          <td><a href="https://covidamd.com/" class="btn btn-success">Bed Availability</a></td>
+          <td><a href="http://www.friends2support.org/" class="btn btn-primary">Oxygen Availability</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-success">Plasma Availability</a></td>
         </tr>
-        <tr class="bg-info">
+        <tr style="display:none;"class="bg-info">
           <th scope="row" class="text-light">Gandhinagar</th>
           <!-- <td>Jacob</td> -->
-          <td><a href="https://covidgandhinagar.com/" class="btn btn-primary">Click Here</a></td>
+          <td><a href="https://covidgandhinagar.com/" class="btn btn-primary">Bed Availability</a></td>
           <td><a href="tel:9624057044" class="btn btn-success">Call Now</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-primary">Click Here</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-primary">Plasma Availability</a></td>
         </tr>
-        <tr class="table-info">
+        <tr style="display:none;"class="table-info">
           <th scope="row" class="text-light">Vadodara</th>
           <!-- <td>Jacob</td> -->
-          <td><a href="https://vmc.gov.in/Covid19VadodaraApp/Default.aspx" class="btn btn-success">Click Here</a></td>
+          <td><a href="https://vmc.gov.in/Covid19VadodaraApp/Default.aspx" class="btn btn-success">Bed Availability</a></td>
           <!-- <td></td> -->
-          <td><a href="#" class="btn disabled btn-primary">Click Here</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-success">Click Here</a></td>
+          <td><a href="#" class="btn disabled btn-primary">Oxygen Availability</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-success">Plasma Availability</a></td>
           <!-- <td>@fat</td> -->
         </tr>
-        <tr class="bg-info">
+        <tr style="display:none;"class="bg-info">
           <th scope="row" class="text-light">Vapi</th>
           <td><a href="https://t.me/CovidVapi" class="btn btn-primary">All Information Telegram</a></td>
-          <td><a href="#" class="btn disabled btn-success">Click here</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-primary">Click Here</a></td>
+          <td><a href="#" class="btn disabled btn-success">Oxygen Availability</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-primary">Plasma Availability</a></td>
         </tr>
-        <tr class="table-info">
+        <tr style="display:none;"class="table-info">
           <th scope="row" class="text-light">Surat</th>
           <td><a href="http://office.suratsmartcity.com/SuratCOVID19/Home/COVID19BedAvailabilityDetails"
-              class="btn btn-success">Click Here</a></td>
+              class="btn btn-success">Bed Availability</a></td>
           <td><a
               href="https://docs.google.com/spreadsheets/d/1ZyrYsowjk6PdC9N5yKBxMslI7FypoeIqDvlAYrqprL8/edit#gid=1847978247"
-              class="btn btn-primary">Click Here</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-success">Click Here</a></td>
+              class="btn btn-primary">Oxygen Availability</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-success">Plasma Availability</a></td>
         </tr>
-        <tr class="bg-info">
+        <tr style="display:none;"class="bg-info">
           <th scope="row" class="text-light">Rajkot</th>
-          <td><a href="#" class="btn btn-primary disabled">Click Here</a></td>
+          <td><a href="#" class="btn btn-primary disabled">Bed Availability</a></td>
           <td><a href="tel:+919374103523" class="btn btn-success">Call for Oxygen</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-primary">Click Here</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-primary">Plasma Availability</a></td>
         </tr>
-        <tr class="table-info">
+        <tr style="display:none;"class="table-info">
           <th scope="row" class="text-light">Morbi</th>
-          <td><a href="#" class="btn disabled btn-success">Click Here</a></td>
+          <td><a href="#" class="btn disabled btn-success">Bed Availability</a></td>
           <td><a href="tel:+919349393693" class="btn btn-primary">Call for Oxygen</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-success">Click Here</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-success">Plasma Availability</a></td>
         </tr>
-        <tr class="bg-info">
+        <tr style="display:none;"class="bg-info">
           <th scope="row" class="text-light">Navsari</th>
           <td><a href="tel:+919825147161" class="btn btn-primary">Call For Oxygen</a></td>
           <td><a href="tel:+919825880523" class="btn btn-success">Call for Oxygen</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-primary">Click Here</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-primary">Plasma Availability</a></td>
         </tr>
-        <tr class="table-info">
+        <tr style="display:none;"class="table-info">
           <th scope="row" class="text-light">Bhavnagar</th>
-          <td><a href="#" class="btn disabled btn-success">Click Here</a></td>
+          <td><a href="#" class="btn disabled btn-success">Bed Availability</a></td>
           <td><a href="tel:+919825225512" class="btn btn-primary">Call for Oxygen</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-success">Click Here</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-success">Plasma Availability</a></td>
         </tr>
-        <tr class="bg-info">
+        <tr style="display:none;"class="bg-info">
           <th scope="row" class="text-light">Surendranagar</th>
           <td><a href="tel:+917819999007" class="btn btn-primary">Call for Oxygen</a></td>
           <td><a href="tel:+919828498285" class="btn btn-success">Call for Oxygen</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-primary">Click Here</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-primary">Plasma Availability</a></td>
         </tr>
-        <tr class="table-info">
+        <tr style="display:none;"class="table-info">
           <th scope="row" class="text-light">Jamnagar</th>
-          <td><a href="https://iojn.guj.nic.in/c19vacantbed.aspx?Dcode=10" class="btn btn-success">Click Here</a></td>
-          <td><a href="tel:+919825225512" class="btn btn-primary">Click here</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-success">Click Here</a></td>
+          <td><a href="https://iojn.guj.nic.in/c19vacantbed.aspx?Dcode=10" class="btn btn-success">Bed Availability</a></td>
+          <td><a href="tel:+919825225512" class="btn btn-primary">Oxygen Availability</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-success">Plasma Availability</a></td>
         </tr>
       </tbody>
     </table>
   </div>
-  <br><br><br>
   <div class="container col-md-10" id="mah">
-    <h2 class="text-center text-light p-2 " style="background-color: deeppink;border-radius: 2rem;">Maharashtra</h2>
+    <!-- <h2 class="text-center text-light p-2 " style="background-color: deeppink;border-radius: 2rem;">Maharashtra</h2> -->
     <table class="table table-borderless">
-      <thead>
+      <!-- <thead>
         <tr>
           <th scope="col">City</th>
-          <!-- <th scope="col">All Resources</th> -->
           <th scope="col">Beds availability resource</th>
           <th scope="col">Oxygen availability resource</th>
           <th scope="col">Plasma Resource</th>
         </tr>
-      </thead>
+      </thead> -->
       <tbody>
-        <tr style="background-color: rgb(85,26,139);">
+        <tr style="display:none; background-color: rgb(85,26,139);">
           <th scope="row" class="text-light">Mumbai</th>
           <!-- <td>Mark</td> -->
           <td><a href="https://t.me/CovidMumbai" class="btn btn-success">All Information Telegram</a></td>
-          <td><a href="http://www.friends2support.org/" class=" disabled btn btn-primary">Click Here</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-success">Click Here</a></td>
+          <td><a href="http://www.friends2support.org/" class=" disabled btn btn-primary">Oxygen Availability</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-success">Plasma Availability</a></td>
         </tr>
-        <tr style="background-color:rgb(182,102,210)">
+        <tr style="display:none; background-color:rgb(182,102,210)">
           <th scope="row" class="text-light">Beed</th>
           <!-- <td>Jacob</td> -->
-          <td><a href="https://covidbeed.com/" class="btn btn-primary">Click Here</a></td>
+          <td><a href="https://covidbeed.com/" class="btn btn-primary">Bed Availability</a></td>
           <td><a href="tel:9624057044" class="btn disabled btn-success">Call Now</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-primary">Click Here</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-primary">Plasma Availability</a></td>
         </tr>
-        <tr style="background-color: rgb(85,26,139);">
+        <tr style="display:none; background-color: rgb(85,26,139);">
           <th scope="row" class="text-light">Nagpur</th>
           <!-- <td>Jacob</td> -->
-          <td><a href="http://nsscdcl.org/covidbeds/AvailableHospitals.jsp" class="btn btn-success">Click Here</a></td>
+          <td><a href="http://nsscdcl.org/covidbeds/AvailableHospitals.jsp" class="btn btn-success">Bed Availability</a></td>
           <!-- <td></td> -->
           <td><a href="https://t.me/CovidNagpur" class="btn btn-primary">All Information Telegram</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-success">Click Here</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-success">Plasma Availability</a></td>
           <!-- <td>@fat</td> -->
         </tr>
-        <tr style="background-color:rgb(182,102,210)">
+        <tr style="display:none; background-color:rgb(182,102,210)">
           <th scope="row" class="text-light">Nashik</th>
-          <td><a href="https://covidnashik.com/" class="btn btn-primary">Click Here</a></td>
+          <td><a href="https://covidnashik.com/" class="btn btn-primary">Bed Availability</a></td>
           <td><a href="https://t.me/CovidNashik" class="btn btn-success">All Information Telegram</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-primary">Click Here</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-primary">Plasma Availability</a></td>
         </tr>
-        <tr style="background-color: rgb(85,26,139);">
+        <tr style="display:none; background-color: rgb(85,26,139);">
           <th scope="row" class="text-light">Navi Mumbai</th>
-          <td><a href="https://nmmchealthfacilities.com/HospitalInfo/showhospitalist" class="btn btn-success">Click
-              Here</a></td>
-          <td><a href="#" class="btn disabled btn-primary">Click Here</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-success">Click Here</a></td>
+          <td><a href="https://nmmchealthfacilities.com/HospitalInfo/showhospitalist" class="btn btn-success">Bed Availability</a></td>
+          <td><a href="#" class="btn disabled btn-primary">Oxygen Availability</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-success">Plasma Availability</a></td>
         </tr>
-        <tr style="background-color:rgb(182,102,210)">
+        <tr style="display:none; background-color:rgb(182,102,210)">
           <th scope="row" class="text-light">Pune</th>
-          <td><a href="https://covidpune.com/" class="btn btn-primary">Click Here</a></td>
+          <td><a href="https://covidpune.com/" class="btn btn-primary">Bed Availability</a></td>
           <td><a href="https://t.me/CovidPune" class="btn btn-success">All Information Telegram</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-primary">Click Here</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-primary">Plasma Availability</a></td>
         </tr>
-        <tr style="background-color: rgb(85,26,139);">
+        <tr style="display:none; background-color: rgb(85,26,139);">
           <th scope="row" class="text-light">Thane</th>
-          <td><a href="https://covidthane.org/availabiltyOfHospitalBeds.html" class="btn btn-success">Click Here</a>
+          <td><a href="https://covidthane.org/availabiltyOfHospitalBeds.html" class="btn btn-success">Bed Availability</a>
           </td>
-          <td><a href="#" class="btn disabled btn-primary">Click Here</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-success">Click Here</a></td>
+          <td><a href="#" class="btn disabled btn-primary">Oxygen Availability</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-success">Plasma Availability</a></td>
         </tr>
-        <tr style="background-color:rgb(182,102,210)">
+        <tr style="display:none; background-color:rgb(182,102,210)">
           <th scope="row" class="text-light">Dombivali Kalyan</th>
           <td><a href="https://drive.google.com/file/d/1xmoFfqLFGKb4nCBGC-rqUEGQpg8Qz07m/view"
-              class="btn btn-primary">Click Here</a></td>
-          <td><a href="#" class="btn btn-success disabled">Click Here</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-primary">Click Here</a></td>
+              class="btn btn-primary">Bed Availability</a></td>
+          <td><a href="#" class="btn btn-success disabled">Oxygen Availability</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-primary">Plasma Availability</a></td>
         </tr>
-        <tr style="background-color: rgb(85,26,139);">
+        <tr style="display:none; background-color: rgb(85,26,139);">
           <th scope="row" class="text-light">Panvel</th>
-          <td><a href="https://covidbedpanvel.in/HospitalInfo/showindex" class="btn btn-success">Click Here</a></td>
-          <td><a href="#" class="btn btn-primary disabled">Click Here</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-success">Click Here</a></td>
+          <td><a href="https://covidbedpanvel.in/HospitalInfo/showindex" class="btn btn-success">Bed Availability</a></td>
+          <td><a href="#" class="btn btn-primary disabled">Oxygen Availability</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-success">Plasma Availability</a></td>
         </tr>
-        <tr style="background-color:rgb(182,102,210)">
+        <tr style="display:none; background-color:rgb(182,102,210)">
           <th scope="row" class="text-light">Aurangabad</th>
           <td><a href="https://play.google.com/store/apps/details?id=in.ekatta.healthcare"
               class="btn btn-primary">Install this app for details</a></td>
-          <td><a href="#" class="btn disabled btn-success">Click Here</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-primary">Click Here</a></td>
+          <td><a href="#" class="btn disabled btn-success">Oxygen Availability</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-primary">Plasma Availability</a></td>
         </tr>
-        <tr style="background-color: rgb(85,26,139);">
+        <tr style="display:none; background-color: rgb(85,26,139);">
           <th scope="row" class="text-light">Nandurbar</th>
-          <td><a href="https://ndbcovidinfo.com/" class="btn btn-primary">Click Here</a></td>
-          <td><a href="#" class="btn btn-success disabled">Click Here</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-primary">Click Here</a></td>
+          <td><a href="https://ndbcovidinfo.com/" class="btn btn-primary">Bed Availability</a></td>
+          <td><a href="#" class="btn btn-success disabled">Oxygen Availability</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-primary">Plasma Availability</a></td>
         </tr>
       </tbody>
     </table>
   </div>
-  <br><br><br>
   <div class="container col-md-10" id="raj">
-    <h2 class="text-center text-light bg-warning p-2" style="border-radius: 2rem;">Rajasthan</h2>
+    <!-- <h2 class="text-center text-light bg-warning p-2" style="border-radius: 2rem;">Rajasthan</h2> -->
     <table class="table table-borderless">
-      <thead>
+      <!-- <thead>
         <tr>
           <th scope="col">City</th>
-          <!-- <th scope="col">All Resources</th> -->
           <th scope="col">Beds availability resource</th>
           <th scope="col">Oxygen availability resource</th>
           <th scope="col">Plasma Resource</th>
         </tr>
-      </thead>
+      </thead> -->
       <tbody>
-        <tr style="background-color:#72FC5A;">
+        <tr style="display:none; background-color:#72FC5A;">
           <th scope="row" class="text-light">Jaipur</th>
           <!-- <td>Mark</td> -->
           <td><a href="https://covidinfo.rajasthan.gov.in/Covid-19hospital-wisebedposition-wholeRajasthan.aspx"
-              class="btn btn-success">Click Here</a></td>
+              class="btn btn-success">Bed Availability</a></td>
           <td><a href="https://chat.whatsapp.com/JkSvbvYLkzeLb81aOO76xa" class="btn btn-primary">All Information
               Whatsapp</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-success">Click Here</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-success">Plasma Availability</a></td>
         </tr>
-        <tr style="background-color: #00902F;">
+        <tr style="display:none; background-color: #00902F;">
           <th scope="row" class="text-light">Jodhpur</th>
           <!-- <td>Jacob</td> -->
-          <td><a href="https://covidgandhinagar.com/" class="btn disabled btn-primary">Click Here</a></td>
+          <td><a href="https://covidgandhinagar.com/" class="btn disabled btn-primary">Bed Availability</a></td>
           <td><a href="https://t.me/CovidJodhpur" class="btn btn-success">All Information Telegram</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-primary">Click Here</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-primary">Plasma Availability</a></td>
         </tr>
-        <tr style="background-color:#72FC5A;">
+        <tr style="display:none; background-color:#72FC5A;">
           <th scope="row" class="text-light">Udaipur</th>
           <!-- <td>Jacob</td> -->
-          <td><a href="https://vmc.gov.in/Covid19VadodaraApp/Default.aspx" class="btn disabled btn-success">Click
-              Here</a></td>
+          <td><a href="https://vmc.gov.in/Covid19VadodaraApp/Default.aspx" class="btn disabled btn-success">Bed Availability</a></td>
           <!-- <td></td> -->
           <td><a href="https://t.me/CovidUdaipur" class="btn btn-primary">All Information Telegram</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-success">Click Here</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-success">Plasma Availability</a></td>
           <!-- <td>@fat</td> -->
         </tr>
       </tbody>
     </table>
   </div>
-  <br><br><br>
   <div class="container col-md-10" id="del">
-    <h2 class="text-center text-light bg-primary p-2" style="border-radius: 2rem;">Delhi</h2>
+    <!-- <h2 class="text-center text-light bg-primary p-2" style="border-radius: 2rem;">Delhi</h2> -->
     <table class="table table-borderless">
-      <thead>
+      <!-- <thead>
         <tr>
           <th scope="col">City</th>
-          <!-- <th scope="col">All Resources</th> -->
           <th scope="col">Beds availability resource</th>
           <th scope="col">Oxygen availability resource</th>
           <th scope="col">Plasma Resource</th>
         </tr>
-      </thead>
+      </thead> -->
       <tbody>
-        <tr class="table-primary">
+        <tr style="display:none;"class="table-primary">
           <th scope="row" class="text-light">Delhi</th>
           <!-- <td>Mark</td> -->
-          <td><a href="https://coronabeds.jantasamvad.org/" class="btn btn-success">Click Here</a></td>
-          <td><a href="https://www.instagram.com/hemkunt_foundation/" class="btn btn-primary">Click Here</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-success">Click Here</a></td>
+          <td><a href="https://coronabeds.jantasamvad.org/" class="btn btn-success">Bed Availability</a></td>
+          <td><a href="https://www.instagram.com/hemkunt_foundation/" class="btn btn-primary">Oxygen Availability</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-success">Plasma Availability</a></td>
         </tr>
-        <tr class="bg-primary">
+        <tr style="display:none;"class="bg-primary">
           <th scope="row" class="text-light">Gurugram</th>
           <!-- <td>Mark</td> -->
-          <td><a href="https://covidggn.com/public/pages/gurugram-hospitals" class="btn btn-primary">Click Here</a></td>
-          <td><a href="http://www.friends2support.org/" class="disabled btn btn-success">Click Here</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-primary">Click Here</a></td>
+          <td><a href="https://covidggn.com/public/pages/gurugram-hospitals" class="btn btn-primary">Bed Availability</a></td>
+          <td><a href="http://www.friends2support.org/" class="disabled btn btn-success">Oxygen Availability</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-primary">Plasma Availability</a></td>
         </tr>
       </tbody>
     </table>
-  </div><br><br><br>
+  </div>
   <div class="container col-md-10" id="up">
-    <h2 class="text-center text-light p-2 " style="background-color: deeppink;border-radius: 2rem;">Uttar Pradesh</h2>
+    <!-- <h2 class="text-center text-light p-2 " style="background-color: deeppink;border-radius: 2rem;">Uttar Pradesh</h2> -->
     <table class="table table-borderless">
-      <thead>
+      <!-- <thead>
         <tr>
           <th scope="col">City</th>
-          <!-- <th scope="col">All Resources</th> -->
           <th scope="col">Beds availability resource</th>
           <th scope="col">Oxygen availability resource</th>
           <th scope="col">Plasma Resource</th>
         </tr>
-      </thead>
+      </thead> -->
       <tbody>
-        <tr style="background-color: rgb(85,26,139);">
+        <tr style="display:none; background-color: rgb(85,26,139);">
           <th scope="row" class="text-light">Agra</th>
           <!-- <td>Mark</td> -->
           <td><a href="https://www.instagram.com/agra_covid_resources/" class="btn btn-success">All Information
               Instagram</a></td>
-          <td><a href="http://www.friends2support.org/" class="btn btn-primary disabled">Click Here</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-success">Click Here</a></td>
+          <td><a href="http://www.friends2support.org/" class="btn btn-primary disabled">Oxygen Availability</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-success">Plasma Availability</a></td>
         </tr>
-        <tr style="background-color:rgb(182,102,210)">
+        <tr style="display:none; background-color:rgb(182,102,210)">
           <th scope="row" class="text-light">Kanpur</th>
           <!-- <td>Jacob</td> -->
           <td><a href="https://chat.whatsapp.com/JnqFXdLrICG9JeNFrGlQte" class="btn btn-primary">All Information
               Whatsapp</a></td>
           <td><a href="https://chat.whatsapp.com/L343mvBeH77Buu6Ngi6Kps" class="mx-3 btn btn-success">All Information
               Whatsapp2</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-primary">Click Here</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-primary">Plasma Availability</a></td>
         </tr>
-        <tr style="background-color: rgb(85,26,139);">
+        <tr style="display:none; background-color: rgb(85,26,139);">
           <th scope="row" class="text-light">Lucknow</th>
-          <td><a href="https://beds.dgmhup-covid19.in/EN/covid19bedtrack" class="btn btn-success">Click Here</a></td>
+          <td><a href="https://beds.dgmhup-covid19.in/EN/covid19bedtrack" class="btn btn-success">Bed Availability</a></td>
           <td><a
               href="https://docs.google.com/spreadsheets/d/1roxOi2_Uw4YBzLd5s8vC8cp6lbuM9016tWeWTcx2q5Y/edit#gid=266242322"
               class="btn btn-primary">All information</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-success">Click Here</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-success">Plasma Availability</a></td>
         </tr>
-        <tr style="background-color:rgb(182,102,210)">
+        <tr style="display:none; background-color:rgb(182,102,210)">
           <th scope="row" class="text-light">Meerut</th>
           <td><a href="https://chat.whatsapp.com/LbXzYVg7biRLHwnfXURPgE" class="btn btn-primary">All Information
               Whatsapp</a></td>
           <td><a href="https://chat.whatsapp.com/Kyi6rklYydX36H7gOTTLSn" class="btn btn-success">All Information
               Whatsapp 2</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-primary">Click Here</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-primary">Plasma Availability</a></td>
         </tr>
-        <tr style="background-color: rgb(85,26,139);">
+        <tr style="display:none; background-color: rgb(85,26,139);">
           <th scope="row" class="text-light">Noida</th>
-          <td><a href="https://gbncovidtracker.in/" class="btn btn-success">Click Here</a></td>
-          <td><a href="#" class="btn btn-primary disabled">Click Here</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-success">Click Here</a></td>
+          <td><a href="https://gbncovidtracker.in/" class="btn btn-success">Bed Availability</a></td>
+          <td><a href="#" class="btn btn-primary disabled">Oxygen Availability</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-success">Plasma Availability</a></td>
         </tr>
-        <tr style="background-color:rgb(182,102,210)">
+        <tr style="display:none; background-color:rgb(182,102,210)">
           <th scope="row" class="text-light">Varanasi</th>
           <td><a href="https://t.me/CovidVaranasi" class="btn btn-primary">All Information Telegram</a></td>
-          <td><a href="#" class="btn btn-success disabled">Click Here</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-primary">Click Here</a></td>
+          <td><a href="#" class="btn btn-success disabled">Oxygen Availability</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-primary">Plasma Availability</a></td>
         </tr>
-        <tr style="background-color: rgb(85,26,139);">
+        <tr style="display:none; background-color: rgb(85,26,139);">
           <th scope="row" class="text-light">Gorakhpur</th>
           <td><a
               href="https://twitter.com/search?q=verified+Gorakhpur+%28bed+OR+beds+OR+icu+OR+oxygen+OR+ventilator+OR+ventilators+OR+fabiflu%29+-%22not+verified%22+-%22unverified%22+-%22needed%22+-%22required%22&f=live"
               class="btn btn-success">Twitter Link</a></td>
-          <td><a href="#" class="btn btn-primary disabled">Click Here</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-success">Click Here</a></td>
+          <td><a href="#" class="btn btn-primary disabled">Oxygen Availability</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-success">Plasma Availability</a></td>
         </tr>
       </tbody>
     </table>
   </div>
-  <br><br><br>
   <div class="container col-md-10" id="kar">
-    <h2 class="text-center text-light bg-warning p-2" style="border-radius: 2rem;">Karnataka</h2>
+    <!-- <h2 class="text-center text-light bg-warning p-2" style="border-radius: 2rem;">Karnataka</h2> -->
     <table class="table table-borderless">
-      <thead>
+      <!-- <thead>
         <tr>
           <th scope="col">City</th>
-          <!-- <th scope="col">All Resources</th> -->
           <th scope="col">Beds availability resource</th>
           <th scope="col">Oxygen availability resource</th>
           <th scope="col">Plasma Resource</th>
         </tr>
-      </thead>
+      </thead> -->
       <tbody>
-        <tr style="background-color:#72FC5A;">
+        <tr style="display:none; background-color:#72FC5A;">
           <th scope="row" class="text-light">Bangalore</th>
           <!-- <td>Mark</td> -->
-          <td><a href="https://covidbengaluru.com/" class="btn btn-success">Click Here</a></td>
-          <td><a href="https://oxygenblr.in/" class="btn btn-primary">Click Here</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-success">Click Here</a></td>
+          <td><a href="https://covidbengaluru.com/" class="btn btn-success">Bed Availability</a></td>
+          <td><a href="https://oxygenblr.in/" class="btn btn-primary">Oxygen Availability</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-success">Plasma Availability</a></td>
         </tr>
       </tbody>
     </table>
   </div>
-  <br><br><br>
   <div class="container col-md-10" id="ap">
-    <h2 class="text-center text-light bg-primary p-2" style="border-radius: 2rem;">Andhra Pradesh</h2>
+    <!-- <h2 class="text-center text-light bg-primary p-2" style="border-radius: 2rem;">Andhra Pradesh</h2> -->
     <table class="table table-borderless">
-      <thead>
+      <!-- <thead>
         <tr>
           <th scope="col">City</th>
-          <!-- <th scope="col">All Resources</th> -->
           <th scope="col">Beds availability resource</th>
           <th scope="col">Oxygen availability resource</th>
           <th scope="col">Plasma Resource</th>
         </tr>
-      </thead>
+      </thead> -->
       <tbody>
-        <tr class="table-info">
+        <tr style="display:none;"class="table-info">
           <th scope="row" class="text-light">Visakhapatnam</th>
           <!-- <td>Mark</td> -->
           <td><a
               href="https://twitter.com/search?q=verified+vishakhapatnam+%28bed+OR+beds+OR+icu+OR+oxygen+OR+ventilator+OR+ventilators+OR+fabiflu%29+-%22not+verified%22+-%22unverified%22+-%22needed%22+-%22required%22&f=live"
-              class="btn btn-success">Click Here</a></td>
-          <td><a href="http://www.friends2support.org/" class="btn disabled btn-primary">Click Here</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-success">Click Here</a></td>
+              class="btn btn-success">Bed Availability</a></td>
+          <td><a href="http://www.friends2support.org/" class="btn disabled btn-primary">Oxygen Availability</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-success">Plasma Availability</a></td>
         </tr>
       </tbody>
     </table>
   </div>
-  <br><br><br>
   <div class="container col-md-10" id="mp">
-    <h2 class="text-center text-light p-2 " style="background-color: deeppink;border-radius: 2rem;">Madhya Pradesh</h2>
+    <!-- <h2 class="text-center text-light p-2 " style="background-color: deeppink;border-radius: 2rem;">Madhya Pradesh</h2> -->
     <table class="table table-borderless">
-      <thead>
+      <!-- <thead>
         <tr>
           <th scope="col">City</th>
-          <!-- <th scope="col">All Resources</th> -->
           <th scope="col">Beds availability resource</th>
           <th scope="col">Oxygen availability resource</th>
           <th scope="col">Plasma Resource</th>
         </tr>
-      </thead>
+      </thead> -->
       <tbody>
-        <tr style="background-color: rgb(85,26,139);">
+        <tr style="display:none; background-color: rgb(85,26,139);">
           <th scope="row" class="text-light">Bhopal</th>
           <!-- <td>Mark</td> -->
-          <td><a href="https://bhopalcovidbeds.in/" class="btn btn-success">Click Here</a></td>
+          <td><a href="https://bhopalcovidbeds.in/" class="btn btn-success">Bed Availability</a></td>
           <td><a href="https://t.me/covidbhopal" class="btn btn-primary">All Information Telegram</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-success">Click Here</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-success">Plasma Availability</a></td>
         </tr>
-        <tr style="background-color:rgb(182,102,210)">
+        <tr style="display:none; background-color:rgb(182,102,210)">
           <th scope="row" class="text-light">Indore</th>
           <!-- <td>Jacob</td> -->
           <td><a href="http://covid-india.org/Indore/dashboard.php" class="btn btn-primary">All Information</a></td>
-          <td><a href="tel:9624057044" class="btn disabled btn-success">Click Here</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-primary">Click Here</a></td>
+          <td><a href="tel:9624057044" class="btn disabled btn-success">Oxygen Availability</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-primary">Plasma Availability</a></td>
         </tr>
-        <tr style="background-color: rgb(85,26,139);">
+        <tr style="display:none; background-color: rgb(85,26,139);">
           <th scope="row" class="text-light">Madhya Pradesh</th>
           <!-- <td>Mark</td> -->
-          <td><a href="https://covidmp.com//" class="btn btn-success">Click Here</a></td>
+          <td><a href="https://covidmp.com//" class="btn btn-success">Bed Availability</a></td>
           <td><a href="https://t.me/covidbhopal" class="btn btn-primary disabled">All Information Telegram</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-success">Click Here</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-success">Plasma Availability</a></td>
         </tr>
       </tbody>
     </table>
   </div>
-  <br><br><br>
-
-
-
-  <!--remaining section Only States added -->
-
-
-
   <div class="container col-md-10" id="wb">
-    <h2 class="text-center text-light bg-warning p-2" style="border-radius: 2rem;">West Bengal</h2>
+    <!-- <h2 class="text-center text-light bg-warning p-2" style="border-radius: 2rem;">West Bengal</h2> -->
     <table class="table table-borderless">
-      <thead>
+      <!-- <thead>
         <tr>
           <th scope="col">City</th>
-          <!-- <th scope="col">All Resources</th> -->
           <th scope="col">Beds availability resource</th>
           <th scope="col">Oxygen availability resource</th>
           <th scope="col">Plasma Resource</th>
         </tr>
 
-      </thead>
+      </thead> -->
       <tbody>
-        <tr style="background-color:#72FC5A;">
+        <tr style="display:none; background-color:#72FC5A;">
           <th scope="row" class="text-light">Kolkata</th>
           <!-- <td>Mark</td> -->
           <td><a href="https://www.instagram.com/kolkatafightscovid19/" class="btn btn-success">All Information
               Instagram</a></td>
           <td><a href="https://t.me/CovidKolkata" class="btn btn-primary">All Information Telegram</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-success">Click Here</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-success">Plasma Availability</a></td>
         </tr>
-        <tr style="background-color: #00902F;">
+        <tr style="display:none; background-color: #00902F;">
           <th scope="row" class="text-light">West Bengal</th>
           <!-- <td>Jacob</td> -->
-          <td><a href="https://covidwb.com/" class="btn disabled btn-primary">Click Here</a></td>
-          <td><a href="https://t.me/CovidJodhpur" class="btn btn-success disabled">Click Here</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-primary">Click Here</a></td>
+          <td><a href="https://covidwb.com/" class="btn disabled btn-primary">Bed Availability</a></td>
+          <td><a href="https://t.me/CovidJodhpur" class="btn btn-success disabled">Oxygen Availability</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-primary">Plasma Availability</a></td>
         </tr>
       </tbody>
     </table>
   </div>
-  <br><br><br>
   <div class="container col-md-10" id="uk">
-    <h2 class="text-center text-light bg-primary p-2" style="border-radius: 2rem;">Uttarakhand</h2>
+    <!-- <h2 class="text-center text-light bg-primary p-2" style="border-radius: 2rem;">Uttarakhand</h2> -->
     <table class="table table-borderless">
-      <thead>
+      <!-- <thead>
         <tr>
           <th scope="col">City</th>
-          <!-- <th scope="col">All Resources</th> -->
           <th scope="col">Beds availability resource</th>
           <th scope="col">Oxygen availability resource</th>
           <th scope="col">Plasma Resource</th>
         </tr>
-      </thead>
+      </thead> -->
       <tbody>
-        <tr class="table-info">
+        <tr style="display:none;"class="table-info">
           <th scope="row" class="text-light">Uttarakhand</th>
           <!-- <td>Mark</td> -->
-          <td><a href="https://covid19.uk.gov.in/bedssummary.aspx" class="btn btn-success">Click Here</a></td>
-          <td><a href="http://www.friends2support.org/" class="btn disabled btn-primary">Click Here</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-success">Click Here</a></td>
+          <td><a href="https://covid19.uk.gov.in/bedssummary.aspx" class="btn btn-success">Bed Availability</a></td>
+          <td><a href="http://www.friends2support.org/" class="btn disabled btn-primary">Oxygen Availability</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-success">Plasma Availability</a></td>
         </tr>
       </tbody>
     </table>
   </div>
-  <br><br><br>
-  <!-- Reamining from here -->
   <div class="container col-md-10" id="tel">
-    <h2 class="text-center text-light p-2 " style="background-color: deeppink;border-radius: 2rem;">Telangana</h2>
+    <!-- <h2 class="text-center text-light p-2 " style="background-color: deeppink;border-radius: 2rem;">Telangana</h2> -->
     <table class="table table-borderless">
-      <thead>
+      <!-- <thead>
         <tr>
           <th scope="col">City</th>
-          <!-- <th scope="col">All Resources</th> -->
           <th scope="col">Beds availability resource</th>
           <th scope="col">Oxygen availability resource</th>
           <th scope="col">Plasma Resource</th>
         </tr>
-      </thead>
+      </thead> -->
       <tbody>
-        <tr style="background-color: rgb(85,26,139);">
+        <tr style="display:none; background-color: rgb(85,26,139);">
           <th scope="row" class="text-light">Hyderabad</th>
           <!-- <td>Mark</td> -->
-          <td><a href="https://wordpress-516618-1889984.cloudwaysapps.com/" class="btn btn-success">Click Here</a></td>
+          <td><a href="https://wordpress-516618-1889984.cloudwaysapps.com/" class="btn btn-success">Bed Availability</a></td>
           <td><a href="https://hydcovidresources.com/" class="btn btn-primary">All Information</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-success">Click Here</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-success">Plasma Availability</a></td>
         </tr>
-        <tr style="background-color:rgb(182,102,210)">
+        <tr style="display:none; background-color:rgb(182,102,210)">
           <th scope="row" class="text-light">Telangana</th>
           <!-- <td>Jacob</td> -->
-          <td><a href="https://covidtelangana.com/" class="btn btn-primary">Click Here</a></td>
+          <td><a href="https://covidtelangana.com/" class="btn btn-primary">Bed Availability</a></td>
           <td><a href="tel:9624057044" class="btn disabled btn-success">Call Now</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-primary">Click Here</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-primary">Plasma Availability</a></td>
         </tr>
       </tbody>
     </table>
   </div>
-  <br><br><br>
   <div class="container col-md-10" id="jh">
-    <h2 class="text-center text-light bg-warning p-2" style="border-radius: 2rem;">Jharkhand</h2>
+    <!-- <h2 class="text-center text-light bg-warning p-2" style="border-radius: 2rem;">Jharkhand</h2> -->
     <table class="table table-borderless">
-      <thead>
+      <!-- <thead>
         <tr>
           <th scope="col">City</th>
-          <!-- <th scope="col">All Resources</th> -->
           <th scope="col">Beds availability resource</th>
           <th scope="col">Oxygen availability resource</th>
           <th scope="col">Plasma Resource</th>
         </tr>
-      </thead>
+      </thead> -->
       <tbody>
-        <tr style="background-color:#72FC5A;">
+        <tr style="display:none; background-color:#72FC5A;">
           <th scope="row" class="text-light">Ranchi</th>
           <!-- <td>Mark</td> -->
-          <td><a href="https://pratirakshak.co.in/new-report.php" class="btn btn-success">Click Here</a></td>
+          <td><a href="https://pratirakshak.co.in/new-report.php" class="btn btn-success">Bed Availability</a></td>
           <td><a href="https://www.instagram.com/ranchi_covid19help/" class="btn btn-primary">All Information
               Instagram</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-success">Click Here</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-success">Plasma Availability</a></td>
         </tr>
       </tbody>
     </table>
   </div>
-  <br><br><br>
   <div class="container col-md-10" id="bih">
-    <h2 class="text-center text-light bg-primary p-2" style="border-radius: 2rem;">Bihar</h2>
+    <!-- <h2 class="text-center text-light bg-primary p-2" style="border-radius: 2rem;">Bihar</h2> -->
     <table class="table table-borderless">
-      <thead>
+      <!-- <thead>
         <tr>
           <th scope="col">City</th>
-          <!-- <th scope="col">All Resources</th> -->
           <th scope="col">Beds availability resource</th>
           <th scope="col">Oxygen availability resource</th>
           <th scope="col">Plasma Resource</th>
         </tr>
-      </thead>
+      </thead> -->
       <tbody>
-        <tr class="table-primary">
+        <tr style="display:none;"class="table-primary">
           <th scope="row" class="text-light">Bihar</th>
           <!-- <td>Mark</td> -->
-          <td><a href="https://covid19health.bihar.gov.in/DailyDashboard/BedsOccupied" class="btn btn-success">Click
-              Here</a></td>
-          <td><a href="http://www.friends2support.org/" class="btn btn-primary disabled">Click Here</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-success">Click Here</a></td>
+          <td><a href="https://covid19health.bihar.gov.in/DailyDashboard/BedsOccupied" class="btn btn-success">Bed Availability</a></td>
+          <td><a href="http://www.friends2support.org/" class="btn btn-primary disabled">Oxygen Availability</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-success">Plasma Availability</a></td>
         </tr>
-        <tr class="bg-primary">
+        <tr style="display:none;"class="bg-primary">
           <th scope="row" class="text-light">Patna</th>
           <!-- <td>Mark</td> -->
           <td><a href="https://t.me/CovidPatna" class="btn btn-primary">All Information Telegram</a></td>
-          <td><a href="http://www.friends2support.org/" class="btn disabled btn-success">Click Here</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-primary">Click Here</a></td>
+          <td><a href="http://www.friends2support.org/" class="btn disabled btn-success">Oxygen Availability</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-primary">Plasma Availability</a></td>
         </tr>
       </tbody>
     </table>
-  </div><br><br><br>
+  </div>
   <div class="container col-md-10" id="as">
-    <h2 class="text-center text-light p-2 " style="background-color: deeppink;border-radius: 2rem;">Assam</h2>
+    <!-- <h2 class="text-center text-light p-2 " style="background-color: deeppink;border-radius: 2rem;">Assam</h2> -->
     <table class="table table-borderless">
-      <thead>
+      <!-- <thead>
         <tr>
           <th scope="col">City</th>
-          <!-- <th scope="col">All Resources</th> -->
           <th scope="col">Beds availability resource</th>
           <th scope="col">Oxygen availability resource</th>
           <th scope="col">Plasma Resource</th>
         </tr>
-      </thead>
+      </thead> -->
       <tbody>
-        <tr style="background-color: rgb(85,26,139);">
+        <tr style="display:none; background-color: rgb(85,26,139);">
           <th scope="row" class="text-light">Assam</th>
           <!-- <td>Mark</td> -->
           <td><a
               href="https://docs.google.com/spreadsheets/d/1cMAASDH-dVsSxCl7UM-47SXVYZWTjSy39N-_L8E7rBk/edit#gid=1041531725"
               class="btn btn-success">All Information</a></td>
-          <td><a href="http://www.friends2support.org/" class="btn btn-primary disabled">Click Here</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-success">Click Here</a></td>
+          <td><a href="http://www.friends2support.org/" class="btn btn-primary disabled">Oxygen Availability</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-success">Plasma Availability</a></td>
         </tr>
 
       </tbody>
     </table>
   </div>
-  <br><br><br>
   <div class="container col-md-10" id="pun">
-    <h2 class="text-center text-light bg-warning p-2" style="border-radius: 2rem;">Punjab</h2>
+    <!-- <h2 class="text-center text-light bg-warning p-2" style="border-radius: 2rem;">Punjab</h2> -->
     <table class="table table-borderless">
-      <thead>
+      <!-- <thead>
         <tr>
           <th scope="col">City</th>
-          <!-- <th scope="col">All Resources</th> -->
           <th scope="col">Beds availability resource</th>
           <th scope="col">Oxygen availability resource</th>
           <th scope="col">Plasma Resource</th>
         </tr>
-      </thead>
+      </thead> -->
       <tbody>
-        <tr style="background-color:#72FC5A;">
+        <tr style="display:none; background-color:#72FC5A;">
           <th scope="row" class="text-light">Chandigarh</th>
           <!-- <td>Mark</td> -->
           <td><a href="https://sites.google.com/plronline.in/tricityfightscovid/home" class="btn btn-success">All
               Information</a></td>
           <td><a href="https://t.me/CovidChandigarh" class="btn btn-primary">All Information Telegram</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-success">Click Here</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-success">Plasma Availability</a></td>
         </tr>
       </tbody>
     </table>
   </div>
-  <br><br><br>
   <div class="container col-md-10" id="ch">
-    <h2 class="text-center text-light bg-primary p-2" style="border-radius: 2rem;">Chhattisgarh</h2>
+    <!-- <h2 class="text-center text-light bg-primary p-2" style="border-radius: 2rem;">Chhattisgarh</h2> -->
     <table class="table table-borderless">
-      <thead>
+      <!-- <thead>
         <tr>
           <th scope="col">City</th>
-          <!-- <th scope="col">All Resources</th> -->
           <th scope="col">Beds availability resource</th>
           <th scope="col">Oxygen availability resource</th>
           <th scope="col">Plasma Resource</th>
         </tr>
-      </thead>
+      </thead> -->
       <tbody>
-        <tr class="table-primary">
+        <tr style="display:none;"class="table-primary">
           <th scope="row" class="text-light">Chhattisgarh</th>
           <!-- <td>Mark</td> -->
-          <td><a href="https://cg.nic.in/health/covid19/RTPBedAvailable.aspx" class="btn btn-success">Click Here</a>
+          <td><a href="https://cg.nic.in/health/covid19/RTPBedAvailable.aspx" class="btn btn-success">Bed Availability</a>
           </td>
           <td><a href="https://www.instagram.com/officialhumansofchhattisgarh/" class="btn btn-primary">All
               Information</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-success">Click Here</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-success">Plasma Availability</a></td>
         </tr>
-        <!-- <tr class="bg-primary">
+        <!-- <tr style="display:none;"class="bg-primary">
             <th scope="row" class="text-light">Gurugram</th>
              <td>Mark</td> 
-            <td><a href="https://covidamd.com/" class="btn btn-primary">Click Here</a></td>
-            <td><a href="http://www.friends2support.org/" class="btn btn-success">Click Here</a></td>
-            <td><a href="http://friends2support.org/" class="btn btn-primary">Click Here</a></td>
+            <td><a href="https://covidamd.com/" class="btn btn-primary">Bed Availability</a></td>
+            <td><a href="http://www.friends2support.org/" class="btn btn-success">Plasma Availability</a></td>
+            <td><a href="http://friends2support.org/" class="btn btn-primary">Plasma Availability</a></td>
           </tr> -->
       </tbody>
     </table>
-  </div><br><br><br>
+  </div>
   <div class="container col-md-10" id="tn">
-    <h2 class="text-center text-light p-2 " style="background-color: deeppink;border-radius: 2rem;">Tamil Nadu</h2>
+    <!-- <h2 class="text-center text-light p-2 " style="background-color: deeppink;border-radius: 2rem;">Tamil Nadu</h2> -->
     <table class="table table-borderless">
-      <thead>
+      <!-- <thead>
         <tr>
           <th scope="col">City</th>
-          <!-- <th scope="col">All Resources</th> -->
           <th scope="col">Beds availability resource</th>
           <th scope="col">Oxygen availability resource</th>
           <th scope="col">Plasma Resource</th>
         </tr>
-      </thead>
+      </thead> -->
       <tbody>
-        <tr style="background-color: rgb(85,26,139);">
+        <tr style="display:none; background-color: rgb(85,26,139);">
           <th scope="row" class="text-light">Coimbatore</th>
           <!-- <td>Mark</td> -->
           <td><a href="https://t.me/CovidCoimbatore" class="btn btn-success">All Information Telegram</a></td>
-          <td><a href="http://www.friends2support.org/" class="btn btn-primary disabled">Click Here</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-success">Click Here</a></td>
+          <td><a href="http://www.friends2support.org/" class="btn btn-primary disabled">Oxygen Availability</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-success">Plasma Availability</a></td>
         </tr>
-        <tr style="background-color:rgb(182,102,210)">
+        <tr style="display:none; background-color:rgb(182,102,210)">
           <th scope="row" class="text-light">Tamil Nadu</th>
           <!-- <td>Jacob</td> -->
-          <td><a href="https://covidtnadu.com/" class="btn btn-primary">Click Here</a></td>
-          <td><a href="tel:9624057044" class="btn btn-success disabled">Click Here</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-primary">Click Here</a></td>
+          <td><a href="https://covidtnadu.com/" class="btn btn-primary">Bed Availability</a></td>
+          <td><a href="tel:9624057044" class="btn btn-success disabled">Oxygen Availability</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-primary">Plasma Availability</a></td>
         </tr>
-        <!-- <tr style="background-color: rgb(85,26,139);">
+        <!-- <tr style="display:none; background-color: rgb(85,26,139);">
             <th scope="row" class="text-light">Lucknow</th>
              <td>Jacob</td> 
-            <td><a href="https://vmc.gov.in/Covid19VadodaraApp/Default.aspx" class="btn btn-success">Click Here</a></td>
+            <td><a href="https://vmc.gov.in/Covid19VadodaraApp/Default.aspx" class="btn btn-success">Plasma Availability</a></td>
              <td></td> 
-            <td><a href="#"class="btn btn-primary">Click Here</a></td>
-            <td><a href="#"class="btn btn-success">Click Here</a></td>
+            <td><a href="#"class="btn btn-primary">Plasma Availability</a></td>
+            <td><a href="#"class="btn btn-success">Plasma Availability</a></td>
              <td>@fat</td> 
           </tr>
-          <tr style="background-color:rgb(182,102,210)">
+          <tr style="display:none; background-color:rgb(182,102,210)">
             <th scope="row" class="text-light">Meerut</th>
-            <td><a href="#"class="btn btn-primary">Click Here</a></td>
-            <td><a href="#"class="btn btn-success">Click Here</a></td>
-            <td><a href="#"class="btn btn-primary">Click Here</a></td>
+            <td><a href="#"class="btn btn-primary">Plasma Availability</a></td>
+            <td><a href="#"class="btn btn-success">Plasma Availability</a></td>
+            <td><a href="#"class="btn btn-primary">Plasma Availability</a></td>
             </tr>
-          <tr style="background-color: rgb(85,26,139);">
+          <tr style="display:none; background-color: rgb(85,26,139);">
             <th scope="row" class="text-light">Noida</th>
-            <td><a href="#"class="btn btn-success">Click Here</a></td>
-            <td><a href="#"class="btn btn-primary">Click Here</a></td>
-            <td><a href="#"class="btn btn-success">Click Here</a></td>
+            <td><a href="#"class="btn btn-success">Plasma Availability</a></td>
+            <td><a href="#"class="btn btn-primary">Plasma Availability</a></td>
+            <td><a href="#"class="btn btn-success">Plasma Availability</a></td>
           </tr>
-          <tr style="background-color:rgb(182,102,210)">
+          <tr style="display:none; background-color:rgb(182,102,210)">
             <th scope="row" class="text-light">Varanasi</th>
-            <td><a href="#"class="btn btn-primary">Click Here</a></td>
-            <td><a href="#"class="btn btn-success">Click Here</a></td>
-            <td><a href="#"class="btn btn-primary">Click Here</a></td>
+            <td><a href="#"class="btn btn-primary">Plasma Availability</a></td>
+            <td><a href="#"class="btn btn-success">Plasma Availability</a></td>
+            <td><a href="#"class="btn btn-primary">Plasma Availability</a></td>
             </tr>
-            <tr style="background-color: rgb(85,26,139);">
+            <tr style="display:none; background-color: rgb(85,26,139);">
               <th scope="row" class="text-light">Gorakhpur</th>
-              <td><a href="#"class="btn btn-success">Click Here</a></td>
-              <td><a href="#"class="btn btn-primary">Click Here</a></td>
-              <td><a href="#"class="btn btn-success">Click Here</a></td>
+              <td><a href="#"class="btn btn-success">Plasma Availability</a></td>
+              <td><a href="#"class="btn btn-primary">Plasma Availability</a></td>
+              <td><a href="#"class="btn btn-success">Plasma Availability</a></td>
             </tr> -->
       </tbody>
     </table>
   </div>
-  <br><br><br>
   <div class="container col-md-10" id="goa">
-    <h2 class="text-center text-light bg-warning p-2" style="border-radius: 2rem;">Goa</h2>
+    <!-- <h2 class="text-center text-light bg-warning p-2" style="border-radius: 2rem;">Goa</h2> -->
     <table class="table table-borderless">
-      <thead>
+      <!-- <thead>
         <tr>
           <th scope="col">City</th>
-          <!-- <th scope="col">All Resources</th> -->
           <th scope="col">Beds availability resource</th>
           <th scope="col">Oxygen availability resource</th>
           <th scope="col">Plasma Resource</th>
         </tr>
-      </thead>
+      </thead> -->
       <tbody>
-        <tr style="background-color:#72FC5A;">
+        <tr style="display:none; background-color:#72FC5A;">
           <th scope="row" class="text-light">Goa</th>
           <!-- <td>Mark</td> -->
           <td><a href="http://www.covidcaregoa.in" class="btn btn-success">All Information</a></td>
-          <td><a href="http://www.friends2support.org/" class="btn btn-primary disabled">Click Here</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-success">Click Here</a></td>
+          <td><a href="http://www.friends2support.org/" class="btn btn-primary disabled">Oxygen Availability</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-success">Plasma Availability</a></td>
         </tr>
       </tbody>
     </table>
   </div>
-  <br><br><br>
   <div class="container col-md-10" id="hr">
-    <h2 class="text-center text-light bg-primary p-2" style="border-radius: 2rem;">Haryana</h2>
+    <!-- <h2 class="text-center text-light bg-primary p-2" style="border-radius: 2rem;">Haryana</h2> -->
     <table class="table table-borderless">
-      <thead>
+      <!-- <thead>
         <tr>
           <th scope="col">City</th>
-          <!-- <th scope="col">All Resources</th> -->
           <th scope="col">Beds availability resource</th>
           <th scope="col">Oxygen availability resource</th>
           <th scope="col">Plasma Resource</th>
         </tr>
-      </thead>
+      </thead> -->
       <tbody>
-        <tr class="table-primary">
+        <tr style="display:none;"class="table-primary">
           <th scope="row" class="text-light">Chandigarh</th>
           <!-- <td>Mark</td> -->
           <td><a href="https://sites.google.com/plronline.in/tricityfightscovid/home" class="btn btn-success">All
               Information</a></td>
           <td><a href="https://t.me/CovidChandigarh" class="btn btn-primary">All Information Telegram</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-success">Click Here</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-success">Plasma Availability</a></td>
         </tr>
-        <tr class="bg-primary">
+        <tr style="display:none;"class="bg-primary">
           <th scope="row" class="text-light">Haryana</th>
           <!-- <td>Mark</td> -->
-          <td><a href="https://coronaharyana.in/" class="btn btn-primary">Click Here</a></td>
-          <td><a href="http://www.friends2support.org/" class="btn disabled btn-success">Click Here</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-primary">Click Here</a></td>
+          <td><a href="https://coronaharyana.in/" class="btn btn-primary">Bed Availability</a></td>
+          <td><a href="http://www.friends2support.org/" class="btn disabled btn-success">Oxygen Availability</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-primary">Plasma Availability</a></td>
         </tr>
       </tbody>
     </table>
-  </div><br><br><br>
+  </div>
   <div class="container col-md-10" id="ker">
-    <h2 class="text-center text-light p-2 " style="background-color: deeppink;border-radius: 2rem;">Kerala</h2>
+    <!-- <h2 class="text-center text-light p-2 " style="background-color: deeppink;border-radius: 2rem;">Kerala</h2> -->
     <table class="table table-borderless">
-      <thead>
+      <!-- <thead>
         <tr>
           <th scope="col">City</th>
-          <!-- <th scope="col">All Resources</th> -->
           <th scope="col">Beds availability resource</th>
           <th scope="col">Oxygen availability resource</th>
           <th scope="col">Plasma Resource</th>
         </tr>
-      </thead>
+      </thead> -->
       <tbody>
-        <tr style="background-color: rgb(85,26,139);">
+        <tr style="display:none; background-color: rgb(85,26,139);">
           <th scope="row" class="text-light">Kerala</th>
           <!-- <td>Mark</td> -->
-          <td><a href="https://covid19jagratha.kerala.nic.in/home/addHospitalDashBoard" class="btn btn-success">Click
-              Here</a></td>
-          <td><a href="http://www.friends2support.org/" class="disabled btn btn-primary">Click Here</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-success">Click Here</a></td>
+          <td><a href="https://covid19jagratha.kerala.nic.in/home/addHospitalDashBoard" class="btn btn-success">Bed Availability</a></td>
+          <td><a href="http://www.friends2support.org/" class="disabled btn btn-primary">Oxygen Availability</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-success">Plasma Availability</a></td>
         </tr>
-        <!-- <tr style="background-color:rgb(182,102,210)">
+        <!-- <tr style="display:none; background-color:rgb(182,102,210)">
             <th scope="row" class="text-light">Kanpur</th>
              <td>Jacob</td> 
-            <td><a href="https://covidgandhinagar.com/" class="btn btn-primary">Click Here</a></td>
+            <td><a href="https://covidgandhinagar.com/" class="btn btn-primary">Plasma Availability</a></td>
             <td><a href="tel:9624057044" class="btn btn-success">Call Now</a></td>
-            <td><a href="http://friends2support.org/" class="btn btn-primary">Click Here</a></td>
+            <td><a href="http://friends2support.org/" class="btn btn-primary">Plasma Availability</a></td>
           </tr>
-          <tr style="background-color: rgb(85,26,139);">
+          <tr style="display:none; background-color: rgb(85,26,139);">
             <th scope="row" class="text-light">Lucknow</th>
              <td>Jacob</td> 
-            <td><a href="https://vmc.gov.in/Covid19VadodaraApp/Default.aspx" class="btn btn-success">Click Here</a></td>
+            <td><a href="https://vmc.gov.in/Covid19VadodaraApp/Default.aspx" class="btn btn-success">Plasma Availability</a></td>
              <td></td> 
-            <td><a href="#"class="btn btn-primary">Click Here</a></td>
-            <td><a href="#"class="btn btn-success">Click Here</a></td>
+            <td><a href="#"class="btn btn-primary">Plasma Availability</a></td>
+            <td><a href="#"class="btn btn-success">Plasma Availability</a></td>
             <td>@fat</td> 
           </tr>
-          <tr style="background-color:rgb(182,102,210)">
+          <tr style="display:none; background-color:rgb(182,102,210)">
             <th scope="row" class="text-light">Meerut</th>
-            <td><a href="#"class="btn btn-primary">Click Here</a></td>
-            <td><a href="#"class="btn btn-success">Click Here</a></td>
-            <td><a href="#"class="btn btn-primary">Click Here</a></td>
+            <td><a href="#"class="btn btn-primary">Plasma Availability</a></td>
+            <td><a href="#"class="btn btn-success">Plasma Availability</a></td>
+            <td><a href="#"class="btn btn-primary">Plasma Availability</a></td>
             </tr>
-          <tr style="background-color: rgb(85,26,139);">
+          <tr style="display:none; background-color: rgb(85,26,139);">
             <th scope="row" class="text-light">Noida</th>
-            <td><a href="#"class="btn btn-success">Click Here</a></td>
-            <td><a href="#"class="btn btn-primary">Click Here</a></td>
-            <td><a href="#"class="btn btn-success">Click Here</a></td>
+            <td><a href="#"class="btn btn-success">Plasma Availability</a></td>
+            <td><a href="#"class="btn btn-primary">Plasma Availability</a></td>
+            <td><a href="#"class="btn btn-success">Plasma Availability</a></td>
           </tr>
-          <tr style="background-color:rgb(182,102,210)">
+          <tr style="display:none; background-color:rgb(182,102,210)">
             <th scope="row" class="text-light">Varanasi</th>
-            <td><a href="#"class="btn btn-primary">Click Here</a></td>
-            <td><a href="#"class="btn btn-success">Click Here</a></td>
-            <td><a href="#"class="btn btn-primary">Click Here</a></td>
+            <td><a href="#"class="btn btn-primary">Plasma Availability</a></td>
+            <td><a href="#"class="btn btn-success">Plasma Availability</a></td>
+            <td><a href="#"class="btn btn-primary">Plasma Availability</a></td>
             </tr>
-            <tr style="background-color: rgb(85,26,139);">
+            <tr style="display:none; background-color: rgb(85,26,139);">
               <th scope="row" class="text-light">Gorakhpur</th>
-              <td><a href="#"class="btn btn-success">Click Here</a></td>
-              <td><a href="#"class="btn btn-primary">Click Here</a></td>
-              <td><a href="#"class="btn btn-success">Click Here</a></td>
+              <td><a href="#"class="btn btn-success">Plasma Availability</a></td>
+              <td><a href="#"class="btn btn-primary">Plasma Availability</a></td>
+              <td><a href="#"class="btn btn-success">Plasma Availability</a></td>
             </tr> -->
       </tbody>
     </table>
   </div>
-  <br><br><br>
   <div class="container col-md-10" id="pud">
-    <h2 class="text-center text-light bg-warning p-2" style="border-radius: 2rem;">Puducherry</h2>
+    <!-- <h2 class="text-center text-light bg-warning p-2" style="border-radius: 2rem;">Puducherry</h2> -->
     <table class="table table-borderless">
-      <thead>
+      <!-- <thead>
         <tr>
           <th scope="col">City</th>
-          <!-- <th scope="col">All Resources</th> -->
           <th scope="col">Beds availability resource</th>
           <th scope="col">Oxygen availability resource</th>
           <th scope="col">Plasma Resource</th>
         </tr>
-      </thead>
+      </thead> -->
       <tbody>
-        <tr style="background-color:#72FC5A;">
+        <tr style="display:none; background-color:#72FC5A;">
           <th scope="row" class="text-light">Puducherry</th>
           <!-- <td>Mark</td> -->
-          <td><a href="https://covid19dashboard.py.gov.in/BedAvailabilityDetails" class="btn btn-success">Click Here</a>
+          <td><a href="https://covid19dashboard.py.gov.in/BedAvailabilityDetails" class="btn btn-success">Bed Availability</a>
           </td>
-          <td><a href="http://www.friends2support.org/" class="disabled btn btn-primary">Click Here</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-success">Click Here</a></td>
+          <td><a href="http://www.friends2support.org/" class="disabled btn btn-primary">Oxygen Availability</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-success">Plasma Availability</a></td>
         </tr>
       </tbody>
     </table>
   </div>
-  <br><br><br>
   <div class="container col-md-10" id="meg">
-    <h2 class="text-center text-light bg-primary p-2" style="border-radius: 2rem;">Meghalaya</h2>
+    <!-- <h2 class="text-center text-light bg-primary p-2" style="border-radius: 2rem;">Meghalaya</h2> -->
     <table class="table table-borderless">
-      <thead>
+      <!-- <thead>
         <tr>
           <th scope="col">City</th>
-          <!-- <th scope="col">All Resources</th> -->
           <th scope="col">Beds availability resource</th>
           <th scope="col">Oxygen availability resource</th>
           <th scope="col">Plasma Resource</th>
         </tr>
-      </thead>
+      </thead> -->
       <tbody>
-        <tr class="table-primary">
+        <tr style="display:none;"class="table-primary">
           <th scope="row" class="text-light">Meghalaya</th>
           <!-- <td>Mark</td> -->
-          <td><a href="https://meghealth.in/MeghCare.html" class="btn btn-success">Click Here</a></td>
-          <td><a href="http://www.friends2support.org/" class="disabled btn btn-primary">Click Here</a></td>
-          <td><a href="http://friends2support.org/" class="btn btn-success">Click Here</a></td>
+          <td><a href="https://meghealth.in/MeghCare.html" class="btn btn-success">Bed Availability</a></td>
+          <td><a href="http://www.friends2support.org/" class="disabled btn btn-primary">Oxygen Availability</a></td>
+          <td><a href="http://friends2support.org/" class="btn btn-success">Plasma Availability</a></td>
         </tr>
-        <!-- <tr class="bg-primary">
+        <!-- <tr style="display:none;"class="bg-primary">
             <th scope="row" class="text-light">Gurugram</th>
             \ <td>Mark</td> 
-            <td><a href="https://covidamd.com/" class="btn btn-primary">Click Here</a></td>
-            <td><a href="http://www.friends2support.org/" class="btn btn-success">Click Here</a></td>
-            <td><a href="http://friends2support.org/" class="btn btn-primary">Click Here</a></td>
+            <td><a href="https://covidamd.com/" class="btn btn-primary">Plasma Availability</a></td>
+            <td><a href="http://www.friends2support.org/" class="btn btn-success">Plasma Availability</a></td>
+            <td><a href="http://friends2support.org/" class="btn btn-primary">Plasma Availability</a></td>
           </tr> -->
       </tbody>
     </table>
   </div>
+  <script>
+    function myFunction() {
+      // Declare variables
+      var input, filter, table, tbody, thead, th,tr, td1, td2, td3, th, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementsByTagName("table");
+      // Loop through all table rows, and hide those who don't match the search query
+      if(input.value.length==0){
+       for(j=0;j<table.length;j++){
+        tbody = table[j].getElementsByTagName("tbody")[0];
+        thead= table[j].getElementsByTagName("thead")[0];
+        th=thead.getElementsByTagName("th");
+        tr=tbody.getElementsByTagName("tr");
+        for (i = 0; i < th.length; i++) {
+          th[i].style.display="none";
+        }
+        for (i = 0; i < tr.length; i++) {
+          tr[i].style.display="none";
+        }
+       } 
+      }
+      for (j=0;j<table.length;j++){
+        tbody = table[j].getElementsByTagName("tbody")[0];
+        tr=tbody.getElementsByTagName("tr");
+      for (i = 0; i < tr.length; i++) {
+        th = tr[i].getElementsByTagName("th")[0];
+        // td1 = tr[i].getElementsByTagName("td")[0];
+        // td2 = tr[i].getElementsByTagName("td")[1];
+        // td3 = tr[i].getElementsByTagName("td")[2];
+        if (th) {
+          txtValue = th.textContent || th.innerText;
+          if (txtValue.toUpperCase()==filter || (txtValue.toUpperCase()).includes(filter)) {
+            // console.log(td1.innerText);  indexOf(filter) > -1
+            // console.log(td2.innerText);
+            // console.log(td3.innerText);
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+    }
+
+    // function checker(){
+    //   var input, filter, table, tr, td, i, txtValue;
+    //   input = document.getElementById("myInput");
+      
+    //   if(input.value.length==0){
+        
+    //   }
+    // }
+    </script>
 </body>
 
 </html>
