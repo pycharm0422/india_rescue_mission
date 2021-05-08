@@ -20,16 +20,19 @@
     <title>Doctor Form</title>
 </head>
 <div class="container">
-    <h1>Login</h1>
-
+    <br><br><br>
     <body>
+        <h1 class="text-center" >Login</h1>
         <form action="" method="post">
             {% csrf_token %}
-            <fieldset>
-                {{form|crispy}}
-            </fieldset>
-            <button type="submit" class="btn btn-info text-center ">Submit</button>
-        </form><br><br>
+            <div  class="container shadow-lg p-3 mb-5 bg-body rounded" style="width: 30%;">
+                <fieldset>
+                    {{form|crispy}}
+                </fieldset>
+
+                <button type="submit" class="btn btn-info text-center ">Submit</button>
+            </div>
+        </form><br><br><br><br>
     </body>
 </div>
 

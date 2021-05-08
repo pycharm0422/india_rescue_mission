@@ -18,17 +18,110 @@
         <script src="https://use.fontawesome.com/4ad478e227.js"></script>
         <title>Councellor Form</title>
     </head>
-    <body>
-        <div class="container">
+    <body><br><br>
 
-            <h1>Councellor Form</h1>
-            <form action="" method="post">
+        <style>
+            .mardwn {
+                margin-top:-30px
+            }
+        </style>
+        <div class="container shadow-sm">
+
+            <h1 class="text-center" >Councellor Form</h1>
+            <form action="" method="POST">
                 {% csrf_token %}
-                <fieldset>
-                    {{form|crispy}}
-                </fieldset>
-                <button type="submit" class="btn btn-info text-center ">Submit</button>
-            </form><br><br>
+                <div class="form-group">
+                    {{form.username.label}}
+                    <div class="mardwn">
+
+                        {{form.username|as_crispy_field}}
+                    </div>
+                    <div class="validate"></div>
+                  </div>
+                <div class="row justify-content-center">
+                  <div class="form-group col-md-3">
+      
+                   {{form.name|as_crispy_field}}
+                    <div class="validate"></div>
+                  </div>
+                  <div class="form-group col-md-4">
+                    {{form.age|as_crispy_field}}
+                    <div class="validate"></div>
+                  </div>
+                  <div class="form-group col-md-3">
+      
+                    {{form.gender|as_crispy_field}}
+                    <div class="validate"></div>
+                  </div>
+                </div>
+                <div class="row justify-content-center">
+                  <div class="form-group col-md-3">
+      
+                   {{form.contact|as_crispy_field}}
+                    <div class="validate"></div>
+                  </div>
+                  <div class="form-group col-md-4">
+                    {{form.email|as_crispy_field}}
+                    <div class="validate"></div>
+                  </div>
+                  <div class="form-group col-md-3">
+      
+                    {{form.profile|as_crispy_field}}
+                    <div class="validate"></div>
+                  </div>
+                </div>
+                <div class="row justify-content-center">
+                  <div class="form-group col-md-3">
+      
+                   {{form.city|as_crispy_field}}
+                    <div class="validate"></div>
+                  </div>
+                  <div class="form-group col-md-4">
+                    {{form.state|as_crispy_field}}
+                    <div class="validate"></div>
+                  </div>
+                  <div class="form-group col-md-3">
+      
+                    {{form.country|as_crispy_field}}
+                    <div class="validate"></div>
+                  </div>
+                </div>
+                <div class="form-group">
+      
+                  {{form.address|as_crispy_field}}
+                  <div class="validate"></div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                    {{form.password1.label}}
+                    <div class="mardwn">
+
+                        {{form.password1|as_crispy_field}}
+                    </div>
+                      <div class="validate"></div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        
+                      {{form.password2.label}}
+                      <div class="mardwn">
+
+                          {{form.password2|as_crispy_field}}
+                      </div>
+                      <div class="validate"></div>
+                    </div>
+                  </div>
+                <div class="text-center mb-3"><button type="submit" class="btn btn-primary">Submit</button></div>
+              </form><br><br>
         </div>
+        <div class="text-center mb-3"><a href="{% url 'home-page' %}" class="btn btn-secondary">Back To Home Page</a></div><br>
 </body>
+
+
+<script>
+    items = document.getElementsByClassName('requiredField')
+    var i = 0;
+    for(i=0; i<=items.length; i++){
+        items[i].style.visibility = 'hidden';
+    }
+</script>
 </html>
