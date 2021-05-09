@@ -132,12 +132,14 @@ def home3(request):
     resources = Resource.objects.all()
     messages = Messages.objects.order_by('-pk')[0:3]
     form3 = OxygenShortageHospitalForm()
+    shortage_beds = OxygenShortageHospital.objects.order_by('-pk')[0:3]
     context = {
         'resources':resources,
         'messages':messages,
         'form2':form2,
         'bdmsgs':bdmsgs,
         'form3':form3,
+        'shortage_beds':shortage_beds,
         
     }
     return render(request, 'rescue/home3.html', context)
