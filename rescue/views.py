@@ -332,3 +332,8 @@ def oxygen_shortage(request):
         'mssges':shortages,
     }
     return render(request, 'rescue/oxygen_shortages.html', context)
+
+def donatenow(request):
+    return render(request, 'rescue/donatenow.html')
+
+    
