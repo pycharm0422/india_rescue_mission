@@ -1069,7 +1069,7 @@
             </a>
           </div>
           <br>
-          <h3 class="text-center"><a class="btn btn-primary btn-lg" href="/donorform">Click to register yourself as donor.</a></h3>
+          <h3 class="text-center"><a class="btn btn-primary btn-lg" href="{% url 'donor-page' %}">Click to register yourself as donor.</a></h3>
           <hr>
           <br><br>
           <div class="row justify-content-center">
@@ -1278,7 +1278,7 @@
             </a>
           </div>
           <br>
-          <h3 class="text-center"><a class="btn btn-primary btn-lg" href="/volunteer">Click to register yourself as volunteer for Rescue India.</a></h3>
+          <h3 class="text-center"><a class="btn btn-primary btn-lg" href="{% url 'volunteer-page' %}">Click to register yourself as volunteer for Rescue India.</a></h3>
           <hr>
           <br><br>
           <div class="row justify-content-center">
@@ -2671,34 +2671,18 @@
         <h2>Hospitals With Oxygen Shortage</h2>
         <h3 class="text-center">Check here to stay updated and you can add too, if you know any such hospitals.</h3>
       </div>
+      {% for hospital in shortage_beds %}
       <div class="card">
         <!-- <img src="./logos/sosiyc.png" class="card-img-top" alt="..."> -->
         <div class="card-body">
-          <h3 class="card-title text-left">MPUH Urological Hospital</h3>
-          <p class="card-text text-left">Nadiad, Gujarat, India</p>
+          <h3 class="card-title text-left">{{hospital.name}}</h3>
+          <p class="card-text text-left">{{hospital.city}}, {{hospital.state}}, {{hospital.country}}</p>
         </div>
       </div>
-      <div class="card">
-        <!-- <img src="./logos/sosiyc.png" class="card-img-top" alt="..."> -->
-        <div class="card-body">
-          <h3 class="card-title text-left">Apollo Hospitals</h3>
-          <p class="card-text text-left">Ahmedabad, Gujarat, India</p>
-        </div>
-      </div>
-      <div class="card">
-        <!-- <img src="./logos/sosiyc.png" class="card-img-top" alt="..."> -->
-        <div class="card-body">
-          <h3 class="card-title text-left">Billroth Hospitals</h3>
-          <p class="card-text text-left">Rajkot, Gujarat, India</p>
-        </div>
-      </div>
-      <div class="card">
-        <!-- <img src="./logos/sosiyc.png" class="card-img-top" alt="..."> -->
-        <div class="card-body">
-          <h3 class="card-title text-left">Fortis Healthcare</h3>
-          <p class="card-text text-left">Mount Abu, Rajasthan, India</p>
-        </div>
-      </div>
+      {% endfor %}
+      
+     
+    
       <br>
       
       <div class="row justify-content-center"> <a href="{% url 'oxygen-shortage-page' %}" class="btn btn-warning btn-lg mx-1">Click to add more</a> <a
