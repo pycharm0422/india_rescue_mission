@@ -18,7 +18,14 @@
     crossorigin="anonymous"></script>
   <link rel="stylesheet" href="{% static 'rescue/mystyle.css' %}">
   <script src="https://use.fontawesome.com/4ad478e227.js"></script>
-
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet"> -->
+  <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Itim&family=Montserrat:wght@300&display=swap" rel="stylesheet"> -->
+<!-- <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"> -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 
 <style>
@@ -63,10 +70,11 @@
   #intro {
     width: 100%;
     height: 100vh;
-    background: url("{% static 'rescue/images/indian-flag-38509.jpg' %}") top center;
+    background: url("{% static 'rescue/images/indian-flag-38509.png' %}") top center;
     background-size: cover;
     overflow: hidden;
     position: relative;
+    
   }
 
   @media (min-width: 1024px) {
@@ -77,7 +85,7 @@
 
   #intro:before {
     content: "";
-    background: rgba(6, 12, 34, 0.5);
+    background: rgba(6, 12, 34, 0.4);
     position: absolute;
     bottom: 0;
     top: 0;
@@ -161,7 +169,7 @@
   }
 
   #about {
-    background: url("{% static 'rescue/images/download.jfif' %}");
+    background: url("{% static 'rescue/images/logos/background.jpg' %}");
     background-size: cover;
     overflow: hidden;
     position: relative;
@@ -177,7 +185,7 @@
 
   #about:before {
     content: "";
-    background: rgba(13, 20, 41, 0.8);
+    background: rgba(13, 20, 41, 0.7);
     position: absolute;
     bottom: 0;
     top: 0;
@@ -313,7 +321,7 @@
     color: #fff;
     -webkit-animation-delay: 0.8s;
     animation-delay: 0.8s;
-    border: 2px solid green;
+    border: 2px solid #f82249;
   }
 
   a:hover {
@@ -321,7 +329,7 @@
   }
 
   #intro .donate-btn:hover {
-    background: green;
+    background: #f82249;
     color: #fff;
   }
 
@@ -437,10 +445,10 @@
   }
 </style>
 
-<body class="bg-light">
-  <nav class="navbar navbar-expand-lg navbar-dark" style="background-image: linear-gradient(to right top, #4b5d78, #4e4d69, #4f3e57, #4c2f42, #45232d);">
+<body class="bg-light" style="font-family: 'Montserrat', sans-serif;">
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: floralwhite;">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img src="{% static 'rescue/images/Black and Pink Modern Food  Drink Logo.jpg' %}" alt="" width="30" height="30"
+      <a class="navbar-brand" href="#"><img src="{% static 'rescue/images/logo.jpeg' %}" alt="" width="30" height="30"
           class="d-inline-block align-text-top"> Rescue India Mission</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -510,11 +518,11 @@
             Register
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="{% url 'patient-page' %}">Patient Login</a>
-            <a class="dropdown-item" href="{% url 'doctor-page' %}">Doctor Login</a>
-            <a class="dropdown-item" href="{% url 'donor-page' %}">Donor Login</a>
-            <a class="dropdown-item" href="{% url 'volunteer-page' %}">Volunteer Login</a>
-            <a class="dropdown-item" href="{% url 'counsellor-page' %}">Counsellor Login</a>
+            <a class="dropdown-item" href="{% url 'patient-page' %}">Patient Registration</a>
+            <a class="dropdown-item" href="{% url 'doctor-page' %}">Doctor Registration</a>
+            <a class="dropdown-item" href="{% url 'donor-page' %}">Donor Registration</a>
+            <a class="dropdown-item" href="{% url 'volunteer-page' %}">Volunteer Registration</a>
+            <a class="dropdown-item" href="{% url 'counsellor-page' %}">Counsellor Registration</a>
           </div>
         </li>
         <li class="nav-item dropdown">
@@ -531,14 +539,14 @@
   </nav>
   <section id="intro">
     <div class="intro-container">
-      <h1 class="mb-4 pb-0">Rescue India Mission</h1>
+      <h1 class="mb-4 pb-0 ">Rescue India Mission</h1>
       <div class="row justify-content-center">
-        <div class="col-lg-6">
-          <p>Rescue India Mission is a charity initiative to support India during this Covid calamity . A mission to
+        <div class="col-lg-8">
+          <h4 class="text-light">Rescue India Mission is a charity initiative to support India during this Covid calamity . A mission to
             save lives, prevent deaths, and stem the pandemic. Our volunteers are trying to provide oxygen supplies,
-            hospital beds, support and medical advice to stranded citizens round the clock.</p><p>Come join us. Save lives.
-            Contribute.</p>
-            <p class="text-center">Responding to the monumental misgovernance of Modi and BJP GOVT pushing India into a covid apocalypse, Supreme Court of India constituted an independent task force of relevent experts on the Covid crisis to study and recommend on a scientific& rational basis, the allocation of Oxygen, medicines, medical resources& Vaccines across the country. Govt has failed us. So we are stepping in to do whatever little we can to help the nation reeling in disaster.</p><br><p class="text-center bg-primary rounded-pill"><a style="color: white;" href="https://t.co/89lWWrGCJ6">Click here to know more</a></p>
+            hospital beds, support and medical advice to stranded citizens round the clock.</h4><h4 class="text-light">Come join us. Save lives.
+            Contribute.</h4>
+            <h4 class="text-light text-center">Responding to the monumental misgovernance of Modi and BJP GOVT pushing India into a covid apocalypse, Supreme Court of India constituted an independent task force of relevent experts on the Covid crisis to study and recommend on a scientific & rational basis, the allocation of Oxygen, medicines, medical resources & Vaccines across the country. Govt has failed us. So we are stepping in to do whatever little we can to help the nation reeling in disaster.</h4><br><p class="text-center bg-primary rounded-pill"><a style="color: white;" href="https://t.co/89lWWrGCJ6">Click here to know more</a></p>
         </div>
       </div>
       <h2 class="text-warning mb-4 pb-0">Donate any of the following</h2>
@@ -548,6 +556,7 @@
         <div class="col-md-3"><a href="#about" class="donate-btn scrollto">Medical Supplies</a></div>
         <div class="col-md-3"><a href="#about" class="donate-btn scrollto">Oxygen Concentrators</a></div>
       </div>
+      <br><br><br>
     </div>
   </section>
 
@@ -593,8 +602,8 @@
         <p>Our platform offers services mentioned as below to aid the needful.</p>
       </div>
 
-      <div class="row">
-        <div class="col-lg-3">
+      <div class="card-deck justify-content-center">
+        
           <div class="card border-primary text-dark bg-light mx-1" style="width: 18rem;">
             <img src="{% static 'rescue/images/csk.jpeg' %}" class="card-img-top" alt="..." width="300px"
               height="200px">
@@ -602,36 +611,30 @@
               <h5 class="card-title">Covid Survival Kits</h5>
               <p class="card-text text-justify">We help to donate Covid survival kits such as Masks, PPE Kits, Pulse
                 Oximeters etc which serve as an important equipment at such times for even doctors as well as to the
-                common users too.<br><br><br><br></p>
+                common users too.</p>
             </div>
             <div class="card-footer text-center"><a href="#" class="btn btn-success">Click to Know More</a></div>
           </div>
-        </div>
-        <div class="col-lg-3">
           <div class="card border-success text-dark bg-light mx-1" style="width: 18rem;">
             <img src="{% static 'rescue/images/em.jpeg' %}" class="card-img-top" alt="..." width="300px" height="200px">
             <div class="card-body">
               <h5 class="card-title">Essential Medicines</h5>
               <p class="card-text text-justify">Essential Medicines for recovery from Covid-19 such as favpiravir,
                 remdesivir etc are provided to the patients fighting Covid-19 through our platform. <br<br>
-                  <br><br><br><br><br></p>
+            </p>
             </div>
             <div class="card-footer text-center"><a href="#" class="btn btn-success">Click to Know More</a></div>
           </div>
-        </div>
-        <div class="col-lg-3">
           <div class="card text-dark border-warning bg-light mx-1" style="width: 18rem;">
             <img src="{% static 'rescue/images/hc.jpeg' %}" class="card-img-top" alt="..." width="300px" height="200px">
             <div class="card-body">
               <h5 class="card-title">Mental Healthcare</h5>
               <p class="card-text text-justify">The effects of pandemic are not only physically felt, but mentally as
                 well people are affected. It affects the mental state of person causing anxiety, nervousness etc which
-                needs to be taken care of. We also provide help to such people through our platform.<br><br></p>
+                needs to be taken care of. We also provide help to such people through our platform.</p>
             </div>
             <div class="card-footer text-center"><a href="#" class="btn btn-success">Click to Know More</a></div>
           </div>
-        </div>
-        <div class="col-lg-3">
           <div class="card text-dark bg-light border-dark mx-1" style="width: 18rem;">
             <img src="{% static 'rescue/images/tele.jpeg' %}" class="card-img-top" alt="..." width="300px"
               height="200px">
@@ -643,7 +646,7 @@
             </div>
             <div class="card-footer text-center"><a href="#" class="btn btn-success">Click to Know More</a></div>
           </div>
-        </div>
+        
       </div><br><br>
       <div class="row justify-content-center">
         <a class="btn btn-primary btn-lg px-4 py-3" href="#">Donate Now</a>
@@ -711,26 +714,26 @@
             <div class="carousel-inner" role="listbox">
   
               <div class="carousel-item active">
-                <div class="card-deck justify-content-center">
-                <div class="card text-dark bg-light col-md-3">
-                  <img src="{% static 'rescue/images/Doctors/1.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-deck justify-content-center ">
+                <div class="card text-dark bg-light col-md-3 p-0">
+                  <img src="{% static 'rescue/images/logos/noprofile.JPG' %}" class="card-img-top" alt="...">
                   <div class="card-body">
-                    <h5 class="card-title">Dr ABC</h5>
-                    <h6 class="card-subtitle">Physiologist</h6>
-                    <p class="card-text text-justify">Dr ABC is a physiologist at who practices at Nevada General Hostpital. She has over 8 years of experience in treating patients with various physiological diseases.</p>
+                    <h5 class="card-title text-center">Dr Sivaramulu</h5>
+                    <!-- <h6 class="card-subtitle"></h6> -->
+                    <!-- <p class="card-text text-justify">Dr ABC is a physiologist at who practices at Nevada General Hostpital. She has over 8 years of experience in treating patients with various physiological diseases.</p> -->
                   </div>
-                  <div class="card-footer text-center"><a href="#" class="btn btn-warning">View testimonial</a></div>
+                  <!-- <div class="card-footer text-center"><a href="#" class="btn btn-warning">View testimonial</a></div> -->
                 </div>
-                <div class="card text-dark bg-light col-md-3">
-                  <img src="{% static 'rescue/images/Doctors/2.jpg' %}" class="card-img-top" alt="...">
+                <div class="card text-dark bg-light col-md-3 p-0">
+                  <img src="{% static 'rescue/images/logos/noprofile.JPG' %}" class="card-img-top" alt="...">
                   <div class="card-body">
-                    <h5 class="card-title">Dr XYZ</h5>
-                    <h6 class="card-subtitle">Rheumatologist</h6>
-                    <p class="card-text text-justify">Dr ABC is a Rheumatologist at who practices at St Bonaventure Hostpital. He has over 10 years of experience in treating patients with various Rheumatic ailments.</p>
+                    <h5 class="card-title text-center">Dr Shankar</h5>
+                    <!-- <h6 class="card-subtitle">Rheumatologist</h6> -->
+                    <!-- <p class="card-text text-justify">Dr ABC is a Rheumatologist at who practices at St Bonaventure Hostpital. He has over 10 years of experience in treating patients with various Rheumatic ailments.</p> -->
                   </div>
-                  <div class="card-footer text-center"><a href="#" class="btn btn-warning">View testimonial</a></div>
+                  <!-- <div class="card-footer text-center"><a href="#" class="btn btn-warning">View testimonial</a></div> -->
                 </div>
-               <div class="card text-dark bg-light col-md-3">
+               <!-- <div class="card text-dark bg-light col-md-3">
                   <img src="{% static 'rescue/images/Doctors/41.jpg' %}" class="card-img-top" alt="...">
                   <div class="card-body">
                     <h5 class="card-title">Dr PQR</h5>
@@ -738,10 +741,10 @@
                     <p class="card-text text-justify">Dr PQR is a physiologist at who practices at Blue Bird Multispeciality Hospital. She has over 15 years of experience in treating patients with various Neurological diseases.</p>
                   </div>
                   <div class="card-footer text-center"><a href="#" class="btn btn-warning">View testimonial</a></div>
-               </div>
+               </div> -->
               </div>
             </div>
-              
+<!--               
             <div class="carousel-item">
               <div class="card-deck justify-content-center">
               <div class="card text-dark bg-light col-md-3">
@@ -804,7 +807,7 @@
               <div class="card-footer text-center"><a href="#" class="btn btn-warning">View testimonial</a></div>
            </div>
           </div>
-        </div>
+        </div> -->
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
               <span style="background-color: #000000;" class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="sr-only">Previous</span>
@@ -937,7 +940,7 @@
             <br><br>
             <div class="carousel-inner" role="listbox">
   
-              <div class="carousel-item active">
+              <!-- <div class="carousel-item active">
                 <div class="card-deck justify-content-center">
                 <div class="card text-dark bg-light col-md-3">
                   <img src="{% static 'rescue/images/Donors/1.jfif' %}" class="card-img-top" alt="..." >
@@ -1052,7 +1055,7 @@
             </div>  
           </div>
         </div>
-              
+               -->
             
             <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev">
               <span style="background-color: #000000;" class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -1141,110 +1144,112 @@
   
               <div class="carousel-item active">
                 <div class="card-deck justify-content-center">
-                  <div class="card text-dark bg-light col-md-3">
-                    <img src="{% static 'rescue/images/Volunteers/1.jfif' %}" class="card-img-top" alt="...">
+                  <div class="card text-dark bg-light col-md-3 p-0">
+                    <img src="{% static 'rescue/images/Volunteers/arifa.jpeg' %}" class="card-img-top" alt="..." height="380px" width="226px">
                     <div class="card-body">
-                      <h5 class="card-title">Mr ABC</h5>
-                      <h6 class="card-subtitle">student, AIIMSDelhi</h6>
-                      <p class="card-text text-justify">Mr ABC is actively volunteering in providing support and assistance to the
+                      <h5 class="text-center card-title">Arifa Khan</h5>
+                      <h6 class="text-center card-subtitle">Andhra Pradesh</h6>
+                      <!-- <p class="card-text text-justify">Mr ABC is actively volunteering in providing support and assistance to the
                         patients affected by Covid-19 and helping them get access to important resources for the same.</p>
-                      <p>Read his story by clicking the link below</p>
+                      <p>Read his story by clicking the link below</p> -->
                     </div>
-                    <div class="card-footer text-center"><a href="#" class="btn btn-success">View testimonial</a></div>
+                    <!-- <div class="card-footer text-center"><a href="#" class="btn btn-success">View testimonial</a></div> -->
                   </div>
-                  <div class="card text-dark bg-light col-md-3">
-                    <img src="{% static 'rescue/images/Volunteers/2.jfif' %}" class="card-img-top" alt="...">
+                  <div class="card text-dark bg-light col-md-3 p-0">
+                    <img src="{% static 'rescue/images/Volunteers/sudhakar.jpeg' %}" class="card-img-top" alt="..." height="386px">
                     <div class="card-body">
-                      <h5 class="card-title">Ms XYZ</h5>
-                      <h6 class="card-subtitle">Chef, Gujarat</h6>
-                      <p class="card-text text-justify">Ms ABC is a chef from Gujarat who came forward to help the humanity by
+                      <h5 class="text-center card-title">Sudhakar</h5>
+                      <h6 class="text-center card-subtitle">Hyderabad</h6>
+                      <!-- <p class="card-text text-justify">Mr ABC is actively volunteering in providing support and assistance to the
+                        patients affected by Covid-19 and helping them get access to important resources for the same.</p>
+                      <p>Read his story by clicking the link below</p> -->
+                    </div>
+                    <!-- <div class="card-footer text-center"><a href="#" class="btn btn-success">View testimonial</a></div> -->
+                  </div>
+                  <div class="card text-dark bg-light col-md-3 p-0">
+                    <img src="{% static 'rescue/images/Volunteers/muzammil.jpeg' %}" class="card-img-top" alt="..." height="386px">
+                    <div class="card-body">
+                      <h5 class="card-title text-center">Muzammil</h5>
+                      <h6 class="card-subtitle"></h6>
+                      <!-- <p class="card-text text-justify">Ms ABC is a chef from Gujarat who came forward to help the humanity by
                         providing free food to the Covid-19 affected patients. She makes sure the food is hygienic and also
                         provides immunity to the patients at the same time.</p>
-                      <p>Read her story by clicking the link below</p>
+                      <p>Read her story by clicking the link below</p> -->
                     </div>
-                    <div class="card-footer text-center"><a href="#" class="btn btn-success">View testimonial</a></div>
-                  </div>
-                  <div class="card text-dark bg-light col-md-3">
-                    <img src="{% static 'rescue/images/Volunteers/3.jfif' %}" class="card-img-top" alt="..." height="250px">
-                    <div class="card-body">
-                      <h5 class="card-title">Mr PQR</h5>
-                      <h6 class="card-subtitle">Accountatnt, West Bengal</h6>
-                      <p class="card-text text-justify">Mr PQR, an Accountant from West Bengal provided free medicines to the
-                        Covid-19 infected patients by delivering it to their desired location for free of cost. Additionally he
-                        also provided leads to them for important equipments such as Oxygen concentrators, Pulse Oximeters etc if
-                        needed.</p>
-                      <p>Read his story by clicking the link below</p>
-                    </div>
-                    <div class="card-footer text-center"><a href="#" class="btn btn-success">View testimonial</a></div>
+                    <!-- <div class="card-footer text-center"><a href="#" class="btn btn-success">View testimonial</a></div> -->
                   </div>  
               </div>
             </div>
             <div class="carousel-item">
               <div class="card-deck justify-content-center">
-                <div class="card text-dark bg-light col-md-3">
-                  <img src="{% static 'rescue/images/Volunteers/1.jfif' %}" class="card-img-top" alt="...">
+                <div class="card text-dark bg-light col-md-3 p-0">
+                  <img src="{% static 'rescue/images/logos/noprofile.jpg' %}" class="card-img-top" alt="...">
                   <div class="card-body">
-                    <h5 class="card-title">Mr ABC</h5>
-                    <h6 class="card-subtitle">student, AIIMSDelhi</h6>
-                    <p class="card-text text-justify">Mr ABC is actively volunteering in providing support and assistance to the
-                      patients affected by Covid-19 and helping them get access to important resources for the same.</p>
-                    <p>Read his story by clicking the link below</p>
+                    <h5 class="text-center card-title">Srivatsa</h5>
+                    <h6 class="text-center card-subtitle">Bangalore</h6>
+                    <!-- <p class="card-text text-justify">Mr ABC is actively volunteering in providing support and assistance to the
+                      patients affected by Covid-19 and helping them get access to important resources for the same.</p> -->
+                    <!-- <p>Read his story by clicking the link below</p> -->
                   </div>
-                  <div class="card-footer text-center"><a href="#" class="btn btn-success">View testimonial</a></div>
+                  <!-- <div class="card-footer text-center"><a href="#" class="btn btn-success">View testimonial</a></div> -->
                 </div>
-                <div class="card text-dark bg-light col-md-3">
-                  <img src="{% static 'rescue/images/Volunteers/2.jfif' %}" class="card-img-top" alt="...">
+                <div class="card text-dark bg-light col-md-3 p-0">
+                  <img src="{% static 'rescue/images/logos/noprofile.jpg' %}" class="card-img-top" alt="...">
                   <div class="card-body">
-                    <h5 class="card-title">Ms XYZ</h5>
-                    <h6 class="card-subtitle">Chef, Gujarat</h6>
-                    <p class="card-text text-justify">Ms ABC is a chef from Gujarat who came forward to help the humanity by
+                    <h5 class="text-center card-title">Faraz Khan</h5>
+                    <h6 class="text-center card-subtitle"></h6>
+                    <!-- <p class="card-text text-justify">Ms ABC is a chef from Gujarat who came forward to help the humanity by
                       providing free food to the Covid-19 affected patients. She makes sure the food is hygienic and also
                       provides immunity to the patients at the same time.</p>
-                    <p>Read her story by clicking the link below</p>
+                    <p>Read her story by clicking the link below</p> -->
                   </div>
-                  <div class="card-footer text-center"><a href="#" class="btn btn-success">View testimonial</a></div>
+                  <!-- <div class="card-footer text-center"><a href="#" class="btn btn-success">View testimonial</a></div> -->
                 </div>
-                <div class="card text-dark bg-light col-md-3">
-                  <img src="{% static 'rescue/images/Volunteers/3.jfif' %}" class="card-img-top" alt="..." height="250px">
+                <div class="card text-dark bg-light col-md-3 p-0">
+                  <img src="{% static 'rescue/images/Volunteers/samin.jpg' %}" class="card-img-top" alt="..." height="380px" width="226px">
                   <div class="card-body">
-                    <h5 class="card-title">Mr PQR</h5>
-                    <h6 class="card-subtitle">Accountatnt, West Bengal</h6>
-                    <p class="card-text text-justify">Mr PQR, an Accountant from West Bengal provided free medicines to the
+                    <h5 class="text-center card-title">Samin</h5>
+                    <h6 class="text-center card-subtitle">Nadiad</h6>
+                    <!-- <p class="card-text text-justify">Mr PQR, an Accountant from West Bengal provided free medicines to the
                       Covid-19 infected patients by delivering it to their desired location for free of cost. Additionally he
                       also provided leads to them for important equipments such as Oxygen concentrators, Pulse Oximeters etc if
                       needed.</p>
-                    <p>Read his story by clicking the link below</p>
+                    <p>Read his story by clicking the link below</p> -->
                   </div>
-                  <div class="card-footer text-center"><a href="#" class="btn btn-success">View testimonial</a></div>
-                </div>  
+                  <!-- <div class="card-footer text-center"><a href="#" class="btn btn-success">View testimonial</a></div> -->
+                </div>
+                  
             </div>
           </div>
           <div class="carousel-item">
             <div class="card-deck justify-content-center">
-              <div class="card text-dark bg-light col-md-3">
-                <img src="{% static 'rescue/images/Volunteers/1.jfif' %}" class="card-img-top" alt="...">
+                  
+              <div class="card text-dark bg-light col-md-3 p-0">
+                <img src="{% static 'rescue/images/logos/noprofile.jpg' %}" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title">Mr ABC</h5>
-                  <h6 class="card-subtitle">student, AIIMSDelhi</h6>
-                  <p class="card-text text-justify">Mr ABC is actively volunteering in providing support and assistance to the
-                    patients affected by Covid-19 and helping them get access to important resources for the same.</p>
-                  <p>Read his story by clicking the link below</p>
-                </div>
-                <div class="card-footer text-center"><a href="#" class="btn btn-success">View testimonial</a></div>
-              </div>
-              <div class="card text-dark bg-light col-md-3">
-                <img src="{% static 'rescue/images/Volunteers/2.jfif' %}" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Ms XYZ</h5>
-                  <h6 class="card-subtitle">Chef, Gujarat</h6>
-                  <p class="card-text text-justify">Ms ABC is a chef from Gujarat who came forward to help the humanity by
+                  <h5 class="text-center card-title">Rahul Bhasin</h5>
+                  <h6 class="text-center card-subtitle">Delhi</h6>
+                  <!-- <p class="card-text text-justify">Ms ABC is a chef from Gujarat who came forward to help the humanity by
                     providing free food to the Covid-19 affected patients. She makes sure the food is hygienic and also
-                    provides immunity to the patients at the same time.</p>
-                  <p>Read her story by clicking the link below</p>
+                    provides immunity to the patients at the same time.</p> -->
+                  <!-- <p>Read her story by clicking the link below</p> -->
                 </div>
-                <div class="card-footer text-center"><a href="#" class="btn btn-success">View testimonial</a></div>
+                <!-- <div class="card-footer text-center"><a href="#" class="btn btn-success">View testimonial</a></div> -->
               </div>
-              <div class="card text-dark bg-light col-md-3">
+          <div class="card text-dark bg-light col-md-3 p-0">
+                <img src="{% static 'rescue/images/logos/noprofile.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="text-center card-title">Manoj</h5>
+                  <h6 class="text-center card-subtitle">Advocate, Mumbai</h6>
+                  <!-- <p class="card-text text-justify">Mr PQR, an Accountant from West Bengal provided free medicines to the
+                    Covid-19 infected patients by delivering it to their desired location for free of cost. Additionally he
+                    also provided leads to them for important equipments such as Oxygen concentrators, Pulse Oximeters etc if
+                    needed.</p> -->
+                  <!-- <p>Read his story by clicking the link below</p> -->
+                </div>
+                <!-- <div class="card-footer text-center"><a href="#" class="btn btn-success">View testimonial</a></div> -->
+              </div>
+              <!-- <div class="card text-dark bg-light col-md-3">
                 <img src="{% static 'rescue/images/Volunteers/3.jfif' %}" class="card-img-top" alt="..." height="250px">
                 <div class="card-body">
                   <h5 class="card-title">Mr PQR</h5>
@@ -1256,7 +1261,7 @@
                   <p>Read his story by clicking the link below</p>
                 </div>
                 <div class="card-footer text-center"><a href="#" class="btn btn-success">View testimonial</a></div>
-              </div>  
+              </div>   -->
           </div>
         </div>
               
@@ -1867,6 +1872,37 @@
               </div>
             </li>
 
+            <li>
+              <a data-toggle="collapse" href="#faq10" id="ts" class="collapsed">How to find a Plasma Donor?<i class="fa fa-plus"></i></a>
+              <div id="faq10" class="collapse" data-parent="#faq-list">
+                <div class="row justify-content-center">
+                <div class="card text-dark bg-light col-md-6 p-0">
+                  <img src="{% static 'rescue/images/Gallery/plasma donor.jpeg' %}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h4 class="text-center text-dark">Links</h4>
+                    <ul>
+                      <li class="text-dark">Step1: <a href="https://www.dhoondh.com">Click here to fill form</a></li>
+                      <li class="text-dark">Step2: <a href="mailto:plasmatch19@gmail.com">Click here to send mail</a></li>
+                    </ul>
+                  </div>
+                  <!-- <div class="card-footer text-center"><a href="#" class="btn btn-warning">View testimonial</a></div> -->
+                </div></div>
+                <!-- <ul>
+                  <li>Following tests to be done after 7 days if any discomfort / fever persists. If symptom free and
+                    oxygen saturation above 94 then measure your oxygen saturation after a six minute walk inside your
+                    room. If the saturation falls by 4 percent or more than still do the following tests.
+
+                    CBC, ESR, CRP, LFT, KFT, uric acid, Ferritin levels, D dimer, CK, CK-MB, Trop I, Pro BNP,
+                    Interleukin 6, HbA1c, HRCT thorax. If liver enzyme Alt ( alanine amino transferase ) ,ferritin
+                    ,haemoglobin are high and or there is myalgia ( deep muscle pain ) or you have been a cancer patient
+                    or suffer from a neuro degenerative disease I would be extra vigilant and search out more intensive
+                    medical resources including availability of oxygen and potentially access to a hospital.
+
+                  </li>
+                </ul> -->
+              </div>
+            </li>
+
 
             <li>
               <a data-toggle="collapse" href="#faq6" id="pm" class="collapsed">Prescription Medication
@@ -2436,7 +2472,7 @@
 
       <div class="card-deck justify-content-center" data-aos="zoom-in" data-aos-delay="100">
 
-        <div class="card col-md-3" style="width: 18rem;">
+        <!-- <div class="card col-md-3" style="width: 18rem;">
           <img src="{% static 'rescue/images/logos/13.jpeg' %}" class="card-img-top" alt="...">
           <div class="card-body">
             <p class="card-title text-center"><a href="https://www.giveindia.org/" target="_blank"
@@ -2453,11 +2489,19 @@
             <h6 class="card-text text-center">Athrout's endeavour to be hope for thousands is incomplete without your
               help.Lets make it happen for mankind, Lets Do It For Kashmir</h6>
           </div>
+        </div> -->
+        <div class="card col-md-3" style="width: 18rem;">
+          <img src="{% static 'rescue/images/mercy.jpg' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-title text-center"><a href="https://www.facebook.com/MERCY-Foundation-331286457382996/" target="_blank"
+                class="text-dark">Mercy Foundation</a></p>
+            <h6 class="card-text text-center"></h6>
+          </div>
         </div>
         <div class="card col-md-3" style="width: 18rem;">
-          <img src="{% static 'rescue/images/logos/sosiyc.png' %}" class="card-img-top" alt="...">
+          <img src="{% static 'rescue/images/Gallery/sosiyc.jpeg' %}" class="card-img-top" alt="...">
           <div class="card-body">
-            <p class="card-title text-center"><a href="https://twitter.com/sosiyc" target="_blank"
+            <p class="card-title text-center"><a href="https://www.ycea.in/donate" target="_blank"
                 class="text-dark">SOSIYC</a></p>
             <h6 class="card-text text-center">SOSIYC is the Relief campaign of Indian Youth Congress @IYC during
               Lockdown</h6>
@@ -2646,7 +2690,7 @@
       </div>
       <div class="col-md-4">
         <h3 class="text-center"><i class="fa fa-facebook-square"></i> Facebook</h3>
-        <a href="https://www.facebook.com/groups/2489879517824917/?ref=share">
+        <a href="https://www.facebook.com/RESCUEINDIAMISSION123/">
           <p class="text-center bg-light text-success">Follow to stay updated</p>
         </a>
       </div>
