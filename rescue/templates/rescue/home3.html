@@ -445,8 +445,8 @@
   }
 </style>
 
-<body class="bg-light" style="font-family: 'Montserrat', sans-serif;">
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: floralwhite;">
+<body style="font-family: 'Montserrat', sans-serif; background-color: white;">
+  <nav class="p-4 fixed-top navbar navbar-expand-lg navbar-light border-bottom border-dark" style="background-color: white; font-weight: 500;">
     <div class="container-fluid">
       <a class="navbar-brand" href="#"><img src="{% static 'rescue/images/logo.jpeg' %}" alt="" width="30" height="30"
           class="d-inline-block align-text-top"> Rescue India Mission</a>
@@ -544,18 +544,18 @@
       <h1 class="mb-4 pb-0 ">Rescue India Mission</h1>
       <div class="row justify-content-center">
         <div class="col-lg-10">
-          <h4 class="text-light">Rescue India Mission is a charity initiative to support India during this Covid calamity . A mission to
+          <h4 class="text-light" style="font-weight: 600;">Rescue India Mission is a charity initiative to support India during this Covid calamity . A mission to
             save lives, prevent deaths, and stem the pandemic. Our volunteers are trying to provide oxygen supplies,
-            hospital beds, support and medical advice to stranded citizens round the clock.</h4><h4 class="text-light">Come join us. Save lives.
+            hospital beds, support and medical advice to stranded citizens round the clock.</h4><h4 class="text-light" style="font-weight: 600;">Come join us. Save lives.
             Contribute.</h4>
         </div>
       </div>
-      <h2 class="text-light pb-0">Donate any of the following</h2>
+      <h2 class="text-light pb-0" style="font-weight: 700;">Donate any of the following</h2>
       <div class="row">
-        <div class="col-md-3"><a href="#about" class="donate-btn scrollto">Oxygen Cylinder</a></div>
-        <div class="col-md-3"><a href="#about" class="donate-btn scrollto">Pulse Oximeter</a></div>
-        <div class="col-md-3"><a href="#about" class="donate-btn scrollto">Medical Supplies</a></div>
-        <div class="col-md-3 mb-4"><a href="#about" class="donate-btn scrollto">Oxygen Concentrators</a></div>
+        <div class="col-md-3"><a href="#about" class="donate-btn scrollto" style="font-weight: 600;">Oxygen Cylinder</a></div>
+        <div class="col-md-3"><a href="#about" class="donate-btn scrollto" style="font-weight: 600;">Pulse Oximeter</a></div>
+        <div class="col-md-3"><a href="#about" class="donate-btn scrollto" style="font-weight: 600;">Medical Supplies</a></div>
+        <div class="col-md-3 mb-4"><a href="#about" class="donate-btn scrollto" style="font-weight: 600;">Oxygen Concentrators</a></div>
       </div>
       <br><br><br><br><br>
     </div>
@@ -568,7 +568,7 @@
     </div>
     <div class="row">
       <div class="col-md-5">
-        <p class="text-justify ml-4">India is facing an unprecedented humanitarian crisis in the form of covid calamity.
+        <p style="color: white;" class="text-justify ml-4">India is facing an unprecedented humanitarian crisis in the form of covid calamity.
           The healthcare system is teetering on the verge of a total collapse. Responsible citizens are taking up the
           challenge of saving the covid stricken, as the hospitals and healthcare infrastructure is extraordinarily
           burdened. Deaths and mourning have become a daily reality. The crisis is unparalleled because the world's
@@ -587,7 +587,7 @@
         <img src="{% static 'rescue/images/logos/about.jpg' %}" alt="" width="800px" height="600px" class="mt-0">
       </div>
     </div>
-    <div class="row"><div class="col-md-12"><h5 class="text-center" style="color: white;">Responding to the monumental misgovernance of Modi and BJP GOVT pushing India into a covid apocalypse, Supreme Court of India constituted an independent task force of relevent experts on the Covid crisis to study and recommend on a scientific & rational basis, the allocation of Oxygen, medicines, medical resources & Vaccines across the country. Govt has failed us. So we are stepping in to do whatever little we can to help the nation reeling in disaster.</h5><br><p class="my-0 text-center bg-primary rounded-pill p-2"><a style="color: white;" href="https://t.co/89lWWrGCJ6">Click here to know more</a></p></div></div>
+    <!--  <div class="row"><div class="col-md-12"><h5 class="text-center" style="color: white;">Responding to the monumental misgovernance of Modi and BJP GOVT pushing India into a covid apocalypse, Supreme Court of India constituted an independent task force of relevent experts on the Covid crisis to study and recommend on a scientific & rational basis, the allocation of Oxygen, medicines, medical resources & Vaccines across the country. Govt has failed us. So we are stepping in to do whatever little we can to help the nation reeling in disaster.</h5><br><p class="my-0 text-center bg-primary rounded-pill p-2"><a style="color: white;" href="https://t.co/89lWWrGCJ6">Click here to know more</a></p></div></div> -->
   </section>
 
 
@@ -607,50 +607,53 @@
         <p>Our platform offers services mentioned as below to aid the needful.</p>
       </div>
 
-      <div class="card-deck justify-content-center">
-        
-          <div class="card border-primary text-dark bg-light mx-1" style="width: 18rem;">
+      <div class="row justify-content-center">
+        <div class="col-md-3">
+          <div class="card border-primary text-dark bg-light mx-0">
             <img src="{% static 'rescue/images/csk.jpeg' %}" class="card-img-top" alt="..." width="300px"
               height="200px">
             <div class="card-body">
               <h5 class="card-title">Covid Survival Kits</h5>
-              <p class="card-text text-justify">We help to donate Covid survival kits such as Masks, PPE Kits, Pulse
+              <p class="card-text text-center">We help to donate Covid survival kits such as Masks, PPE Kits, Pulse
                 Oximeters etc which serve as an important equipment at such times for even doctors as well as to the
-                common users too.</p>
+                common users too.</p><br><br><br><br><br>
             </div>
             <!-- <div class="card-footer text-center"><a href="#" class="btn btn-success">Click to Know More</a></div> -->
-          </div>
-          <div class="card border-success text-dark bg-light mx-1" style="width: 18rem;">
+          </div></div>
+          <div class="col-md-3">
+          <div class="card border-success text-dark bg-light mx-0" >
             <img src="{% static 'rescue/images/em.jpeg' %}" class="card-img-top" alt="..." width="300px" height="200px">
             <div class="card-body">
               <h5 class="card-title">Essential Medicines</h5>
-              <p class="card-text text-justify">Essential Medicines for recovery from Covid-19 such as favpiravir,
+              <p class="card-text text-center">Essential Medicines for recovery from Covid-19 such as favpiravir,
                 remdesivir etc are provided to the patients fighting Covid-19 through our platform. <br<br>
-            </p>
+            </p><br><br><br><br><br><br>
             </div>
             <!-- <div class="card-footer text-center"><a href="#" class="btn btn-success">Click to Know More</a></div> -->
-          </div>
-          <div class="card text-dark border-warning bg-light mx-1" style="width: 18rem;">
+          </div></div>
+          <div class="col-md-3">
+          <div class="card text-dark border-warning bg-light mx-0">
             <img src="{% static 'rescue/images/hc.jpeg' %}" class="card-img-top" alt="..." width="300px" height="200px">
             <div class="card-body">
               <h5 class="card-title">Mental Healthcare</h5>
-              <p class="card-text text-justify">The effects of pandemic are not only physically felt, but mentally as
+              <p class="card-text text-center">The effects of pandemic are not only physically felt, but mentally as
                 well people are affected. It affects the mental state of person causing anxiety, nervousness etc which
-                needs to be taken care of. We also provide help to such people through our platform.</p>
+                needs to be taken care of. We also provide help to such people through our platform.</p><br><br>
             </div>
             <!-- <div class="card-footer text-center"><a href="#" class="btn btn-success">Click to Know More</a></div> -->
-          </div>
-          <div class="card text-dark bg-light border-dark mx-1" style="width: 18rem;">
+          </div></div>
+          <div class="col-md-3">
+          <div class="card text-dark bg-light border-dark mx-0">
             <img src="{% static 'rescue/images/tele.jpeg' %}" class="card-img-top" alt="..." width="300px"
               height="200px">
             <div class="card-body">
               <h5 class="card-title">Telemedicine: Talk to a Doctor</h5>
-              <p class="card-text text-justify">At such pandemic times, it is not feasible for each and every person to
-                go out and consult doctor, we even have solutions for such people. We offer telemedicine i.e Doctors
-                provide you diagnosis via telephone without any kind of physical contact.</p>
+              <p class="card-text text-center">At such pandemic times, it is not feasible for each and every person to
+                go out and consult doctor, we even have solutions for such people.We offer telemedicine i.e Doctors
+                provide you diagnosis via telephone without any kind of physical contact.</p><br><br>
             </div>
             <!-- <div class="card-footer text-center"><a href="#" class="btn btn-success">Click to Know More</a></div> -->
-          </div>
+          </div></div>
         </div><br><br>
        <p class="text-center"><a href="#" class="btn btn-primary btn-lg">Click to know more</p></a>
       <br><br>
@@ -1150,6 +1153,8 @@
   <section class="section-bg" id="volunteer">
     <div class=" section-bg">
       <div class="section-header"><h2>Our warrior Volunteers</h2><h6 class="text-center"><a href="https://twitter.com/RescueIndiaMis1" target="_blank" class="text-primary">#rescueindia</a></h6></div>
+      <div class="row justify-content-center"><div class="col-md-8"><h3 class="text-center">Join us today and become a part of an organization that is working endlessly to support India in this sensitive times. Additionally, you shall also gain experiences such as:</h3></div></div>
+      <div class="row justify-content-center"><div class="col-md-8"><ul><li>Time Management</li><li>Communication Skills</li><li>Leadership Skills</li><li>Networking with Amazing community</li></ul></div></div>
           <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
             <br><br>
             <div class="carousel-inner" role="listbox">
@@ -1197,11 +1202,12 @@
                 <div class="card text-dark bg-light col-md-3 p-0">
                   <img src="{% static 'rescue/images/logos/noprofile.jpg' %}" class="card-img-top" alt="...">
                   <div class="card-body">
-                    <h5 class="text-center card-title">Srivatsa</h5>
-                    <h6 class="text-center card-subtitle">Bangalore</h6>
-                    <!-- <p class="card-text text-justify">Mr ABC is actively volunteering in providing support and assistance to the
-                      patients affected by Covid-19 and helping them get access to important resources for the same.</p> -->
-                    <!-- <p>Read his story by clicking the link below</p> -->
+                    <h5 class="text-center card-title">Rahul Bhasin</h5>
+                    <h6 class="text-center card-subtitle">Delhi</h6>
+                    <!-- <p class="card-text text-justify">Ms ABC is a chef from Gujarat who came forward to help the humanity by
+                      providing free food to the Covid-19 affected patients. She makes sure the food is hygienic and also
+                      provides immunity to the patients at the same time.</p> -->
+                    <!-- <p>Read her story by clicking the link below</p> -->
                   </div>
                   <!-- <div class="card-footer text-center"><a href="#" class="btn btn-success">View testimonial</a></div> -->
                 </div>
@@ -1236,18 +1242,7 @@
           <div class="carousel-item">
             <div class="card-deck justify-content-center">
                   
-              <div class="card text-dark bg-light col-md-3 p-0">
-                <img src="{% static 'rescue/images/logos/noprofile.jpg' %}" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="text-center card-title">Rahul Bhasin</h5>
-                  <h6 class="text-center card-subtitle">Delhi</h6>
-                  <!-- <p class="card-text text-justify">Ms ABC is a chef from Gujarat who came forward to help the humanity by
-                    providing free food to the Covid-19 affected patients. She makes sure the food is hygienic and also
-                    provides immunity to the patients at the same time.</p> -->
-                  <!-- <p>Read her story by clicking the link below</p> -->
-                </div>
-                <!-- <div class="card-footer text-center"><a href="#" class="btn btn-success">View testimonial</a></div> -->
-              </div>
+              
           <div class="card text-dark bg-light col-md-3 p-0">
                 <img src="{% static 'rescue/images/logos/noprofile.jpg' %}" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -1274,19 +1269,7 @@
                 </div>
                 <div class="card-footer text-center"><a href="#" class="btn btn-success">View testimonial</a></div>
               </div>   -->
-              <div class="card text-dark bg-light col-md-3 p-0">
-                <img src="{% static 'rescue/images/Volunteers/ashwini.jpeg' %}" class="card-img-top" alt="..." height="386px">
-                <div class="card-body">
-                  <h5 class="text-center card-title">Ashwini Gupta</h5>
-                  <h6 class="text-center card-subtitle">Delhi</h6>
-                  <!-- <p class="card-text text-justify">Mr PQR, an Accountant from West Bengal provided free medicines to the
-                    Covid-19 infected patients by delivering it to their desired location for free of cost. Additionally he
-                    also provided leads to them for important equipments such as Oxygen concentrators, Pulse Oximeters etc if
-                    needed.</p> -->
-                  <!-- <p>Read his story by clicking the link below</p> -->
-                </div>
-                <!-- <div class="card-footer text-center"><a href="#" class="btn btn-success">View testimonial</a></div> -->
-              </div>
+              
           </div>
         </div>
               
@@ -1550,7 +1533,9 @@
 <br><br>
 
 
-  <section id="cres">
+  <section id="cres" >
+    <div class="row justify-content-center">
+      <div class="col-md-9 border border-dark p-3">
     <div class="section-header">
       <h2 class="text-center">What to do to protect yourself from Covid-19?</h2>
       <h6 class="text-center"><a href="https://twitter.com/RescueIndiaMis1" target="_blank" class="text-primary">#rescueindia</a></h6>
@@ -1559,7 +1544,7 @@
       <div class="col-lg-9">
         <ul class="list-group list-group-flush" id="slist">
           <li class="list-group-item list-group-item-light list-group-item-action"><a data-toggle="collapse"
-              class="collapsed" href="#s1"><span class="text-dark">Wear a mask that covers your nose and mouth to help
+              class="collapsed" href="#s1"><span style="color: black; font-weight: 600;">Wear a mask that covers your nose and mouth to help
                 protect yourself and others.</span></a>
             <div id="s1" class="collapse" data-parent="#slist">
               <ul>
@@ -1579,7 +1564,7 @@
             </div>
           </li>
           <li class="list-group-item list-group-item-light list-group-item-action"><a data-toggle="collapse"
-              class="collapsed" href="#s2"><span class="text-dark">Stay 6 feet apart from others who don’t live with
+              class="collapsed" href="#s2"><span style="color: black; font-weight: 600;">Stay 6 feet apart from others who don’t live with
                 you.</span></a>
             <div id="s2" class="collapse" data-parent="#slist">
               <ul>
@@ -1602,7 +1587,7 @@
             </div>
           </li>
           <li class="list-group-item list-group-item-light list-group-item-action"><a data-toggle="collapse"
-              class="collapsed" href="#s3"><span class="text-dark">Get a COVID-19 vaccine when it is available to
+              class="collapsed" href="#s3"><span style="color: black; font-weight: 600;">Get a COVID-19 vaccine when it is available to
                 you.</span></a>
             <div id="s3" class="collapse" data-parent="#slist">
               <ul>
@@ -1614,7 +1599,7 @@
             </div>
           </li>
           <li class="list-group-item list-group-item-light list-group-item-action"><a data-toggle="collapse"
-              class="collapsed" href="#s4"><span class="text-dark">Avoid crowds and poorly ventilated indoor
+              class="collapsed" href="#s4"><span style="color: black; font-weight: 600;">Avoid crowds and poorly ventilated indoor
                 spaces.</span></a>
             <div id="s4" class="collapse" data-parent="#slist">
               <ul>
@@ -1628,7 +1613,7 @@
             </div>
           </li>
           <li class="list-group-item list-group-item-light list-group-item-action"><a data-toggle="collapse"
-              class="collapsed" href="#s5"><span class="text-dark">Wash your hands often with soap and water. Use hand
+              class="collapsed" href="#s5"><span style="color: black; font-weight: 600;">Wash your hands often with soap and water. Use hand
                 sanitizer if soap and water aren’t available.</span></a>
             <div id="s5" class="collapse" data-parent="#slist">
               <ul>
@@ -1657,7 +1642,8 @@
           </li>
         </ul>
       </div>
-    </div>
+    </div></div>
+  </div>
     <br><br>
     <div class="row justify-content-center">
       <a class="btn btn-primary btn-lg px-4 py-3" href="{% url 'donatenow-page' %}">Donate Now</a>
@@ -2080,14 +2066,16 @@
       <h6 class="text-center"><a href="https://twitter.com/RescueIndiaMis1" target="_blank" class="text-primary">#rescueindia</a></h6>
     </div>
     <div class="row justify-content-center">
-      <div class="card col-md-4">
+      <div class="card col-md-4 ">
+        <img class="card-img-top" src="{% static 'rescue/images/1.jpg' %}" alt="Card image cap" height="300px">
         <div class="card-body">
-          <h5 class="card-title text-center">Check where hospital beds are available in your state</h5>
+          <h5 class="card-title text-center">Check Important resources available in your state</h5>
           <div class="row justify-content-center"><a href="https://covidrelief.glideapp.io/" target="_blank"
               class="btn btn-success btn-lg">Click Here To Know</a></div>
         </div>
       </div>
-      <div class="card col-md-4">
+      <div class="card col-md-4 ">
+        <img class="card-img-top" src="{% static 'rescue/images/bran.jpg' %}" alt="Card image cap" height="290px">
         <div class="card-body">
           <h5 class="card-title text-center">What to Know About COVID-19 and Brain Fog</h5>
           <div class="row justify-content-center"><a href="https://www.healthline.com/health/covid-brain-fog"
@@ -2095,6 +2083,7 @@
         </div>
       </div>
       <div class="card col-md-4">
+        <img class="card-img-top" src="{% static 'rescue/images/oxy.jpg' %}" alt="Card image cap" height="290px">
         <div class="card-body">
           <h5 class="card-title text-center">Check about Oxygen Cylinders and Plasma availability in your state</h5>
           <div class="row justify-content-center"><a href="https://covid-resource.netlify.app/" target="_blank"
