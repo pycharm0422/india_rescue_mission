@@ -19,4 +19,5 @@ urlpatterns = [
     path('health_care_providers/', views.health_care, name='health_care_prov'),
     path('safety_measure/', views.safety_measure, name='safety-measure'),
     path('oxygen_shortage/', views.oxygen_shortage, name='oxygen-shortage-page'),
+    path('donate_now/',views.donatenow, name='donatenow-page'),
 ]
